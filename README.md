@@ -5,3 +5,6 @@
 
 一键切换
 
+git clone https://github.com/xllyll/XYGatherIM.git
+
+pod install
