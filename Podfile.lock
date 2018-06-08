@@ -1,0 +1,31 @@
+PODS:
+  - Hyphenate (3.4.1)
+  - Masonry (1.1.0)
+  - NIMSDK (5.2.2)
+  - RongCloudIM/IMKit (2.8.32):
+    - RongCloudIM/IMLib
+  - RongCloudIM/IMLib (2.8.32)
+
+DEPENDENCIES:
+  - Hyphenate
+  - Masonry
+  - NIMSDK
+  - RongCloudIM/IMKit (~> 2.8.3)
+  - RongCloudIM/IMLib (~> 2.8.3)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Hyphenate
+    - Masonry
+    - NIMSDK
+    - RongCloudIM
+
+SPEC CHECKSUMS:
+  Hyphenate: 8f14ff0b69a5af878391c55b0536e8c7378e18af
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  NIMSDK: 1800f8bc86ea92c71385c276c615cbfd10232e69
+  RongCloudIM: 48bfc2fcb8d7cae8ce1e19cb5fb26d6d90616375
+
+PODFILE CHECKSUM: 0c7bc1d805b4fa274adfc614b7f4176ab0779a8c
+
+COCOAPODS: 1.5.2
