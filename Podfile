@@ -14,7 +14,7 @@ target 'XYGatherIM' do
   #LOG#
   pod 'CocoaLumberjack', '~> 3.2.1'
   pod 'MJExtension'
-  
+  pod 'SDWebImage'
   #融云IM SDK POD
   pod 'RongCloudIM/IMLib', '~> 2.8.3'
   pod 'RongCloudIM/IMKit', '~> 2.8.3'

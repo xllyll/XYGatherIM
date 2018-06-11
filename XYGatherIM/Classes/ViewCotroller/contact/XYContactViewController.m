@@ -8,9 +8,12 @@
 
 #import "XYContactViewController.h"
 #import "XYGIMClient.h"
+#import "XYContactTableViewCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
-@interface XYContactViewController ()
+@interface XYContactViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong , nonatomic)NSArray *friends;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @end
 
 @implementation XYContactViewController
@@ -23,10 +26,18 @@
 }
 - (void)setup{
     self.title = @"联系人";
+    
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    UIView *v = [[UIView alloc] init];
+    v.backgroundColor = [UIColor clearColor];
+    _tableView.tableFooterView = v;
+    
 }
 -(void)loadData{
     _friends = [XYGIMClient sharedClient].contactManager.getContacts;
     XYLog(@"");
+    [_tableView reloadData];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -42,5 +53,27 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 2;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (section==0) {
+        return 0;
+    }
+    return _friends.count;
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section==0) {
+        return nil;
+    }
+    
+    XYContactTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    if (!cell) {
+        cell  = [[XYContactTableViewCell alloc] initWithReuseIdentifier:@"Cell"];
+    }
+    XYGIMUser *u = _friends[indexPath.row];
+    [cell.imageView sd_setImageWithURL:[NSURL URLWithString:u.userInfo.avatarUrl] placeholderImage:nil];
+    cell.textLabel.text = u.userId;
+    return cell;
+}
 @end

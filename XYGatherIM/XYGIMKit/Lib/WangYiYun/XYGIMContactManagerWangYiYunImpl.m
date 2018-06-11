@@ -8,6 +8,7 @@
 
 #import "XYGIMContactManagerWangYiYunImpl.h"
 #import <NIMSDK/NIMSDK.h>
+#import "MJExtension.h"
 @interface XYGIMContactManagerWangYiYunImpl()
 
 @property (nonatomic,strong,readonly)   id<NIMUserManager> usermaner;
@@ -30,6 +31,11 @@
             user.userId = u.userId;
             user.alias = u.alias;
             user.ext = u.ext;
+            
+            NSDictionary *dic = u.userInfo.mj_keyValues;
+            XYGIMUserInfo *info = [XYGIMUserInfo mj_objectWithKeyValues:dic];
+            user.userInfo = info;
+            
             [array addObject:user];
         }
     }

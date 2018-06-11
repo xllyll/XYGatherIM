@@ -7,6 +7,9 @@
 //
 
 #import "XYGIMUser.h"
+@implementation XYGIMUserInfo
+
+@end
 
 @implementation XYGIMUser
 

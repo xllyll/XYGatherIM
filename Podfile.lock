@@ -14,6 +14,9 @@ PODS:
   - RongCloudIM/IMKit (2.8.32):
     - RongCloudIM/IMLib
   - RongCloudIM/IMLib (2.8.32)
+  - SDWebImage (4.4.1):
+    - SDWebImage/Core (= 4.4.1)
+  - SDWebImage/Core (4.4.1)
 
 DEPENDENCIES:
   - CocoaLumberjack (~> 3.2.1)
@@ -25,6 +28,7 @@ DEPENDENCIES:
   - Reachability (~> 3.2)
   - RongCloudIM/IMKit (~> 2.8.3)
   - RongCloudIM/IMLib (~> 2.8.3)
+  - SDWebImage
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -36,6 +40,7 @@ SPEC REPOS:
     - NIMSDK
     - Reachability
     - RongCloudIM
+    - SDWebImage
 
 SPEC CHECKSUMS:
   CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
@@ -46,7 +51,8 @@ SPEC CHECKSUMS:
   NIMSDK: 1800f8bc86ea92c71385c276c615cbfd10232e69
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RongCloudIM: 48bfc2fcb8d7cae8ce1e19cb5fb26d6d90616375
+  SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
 
-PODFILE CHECKSUM: e0b71e7e30100d90405e51979df80438277df100
+PODFILE CHECKSUM: 88d7ac049a859205462ecec7e980f2dedab6f04e
 
 COCOAPODS: 1.5.2
