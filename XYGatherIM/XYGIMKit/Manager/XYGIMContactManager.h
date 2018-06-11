@@ -7,7 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XYGIMUser.h"
 
-@interface XYGIMContactManager : NSObject
+@protocol XYGIMContactManager <NSObject>
+#pragma mark - Contact Operations
+
+/*!
+ *  \~chinese
+ *  获取本地存储的所有好友
+ *
+ *  @result 好友列表<NSString>
+ *
+ *  \~english
+ *  Get all contacts from local database
+ *
+ *  @result Contact list<String>
+ */
+- (NSArray<XYGIMUser*> *)getContacts;
 
 @end

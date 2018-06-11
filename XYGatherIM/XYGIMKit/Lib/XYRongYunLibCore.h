@@ -6,8 +6,8 @@
 //  Copyright © 2018年 杨卢银. All rights reserved.
 //
 
-#import "XYBaseLibCore.h"
+#import "XYGIMClient.h"
 
-@interface XYRongYunLibCore : XYBaseLibCore
+@interface XYRongYunLibCore : XYGIMClient
 
 @end

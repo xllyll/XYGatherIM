@@ -6,8 +6,8 @@
 //  Copyright © 2018年 杨卢银. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "XYGIMContactManager.h"
 
-@interface XYGIMContactManagerHuanXinImpl : NSObject
+@interface XYGIMContactManagerHuanXinImpl : NSObject<XYGIMContactManager>
 
 @end

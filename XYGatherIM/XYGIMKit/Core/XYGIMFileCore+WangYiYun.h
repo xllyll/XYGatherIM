@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "XYGIMFileCore.h"
+#import "XYGIMLoginData.h"
 
-@interface XYGIMFileCore_WangYiYun : NSObject
+@interface XYGIMFileCore (WangYiYun)
+
++(void)saveLoginData:(XYGIMLoginData*)loginData;
+
++(XYGIMLoginData*)getLoginData;
 
 @end

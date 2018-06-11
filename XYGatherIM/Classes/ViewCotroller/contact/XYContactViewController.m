@@ -7,9 +7,10 @@
 //
 
 #import "XYContactViewController.h"
+#import "XYGIMClient.h"
 
 @interface XYContactViewController ()
-
+@property (strong , nonatomic)NSArray *friends;
 @end
 
 @implementation XYContactViewController
@@ -17,8 +18,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self setup];
+    [self loadData];
 }
-
+- (void)setup{
+    self.title = @"联系人";
+}
+-(void)loadData{
+    _friends = [XYGIMClient sharedClient].contactManager.getContacts;
+    XYLog(@"");
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

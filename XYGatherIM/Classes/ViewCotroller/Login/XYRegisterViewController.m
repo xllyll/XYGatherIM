@@ -7,8 +7,14 @@
 //
 
 #import "XYRegisterViewController.h"
+#import "XYGIMClient.h"
 
 @interface XYRegisterViewController ()
+
+@property (weak, nonatomic) IBOutlet UITextField *usernameTF;
+
+@property (weak, nonatomic) IBOutlet UITextField *passwordTF;
+
 
 @end
 
@@ -22,6 +28,11 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)registerSelect:(id)sender {
+    [[XYGIMClient sharedClient] registerWithUsername:_usernameTF.text password:_passwordTF.text completion:^(NSString *aUsername, XYError *aError) {
+        
+    }];
 }
 
 /*

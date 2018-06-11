@@ -42,7 +42,9 @@
     }
     return self;
 }
-
+-(NSString *)currentUsername{
+    return [_client currentUsername];
+}
 -(NSString *)version{
     return _client.version;
 }
@@ -54,7 +56,17 @@
 - (void)applicationWillEnterForeground:(UIApplication *)application{
     [[EMClient sharedClient] applicationWillEnterForeground:application];
 }
-
+-(void)registerWithUsername:(NSString *)aUsername password:(NSString *)aPassword completion:(void (^)(NSString *, XYError *))aCompletionBlock{
+    [_client registerWithUsername:aUsername password:aPassword completion:^(NSString *theUserName, EMError *aError) {
+        if(aError==nil){
+            aCompletionBlock(theUserName,nil);
+        }else{
+            XYLog(@"%@", aError.errorDescription);
+            XYError *e = [XYError new];
+            aCompletionBlock(nil,e);
+        }
+    }];
+}
 -(void)loginWithUsername:(NSString *)aUsername password:(NSString *)aPassword completion:(void (^)(NSString *, XYError *))aCompletionBlock{
     
     [_client loginWithUsername:aUsername password:aPassword completion:^(NSString *theUserName, EMError *aError) {

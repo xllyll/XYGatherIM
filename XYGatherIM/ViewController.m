@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 #import "XYLoginViewController.h"
+#import "XYGIMClient.h"
+#import "MainTabbarViewController.h"
 
 @interface ViewController ()
 
@@ -28,7 +30,13 @@
 }
 - (void)setup{
     
-    
+    if ([[XYGIMClient sharedClient] isAutoLogin]) {
+        MainTabbarViewController *main = [[MainTabbarViewController alloc] init];
+        [self presentViewController:main animated:YES completion:^{
+            
+        }];
+        return;
+    }
     
     XYLoginViewController *loginVC = [[XYLoginViewController alloc] init];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:loginVC];

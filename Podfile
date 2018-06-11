@@ -8,7 +8,13 @@ target 'XYGatherIM' do
   # Pods for XYGatherIM
 
   pod 'Masonry'
-
+  pod 'MBProgressHUD'
+  #网络状态#
+  pod 'Reachability', '~> 3.2'
+  #LOG#
+  pod 'CocoaLumberjack', '~> 3.2.1'
+  pod 'MJExtension'
+  
   #融云IM SDK POD
   pod 'RongCloudIM/IMLib', '~> 2.8.3'
   pod 'RongCloudIM/IMKit', '~> 2.8.3'

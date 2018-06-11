@@ -47,7 +47,7 @@
     chatListNav.tabBarItem.title = @"会话";
     
     _contactVC = [[XYContactViewController alloc] init];
-    BaseNavgationViewController *contactNav = [[BaseNavgationViewController alloc] initWithRootViewController:_chatListVC];
+    BaseNavgationViewController *contactNav = [[BaseNavgationViewController alloc] initWithRootViewController:_contactVC];
     contactNav.tabBarItem.title = @"联系人";
     
     
@@ -55,9 +55,7 @@
     BaseNavgationViewController *moreNav = [[BaseNavgationViewController alloc] initWithRootViewController:_moreVC];
     moreNav.tabBarItem.title = @"更多";
 
-    [self addChildViewController:chatListNav];
-    [self addChildViewController:contactNav];
-    [self addChildViewController:moreNav];
+    self.viewControllers = @[chatListNav,contactNav,moreNav];
 }
 
 - (void)didReceiveMemoryWarning {

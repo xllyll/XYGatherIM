@@ -6,19 +6,33 @@
 //  Copyright © 2018年 杨卢银. All rights reserved.
 //
 
-#import "XYGIMContactManagerImpl.h"
+#import "XYGIMContactManagerWangYiYunImpl.h"
 #import <NIMSDK/NIMSDK.h>
-@interface XYGIMContactManagerImpl()
+@interface XYGIMContactManagerWangYiYunImpl()
 
 @property (nonatomic,strong,readonly)   id<NIMUserManager> usermaner;
-//@property (strong , nonatomic) NIMUsera
+
 @end
-@implementation XYGIMContactManagerImpl
+@implementation XYGIMContactManagerWangYiYunImpl
 -(instancetype)init{
     self = [super init];
     if (self) {
         _usermaner = [[NIMSDK sharedSDK] userManager];
     }
     return self;
+}
+-(NSArray<XYGIMUser *> *)getContacts{
+    NSArray *list = _usermaner.myFriends;
+    NSMutableArray *array = [NSMutableArray array];
+    if (list) {
+        for (NIMUser *u in list) {
+            XYGIMUser *user = [[XYGIMUser alloc] init];
+            user.userId = u.userId;
+            user.alias = u.alias;
+            user.ext = u.ext;
+            [array addObject:user];
+        }
+    }
+    return array;
 }
 @end

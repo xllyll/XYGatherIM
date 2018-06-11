@@ -215,7 +215,6 @@
 		1781AB662060AD37007D5624 /* XYGatherIMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB652060AD37007D5624 /* XYGatherIMUITests.m */; };
 		1781AB782060B1F1007D5624 /* XYGIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB772060B1F1007D5624 /* XYGIMClient.m */; };
 		1781AB7C2060B5B9007D5624 /* XYHuanXinLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB7B2060B5B9007D5624 /* XYHuanXinLibCore.m */; };
-		1781AB7F2060B5E8007D5624 /* XYBaseLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB7E2060B5E8007D5624 /* XYBaseLibCore.m */; };
 		1781AB822060B91A007D5624 /* XYRongYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB812060B91A007D5624 /* XYRongYunLibCore.m */; };
 		1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */; };
 		1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84B20CA66AE000743DD /* XYJiGuangLibCore.m */; };
@@ -240,6 +239,13 @@
 		17A96D5420CE094700ECF6CB /* BaseNavgationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96D5320CE094700ECF6CB /* BaseNavgationViewController.m */; };
 		17A96D5820CE095B00ECF6CB /* XYMoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96D5620CE095B00ECF6CB /* XYMoreViewController.m */; };
 		17A96D5920CE095B00ECF6CB /* XYMoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 17A96D5720CE095B00ECF6CB /* XYMoreViewController.xib */; };
+		17A96D9620CE48C300ECF6CB /* XYGIMFileCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96D9520CE48C300ECF6CB /* XYGIMFileCore.m */; };
+		17A96D9920CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96D9820CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m */; };
+		17A96D9C20CE4E9000ECF6CB /* XYGIMLoginData.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96D9B20CE4E9000ECF6CB /* XYGIMLoginData.m */; };
+		17A96DA520CE57E600ECF6CB /* XYGIMMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96DA420CE57E600ECF6CB /* XYGIMMessage.m */; };
+		17A96DAD20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96DAC20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m */; };
+		17A96DB020CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96DAF20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m */; };
+		17A96DB320CE60DF00ECF6CB /* XYGIMUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 17A96DB220CE60DF00ECF6CB /* XYGIMUser.m */; };
 		2D078EC5018D8FDBF557DA18 /* libPods-XYGatherIM.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBF2A2DCB8C688021386271A /* libPods-XYGatherIM.a */; };
 		7D9117E3BE490D08CE541C9B /* libPods-XYGatherIMUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1CFB1756DF59DCF4AA79CE01 /* libPods-XYGatherIMUITests.a */; };
 		FDB023267D9963702B0595D9 /* libPods-XYGatherIMTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 22B51791FBBEC72AFC1E68ED /* libPods-XYGatherIMTests.a */; };
@@ -506,8 +512,6 @@
 		1781AB772060B1F1007D5624 /* XYGIMClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMClient.m; sourceTree = "<group>"; };
 		1781AB7A2060B5B9007D5624 /* XYHuanXinLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYHuanXinLibCore.h; sourceTree = "<group>"; };
 		1781AB7B2060B5B9007D5624 /* XYHuanXinLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYHuanXinLibCore.m; sourceTree = "<group>"; };
-		1781AB7D2060B5E8007D5624 /* XYBaseLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYBaseLibCore.h; sourceTree = "<group>"; };
-		1781AB7E2060B5E8007D5624 /* XYBaseLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYBaseLibCore.m; sourceTree = "<group>"; };
 		1781AB802060B91A007D5624 /* XYRongYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYRongYunLibCore.h; sourceTree = "<group>"; };
 		1781AB812060B91A007D5624 /* XYRongYunLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYRongYunLibCore.m; sourceTree = "<group>"; };
 		1786B84720CA603C000743DD /* XYWangYiYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWangYiYunLibCore.h; sourceTree = "<group>"; };
@@ -552,6 +556,21 @@
 		17A96D5520CE095B00ECF6CB /* XYMoreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYMoreViewController.h; sourceTree = "<group>"; };
 		17A96D5620CE095B00ECF6CB /* XYMoreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYMoreViewController.m; sourceTree = "<group>"; };
 		17A96D5720CE095B00ECF6CB /* XYMoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYMoreViewController.xib; sourceTree = "<group>"; };
+		17A96D9420CE48C300ECF6CB /* XYGIMFileCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMFileCore.h; sourceTree = "<group>"; };
+		17A96D9520CE48C300ECF6CB /* XYGIMFileCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMFileCore.m; sourceTree = "<group>"; };
+		17A96D9720CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYGIMFileCore+WangYiYun.h"; sourceTree = "<group>"; };
+		17A96D9820CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYGIMFileCore+WangYiYun.m"; sourceTree = "<group>"; };
+		17A96D9A20CE4E9000ECF6CB /* XYGIMLoginData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMLoginData.h; sourceTree = "<group>"; };
+		17A96D9B20CE4E9000ECF6CB /* XYGIMLoginData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMLoginData.m; sourceTree = "<group>"; };
+		17A96DA020CE568C00ECF6CB /* XYGIMContactManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMContactManager.h; sourceTree = "<group>"; };
+		17A96DA320CE57E600ECF6CB /* XYGIMMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMMessage.h; sourceTree = "<group>"; };
+		17A96DA420CE57E600ECF6CB /* XYGIMMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMMessage.m; sourceTree = "<group>"; };
+		17A96DAB20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMContactManagerWangYiYunImpl.h; sourceTree = "<group>"; };
+		17A96DAC20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMContactManagerWangYiYunImpl.m; sourceTree = "<group>"; };
+		17A96DAE20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMContactManagerHuanXinImpl.h; sourceTree = "<group>"; };
+		17A96DAF20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMContactManagerHuanXinImpl.m; sourceTree = "<group>"; };
+		17A96DB120CE60DF00ECF6CB /* XYGIMUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMUser.h; sourceTree = "<group>"; };
+		17A96DB220CE60DF00ECF6CB /* XYGIMUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMUser.m; sourceTree = "<group>"; };
 		1CFB1756DF59DCF4AA79CE01 /* libPods-XYGatherIMUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYGatherIMUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		22B51791FBBEC72AFC1E68ED /* libPods-XYGatherIMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-XYGatherIMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2300E410CE8A22B13DAD4851 /* Pods-XYGatherIMUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-XYGatherIMUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-XYGatherIMUITests/Pods-XYGatherIMUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -995,10 +1014,11 @@
 		1781AB732060B1A5007D5624 /* XYGIMKit */ = {
 			isa = PBXGroup;
 			children = (
+				1781AB742060B1B8007D5624 /* Core */,
+				17A96D9E20CE55D900ECF6CB /* Manager */,
 				178E05FB2084702A00694CC0 /* Extend */,
 				17476575207B460A0080BC9E /* Utils */,
 				17476566207B14830080BC9E /* ViewController */,
-				1781AB742060B1B8007D5624 /* Core */,
 				1747656D207B19440080BC9E /* View */,
 				1781AB752060B1B8007D5624 /* Model */,
 				1781AB792060B59A007D5624 /* Lib */,
@@ -1014,6 +1034,10 @@
 				178E061020848BE100694CC0 /* XYGIMConfig.h */,
 				178E061120848BE100694CC0 /* XYGIMConfig.m */,
 				178E061620848C3A00694CC0 /* XYGIMMacros.h */,
+				17A96D9420CE48C300ECF6CB /* XYGIMFileCore.h */,
+				17A96D9520CE48C300ECF6CB /* XYGIMFileCore.m */,
+				17A96D9720CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.h */,
+				17A96D9820CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1025,6 +1049,12 @@
 				17476715207B49A20080BC9E /* XYGIMEmotion.m */,
 				178E0624208491E800694CC0 /* XYError.h */,
 				178E0625208491E800694CC0 /* XYError.m */,
+				17A96D9A20CE4E9000ECF6CB /* XYGIMLoginData.h */,
+				17A96D9B20CE4E9000ECF6CB /* XYGIMLoginData.m */,
+				17A96DA320CE57E600ECF6CB /* XYGIMMessage.h */,
+				17A96DA420CE57E600ECF6CB /* XYGIMMessage.m */,
+				17A96DB120CE60DF00ECF6CB /* XYGIMUser.h */,
+				17A96DB220CE60DF00ECF6CB /* XYGIMUser.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1032,8 +1062,8 @@
 		1781AB792060B59A007D5624 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				1781AB7D2060B5E8007D5624 /* XYBaseLibCore.h */,
-				1781AB7E2060B5E8007D5624 /* XYBaseLibCore.m */,
+				17A96DA920CE5D2C00ECF6CB /* HuanXin */,
+				17A96DAA20CE5D2C00ECF6CB /* WangYiYun */,
 				1781AB7A2060B5B9007D5624 /* XYHuanXinLibCore.h */,
 				1781AB7B2060B5B9007D5624 /* XYHuanXinLibCore.m */,
 				1781AB802060B91A007D5624 /* XYRongYunLibCore.h */,
@@ -1155,6 +1185,32 @@
 			path = contact;
 			sourceTree = "<group>";
 		};
+		17A96D9E20CE55D900ECF6CB /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				17A96DA020CE568C00ECF6CB /* XYGIMContactManager.h */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		17A96DA920CE5D2C00ECF6CB /* HuanXin */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HuanXin;
+			sourceTree = "<group>";
+		};
+		17A96DAA20CE5D2C00ECF6CB /* WangYiYun */ = {
+			isa = PBXGroup;
+			children = (
+				17A96DAB20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.h */,
+				17A96DAC20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m */,
+				17A96DAE20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.h */,
+				17A96DAF20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m */,
+			);
+			path = WangYiYun;
+			sourceTree = "<group>";
+		};
 		EBA893E4C6D846F4CDE9D99A /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1240,7 +1296,7 @@
 				TargetAttributes = {
 					1781AB3A2060AD37007D5624 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					1781AB552060AD37007D5624 = {
 						CreatedOnToolsVersion = 9.2;
@@ -1595,6 +1651,7 @@
 				17476713207B495F0080BC9E /* XYGIMFaceManager.m in Sources */,
 				17476706207B46180080BC9E /* TLAttributedLink.m in Sources */,
 				1781AB822060B91A007D5624 /* XYRongYunLibCore.m in Sources */,
+				17A96D9C20CE4E9000ECF6CB /* XYGIMLoginData.m in Sources */,
 				17476654207B46170080BC9E /* NSMutableAttributedString+Link.m in Sources */,
 				178E061220848BE100694CC0 /* XYGIMConfig.m in Sources */,
 				178E061D20848EB100694CC0 /* XYLoginViewController.m in Sources */,
@@ -1602,7 +1659,9 @@
 				1747670C207B46630080BC9E /* XYGIMChatMoreView.m in Sources */,
 				1747664D207B46170080BC9E /* Mp3Recorder.m in Sources */,
 				17476574207B458D0080BC9E /* XYGIMChatFaceView.m in Sources */,
+				17A96DB320CE60DF00ECF6CB /* XYGIMUser.m in Sources */,
 				17A96D5420CE094700ECF6CB /* BaseNavgationViewController.m in Sources */,
+				17A96D9620CE48C300ECF6CB /* XYGIMFileCore.m in Sources */,
 				178E062A20849CF100694CC0 /* MainViewController.m in Sources */,
 				17476571207B42D50080BC9E /* XYGIMChatBar.m in Sources */,
 				1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */,
@@ -1610,7 +1669,6 @@
 				17476569207B14F70080BC9E /* XYChatViewController.m in Sources */,
 				17476658207B46170080BC9E /* NSMutableAttributedString+Config.m in Sources */,
 				17A96D5020CE092E00ECF6CB /* XYContactViewController.m in Sources */,
-				1781AB7F2060B5E8007D5624 /* XYBaseLibCore.m in Sources */,
 				17476708207B46180080BC9E /* JFLoadProgressView.m in Sources */,
 				178E06012084707400694CC0 /* UIImage+XYImage.m in Sources */,
 				1781AB432060AD37007D5624 /* ViewController.m in Sources */,
@@ -1619,6 +1677,7 @@
 				178E06042084708B00694CC0 /* UIView+XYView.m in Sources */,
 				178E0607208471C200694CC0 /* NSString+XYString.m in Sources */,
 				17A96D4C20CE091600ECF6CB /* MainTabbarViewController.m in Sources */,
+				17A96DAD20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m in Sources */,
 				17476707207B46180080BC9E /* UIView+JFFrame.m in Sources */,
 				178E06222084909F00694CC0 /* XYRegisterViewController.m in Sources */,
 				17476716207B49A20080BC9E /* XYGIMEmotion.m in Sources */,
@@ -1626,12 +1685,15 @@
 				17476657207B46170080BC9E /* TLAttributedLabelConst.m in Sources */,
 				17476651207B46170080BC9E /* UIImageView+GIF.m in Sources */,
 				17476650207B46170080BC9E /* SwipeView.m in Sources */,
+				17A96DA520CE57E600ECF6CB /* XYGIMMessage.m in Sources */,
 				17476656207B46170080BC9E /* TLAttributedLabelUtils.m in Sources */,
 				17476719207B4F190080BC9E /* XYGIMChatMoreItem.m in Sources */,
+				17A96DB020CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m in Sources */,
 				1781AB402060AD37007D5624 /* AppDelegate.m in Sources */,
 				1781AB782060B1F1007D5624 /* XYGIMClient.m in Sources */,
 				178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */,
 				1747670F207B47AE0080BC9E /* XYGIMChatFacePageView.m in Sources */,
+				17A96D9920CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m in Sources */,
 				17476652207B46170080BC9E /* NSMutableAttributedString+CTFrameRef.m in Sources */,
 				178E0626208491E800694CC0 /* XYError.m in Sources */,
 				17A96D5820CE095B00ECF6CB /* XYMoreViewController.m in Sources */,
@@ -1805,7 +1867,8 @@
 			baseConfigurationReference = 848191B79BEF6FA8AA0D94B9 /* Pods-XYGatherIM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PS3YZT8DSP;
 				INFOPLIST_FILE = XYGatherIM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1814,6 +1877,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xllyll.me.XYGatherIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "21b49d58-99cd-4a14-b25e-9c443a5272b9";
+				PROVISIONING_PROFILE_SPECIFIER = "XC-DEV";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -1823,7 +1888,9 @@
 			baseConfigurationReference = 682C2F844D4AF8766045C540 /* Pods-XYGatherIM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = PS3YZT8DSP;
 				INFOPLIST_FILE = XYGatherIM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -1832,6 +1899,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.xllyll.me.XYGatherIM;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "6dbaf6e1-9a53-4ef7-9cfd-ac9f5a32b9d9";
+				PROVISIONING_PROFILE_SPECIFIER = "XC-HOC";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

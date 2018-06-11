@@ -18,8 +18,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
-    [[XYGIMClient sharedClient] initWithType:XYGIMLibTypeWangYiYun];
+    [XYGIMClient initIMType:XYGIMLibTypeWangYiYun];
+    //[[XYGIMClient sharedClient] initWithType:XYGIMLibTypeWangYiYun];
     NSLog(@"-----%@-----",[[XYGIMClient sharedClient] version]);
     return YES;
 }

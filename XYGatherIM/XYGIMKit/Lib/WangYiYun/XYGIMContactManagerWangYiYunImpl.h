@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "XYGIMContactManager.h"
 
-@interface XYGIMContactManagerImpl : NSObject<XYGIMContactManager>
+@interface XYGIMContactManagerWangYiYunImpl : NSObject<XYGIMContactManager>
 
 @end

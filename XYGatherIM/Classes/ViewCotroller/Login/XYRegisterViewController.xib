@@ -12,6 +12,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="XYRegisterViewController">
             <connections>
+                <outlet property="passwordTF" destination="z5a-m3-loh" id="eRH-BL-Jkp"/>
+                <outlet property="usernameTF" destination="R6j-aQ-lQ6" id="iYg-aB-WsV"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -45,6 +47,9 @@
                         <constraint firstAttribute="height" constant="42" id="o31-cY-nGg"/>
                     </constraints>
                     <state key="normal" title="register"/>
+                    <connections>
+                        <action selector="registerSelect:" destination="-1" eventType="touchUpInside" id="eC8-Og-Qi5"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" red="0.85490196080000003" green="0.85490196080000003" blue="0.85490196080000003" alpha="1" colorSpace="calibratedRGB"/>

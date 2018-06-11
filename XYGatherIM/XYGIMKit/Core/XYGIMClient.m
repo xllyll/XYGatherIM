@@ -7,71 +7,92 @@
 //
 
 #import "XYGIMClient.h"
-#import "XYBaseLibCore.h"
 
 @interface XYGIMClient()
-
-@property(strong , nonatomic) XYBaseLibCore *libCore;
 
 @end
 
 @implementation XYGIMClient
 
+static XYGIMLibType _static_lib_type;
+
++(void)initIMType:(XYGIMLibType)libtype{
+    _static_lib_type = libtype;
+}
+
 +(instancetype)sharedClient{
     static XYGIMClient* _sharedUtils = nil;
     static dispatch_once_t _once;
     dispatch_once(&_once, ^{
-        _sharedUtils = [[self alloc] init];
+        _sharedUtils = [[self alloc] initSDK];
     });
     return _sharedUtils;
 }
-
--(void)initWithType:(XYGIMLibType)libType{
-    if (_libCore==nil) {
-        //_libCore = [[XYBaseLibCore alloc] init];
-        
-        Class a = nil;
-        
-        switch (libType) {
-            case XYGIMLibTypeHuanXin:
-                a = NSClassFromString(@"XYHuanXinLibCore");
-                break;
-            case XYGIMLibTypeRongYun:
-                
-                a = NSClassFromString(@"XYRongYunLibCore");
-                break;
-                
-            case XYGIMLibTypeJiGuang:
-                
-                a = NSClassFromString(@"XYJiGuangLibCore");
-                break;
-            case XYGIMLibTypeWangYiYun:
-                
-                a = NSClassFromString(@"XYWangYiYunLibCore");
-                break;
-                
-            default:
-                break;
-        }
-        
-        _libCore = [[a alloc] init];
+-(instancetype)initSDK{
+    
+    Class a = nil;
+    
+    switch (_static_lib_type) {
+        case XYGIMLibTypeHuanXin:
+            a = NSClassFromString(@"XYHuanXinLibCore");
+            break;
+        case XYGIMLibTypeRongYun:
+            
+            a = NSClassFromString(@"XYRongYunLibCore");
+            break;
+            
+        case XYGIMLibTypeJiGuang:
+            
+            a = NSClassFromString(@"XYJiGuangLibCore");
+            break;
+        case XYGIMLibTypeWangYiYun:
+            
+            a = NSClassFromString(@"XYWangYiYunLibCore");
+            
+            break;
+            
+        default:
+            
+            a = NSClassFromString(@"XYHuanXinLibCore");
+            
+            break;
     }
+    self = [[a alloc] init];
+    if (self) {
+        _libType = _static_lib_type;
+    }
+    return self;
+}
+
+-(NSString *)currentUser{
+    return @"";
 }
 -(NSString *)version{
     
-    return _libCore.version;
+    return @"";
 }
-
-// APP进入后台
+-(BOOL)isAutoLogin{
+    return NO;
+}
+-(BOOL)isLoggedIn{
+    return NO;
+}
+-(BOOL)isConnected{
+    return NO;
+}
 - (void)applicationDidEnterBackground:(UIApplication *)application{
-    [_libCore applicationDidEnterBackground:application];
+    
 }
-// APP将要从后台返回
-- (void)applicationWillEnterForeground:(UIApplication *)application{
-    [_libCore applicationWillEnterForeground:application];
+-(void)applicationWillEnterForeground:(UIApplication *)application{
+    
 }
-
+-(void)registerWithUsername:(NSString *)aUsername password:(NSString *)aPassword completion:(void (^)(NSString *, XYError *))aCompletionBlock{
+    
+}
 -(void)loginWithUsername:(NSString *)aUsername password:(NSString *)aPassword completion:(void (^)(NSString *, XYError *))aCompletionBlock{
-    [_libCore loginWithUsername:aUsername password:aPassword completion:aCompletionBlock];
+    
+}
+-(void)loginOut:(void (^)(XYError *))aCompletionBlock{
+    
 }
 @end

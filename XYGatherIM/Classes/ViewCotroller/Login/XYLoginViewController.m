@@ -50,6 +50,7 @@
 }
 */
 - (IBAction)loginSelect:(UIButton *)sender {
+    
     [self dismissAllKeyBorad];
     
     [[XYGIMClient sharedClient] loginWithUsername:_userTF.text password:_passTF.text completion:^(NSString *aUsername, XYError *aError) {
