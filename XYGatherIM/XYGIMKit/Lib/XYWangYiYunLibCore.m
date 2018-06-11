@@ -50,5 +50,15 @@
     }];
     
 }
-
+-(void)logOutWithCompletion:(void (^)(XYError *))aCompletionBlock{
+    [[[NIMSDK sharedSDK] loginManager] logout:^(NSError * _Nullable error) {
+        if(error==nil){
+            aCompletionBlock(nil);
+        }else{
+            XYLog(@"%@", error.description);
+            XYError *e = [XYError new];
+            aCompletionBlock(e);
+        }
+    }];
+}
 @end

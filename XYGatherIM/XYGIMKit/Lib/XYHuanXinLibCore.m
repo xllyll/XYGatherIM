@@ -67,5 +67,15 @@
         }
     }];
 }
-
+-(void)logOutWithCompletion:(void (^)(XYError *))aCompletionBlock{
+    [_client logout:YES completion:^(EMError *aError) {
+        if(aError==nil){
+            aCompletionBlock(nil);
+        }else{
+            XYLog(@"%@", aError.errorDescription);
+            XYError *e = [XYError new];
+            aCompletionBlock(e);
+        }
+    }];
+}
 @end

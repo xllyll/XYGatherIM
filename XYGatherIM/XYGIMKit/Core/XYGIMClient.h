@@ -25,7 +25,7 @@ typedef enum XYGIMLibType
 
 +(instancetype)sharedClient;
 /**
- 初始化方法
+ 初始化IM方法
 
  @param libType 聊天服务类型
  */

@@ -27,4 +27,6 @@
                  password:(NSString *)aPassword
                completion:(void (^)(NSString *aUsername, XYError *aError))aCompletionBlock;
 
+- (void)logOutWithCompletion:(void (^)(XYError *aError))aCompletionBlock;
+
 @end

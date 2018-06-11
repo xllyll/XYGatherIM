@@ -9,6 +9,8 @@
 #import "XYLoginViewController.h"
 #import "XYRegisterViewController.h"
 #import "XYGIMClient.h"
+#import "MainTabbarViewController.h"
+
 
 @interface XYLoginViewController ()
 
@@ -53,6 +55,10 @@
     [[XYGIMClient sharedClient] loginWithUsername:_userTF.text password:_passTF.text completion:^(NSString *aUsername, XYError *aError) {
         if (aUsername!=nil) {
             NSLog(@"登录成功✅");
+            MainTabbarViewController *main = [[MainTabbarViewController alloc] init];
+            [self presentViewController:main animated:YES completion:^{
+                
+            }];
         }else{
             NSLog(@"登录失败❌");
         }
