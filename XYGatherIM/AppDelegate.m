@@ -18,6 +18,32 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+//    NSArray *list = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Emotions" ofType:@"plist"]];
+//    NSMutableArray *rootArray = [[NSMutableArray alloc] initWithArray:list];
+//    NSMutableDictionary *rootDic = [[NSMutableDictionary alloc] initWithDictionary:rootArray[0]];
+//    NSMutableArray *items = [NSMutableArray array];
+//    NSArray *data = rootDic[@"items"];
+//    for (int i = 0; i < data.count;i++) {
+//        NSDictionary *info = data[i];
+//        NSMutableDictionary *ain = [NSMutableDictionary dictionary];
+//        [ain setObject:@(i) forKey:@"face_id"];
+//        [ain setObject:info[@"image"] forKey:@"face_image_name"];
+//        [ain setObject:[NSString stringWithFormat:@"[%@]",info[@"text"]] forKey:@"face_name"];
+//        [ain setObject:@(0) forKey:@"face_rank"];
+//        [ain setObject:info[@"image"] forKey:@"image"];
+//        [ain setObject:info[@"text"] forKey:@"text"];
+//        
+//        [items addObject:ain];
+//    }
+//    [rootDic setObject:items forKey:@"items"];
+//    [rootArray removeObjectAtIndex:0];
+//    [rootArray insertObject:rootDic atIndex:0];
+//    
+//    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+//    path = [path stringByAppendingString:@"/test.plist"];
+//    [rootArray writeToFile:path atomically:YES];
+    
     [XYGIMClient initIMType:XYGIMLibTypeWangYiYun];
     //[[XYGIMClient sharedClient] initWithType:XYGIMLibTypeWangYiYun];
     NSLog(@"-----%@-----",[[XYGIMClient sharedClient] version]);

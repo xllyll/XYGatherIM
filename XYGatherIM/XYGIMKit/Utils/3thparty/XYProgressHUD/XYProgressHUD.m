@@ -7,6 +7,8 @@
 //
 
 #import "XYProgressHUD.h"
+#import "XYGIMFaceManager.h"
+
 @interface XYProgressHUD()
 @property (assign, nonatomic) CGFloat angle;
 @property (strong, nonatomic) NSTimer *timer;
@@ -167,7 +169,7 @@
 
 - (UIImageView *)edgeImageView{
     if (!_edgeImageView) {
-        _edgeImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"chat_bar_record"]];
+        _edgeImageView = [[UIImageView alloc]initWithImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_record"]];
         _edgeImageView.center =  CGPointMake([[UIScreen mainScreen] bounds].size.width/2,[[UIScreen mainScreen] bounds].size.height/2);
     }
     return _edgeImageView;

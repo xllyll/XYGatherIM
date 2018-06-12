@@ -150,9 +150,9 @@
     //循环,给每一页末尾加上一个delete图片,如果是最后一页直接在最后一个加上delete图片
     for (int i = 0; i < self.pageCount; i++) {
         if (self.pageCount - 1 == i) {
-            [self.faceArray addObject:@{@"face_id":@"999",@"face_name":@"删除"}];
+            [self.faceArray addObject:@{@"face_id":@"999",@"face_image_name":@"delete_icon",@"face_name":@"删除"}];
         }else{
-            [self.faceArray insertObject:@{@"face_id":@"999",@"face_name":@"删除"} atIndex:(i + 1) * pageItemCount + i];
+            [self.faceArray insertObject:@{@"face_id":@"999",@"face_image_name":@"delete_icon",@"face_name":@"删除"} atIndex:(i + 1) * pageItemCount + i];
         }
     }
     
@@ -219,9 +219,10 @@
         
         
         UIButton *recentButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [recentButton setBackgroundImage:[UIImage imageNamed:@"chat_bar_recent_normal"] forState:UIControlStateNormal];
-        [recentButton setBackgroundImage:[UIImage imageNamed:@"chat_bar_recent_highlight"] forState:UIControlStateHighlighted];
-        [recentButton setBackgroundImage:[UIImage imageNamed:@"chat_bar_recent_highlight"] forState:UIControlStateSelected];
+        
+        [recentButton setBackgroundImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_recent_normal"] forState:UIControlStateNormal];
+        [recentButton setBackgroundImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_recent_highlight"] forState:UIControlStateHighlighted];
+        [recentButton setBackgroundImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_recent_highlight"] forState:UIControlStateSelected];
         recentButton.tag = XYGIMShowRecentFace;
         [recentButton addTarget:self action:@selector(changeFaceType:) forControlEvents:UIControlEventTouchUpInside];
         [recentButton sizeToFit];
@@ -229,9 +230,9 @@
         [recentButton setFrame:CGRectMake(0, _bottomView.frame.size.height/2-recentButton.frame.size.height/2, recentButton.frame.size.width, recentButton.frame.size.height)];
         
         UIButton *jd_emojiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [jd_emojiButton setBackgroundImage:[UIImage imageNamed:@"chat_bar_emoji_normal"] forState:UIControlStateNormal];
-        [jd_emojiButton setBackgroundImage:[UIImage imageNamed:@"chat_bar_emoji_highlight"] forState:UIControlStateHighlighted];
-        [jd_emojiButton setBackgroundImage:[UIImage imageNamed:@"chat_bar_emoji_highlight"] forState:UIControlStateSelected];
+        [jd_emojiButton setBackgroundImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_emoji_normal"] forState:UIControlStateNormal];
+        [jd_emojiButton setBackgroundImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_emoji_highlight"] forState:UIControlStateHighlighted];
+        [jd_emojiButton setBackgroundImage:[XYGIMFaceManager imageForEmotionPNGName:@"chat_bar_emoji_highlight"] forState:UIControlStateSelected];
         jd_emojiButton.tag = XYGIMShowEmojiFace;
         [jd_emojiButton addTarget:self action:@selector(changeFaceType:) forControlEvents:UIControlEventTouchUpInside];
         [jd_emojiButton sizeToFit];
@@ -239,9 +240,9 @@
         [jd_emojiButton setFrame:CGRectMake(recentButton.frame.size.width, _bottomView.frame.size.height/2-jd_emojiButton.frame.size.height/2, jd_emojiButton.frame.size.width, jd_emojiButton.frame.size.height)];
         
         UIButton *emojiButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        [emojiButton setImage:[UIImage imageNamed:@"icon_002_cover"] forState:UIControlStateNormal];
-        [emojiButton setImage:[UIImage imageNamed:@"icon_002_cover"] forState:UIControlStateHighlighted];
-        [emojiButton setImage:[UIImage imageNamed:@"icon_002_cover"] forState:UIControlStateSelected];
+        [emojiButton setImage:[XYGIMFaceManager imageForEmotionPNGName:@"icon_002_cover"] forState:UIControlStateNormal];
+        [emojiButton setImage:[XYGIMFaceManager imageForEmotionPNGName:@"icon_002_cover"] forState:UIControlStateHighlighted];
+        [emojiButton setImage:[XYGIMFaceManager imageForEmotionPNGName:@"icon_002_cover"] forState:UIControlStateSelected];
         emojiButton.tag = XYGIMShowEmojiFace;
         [emojiButton addTarget:self action:@selector(changeFaceType:) forControlEvents:UIControlEventTouchUpInside];
         emojiButton.imageView.contentMode = UIViewContentModeScaleAspectFit;

@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import "XYGIMMacros.h"
-#import "UIView+XYView.h"
 
 
 /**

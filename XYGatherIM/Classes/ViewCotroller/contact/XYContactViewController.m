@@ -10,6 +10,7 @@
 #import "XYGIMClient.h"
 #import "XYContactTableViewCell.h"
 #import <SDWebImage/UIImageView+WebCache.h>
+#import "XYGIMChatViewController.h"
 
 @interface XYContactViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong , nonatomic)NSArray *friends;
@@ -75,5 +76,11 @@
     [cell.imageView sd_setImageWithURL:[NSURL URLWithString:u.userInfo.avatarUrl] placeholderImage:nil];
     cell.textLabel.text = u.userId;
     return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    XYGIMUser *u = _friends[indexPath.row];
+    XYGIMChatViewController *vc = [[XYGIMChatViewController alloc] init];
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 @end

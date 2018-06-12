@@ -18,6 +18,7 @@
 
 #import "XYProgressHUD.h"
 #import "XYGIMConfig.h"
+#import "UIView+XYView.h"
 
 @interface XYGIMChatBar ()<UITextViewDelegate,XYGIMChatFaceViewDelegate,XYGIMChatMoreViewDataSource,XYGIMChatMoreViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,Mp3RecorderDelegate>
 {
@@ -450,17 +451,15 @@
     if (!issinglechat) {
         return @[@"照片",@"拍照",@"位置",@"视频"];
     }
-    return @[@"照片",@"拍照",@"位置",@"视频",@"语音通话",@"视频通话",@"家谱分享",@"家谱邀请"];
+    return @[@"照片",@"拍照",@"视频",@"位置",@"语音通话",@"视频通话"];
 }
 
 - (NSArray *)imageNamesOfMoreView:(XYGIMChatMoreView *)moreView{
     if (!issinglechat) {
-        //self_hb
-        //return @[@"chat_bottom_img"),@"chat_bottom_camera"),@"chat_bottom_location"),@"chat_bottom_video")];
         return @[@"chat_bottom_img",@"chat_bottom_camera",@"chat_bottom_location",@"chat_bottom_video"];
     }
     
-    return @[@"chat_bottom_img",@"chat_bottom_camera",@"chat_bottom_location",@"chat_bottom_video",@"chat_bottom_yuyin_icon",@"chat_bottom_shipin_icon",@"chat_bottom_jiapu_icon",@"chat_bottom_jiapu_icon"];
+    return @[@"sharemore_pic",@"sharemore_video",@"sharemore_videovoip",@"sharemore_location",@"sharemore_voipvoice",@"sharemore_multitalk"];
 }
 
 #pragma mark - XMChatFaceViewDelegate
@@ -811,8 +810,8 @@
     if (!_voiceButton) {
         _voiceButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _voiceButton.tag = XYGIMFunctionViewShowVoice;
-        [_voiceButton setBackgroundImage:[UIImage imageNamed:@"chat_yy"] forState:UIControlStateNormal];
-        [_voiceButton setBackgroundImage:[UIImage imageNamed:@"chat_typewriting"] forState:UIControlStateSelected];
+        [_voiceButton setBackgroundImage:[UIImage imageNamed:@"tool_voice_1"] forState:UIControlStateNormal];
+        [_voiceButton setBackgroundImage:[UIImage imageNamed:@"tool_keyboard_1"] forState:UIControlStateSelected];
         [_voiceButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [_voiceButton sizeToFit];
     }
@@ -850,8 +849,8 @@
     if (!_moreButton) {
         _moreButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _moreButton.tag = XYGIMFunctionViewShowMore;
-        [_moreButton setBackgroundImage:[UIImage imageNamed:@"chat_more"] forState:UIControlStateNormal];
-        [_moreButton setBackgroundImage:[UIImage imageNamed:@"chat_typewriting"] forState:UIControlStateSelected];
+        [_moreButton setBackgroundImage:[UIImage imageNamed:@"tool_share_1"] forState:UIControlStateNormal];
+        [_moreButton setBackgroundImage:[UIImage imageNamed:@"tool_keyboard_1"] forState:UIControlStateSelected];
         [_moreButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [_moreButton sizeToFit];
     }
@@ -862,8 +861,8 @@
     if (!_faceButton) {
         _faceButton = [UIButton buttonWithType:UIButtonTypeCustom];
         _faceButton.tag = XYGIMFunctionViewShowFace;
-        [_faceButton setBackgroundImage:[UIImage imageNamed:@"chat_emoji"] forState:UIControlStateNormal];
-        [_faceButton setBackgroundImage:[UIImage imageNamed:@"chat_typewriting"] forState:UIControlStateSelected];
+        [_faceButton setBackgroundImage:[UIImage imageNamed:@"tool_emotion_1"] forState:UIControlStateNormal];
+        [_faceButton setBackgroundImage:[UIImage imageNamed:@"tool_keyboard_1"] forState:UIControlStateSelected];
         [_faceButton addTarget:self action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
         [_faceButton sizeToFit];
     }

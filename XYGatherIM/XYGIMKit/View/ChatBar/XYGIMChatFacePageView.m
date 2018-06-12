@@ -30,7 +30,7 @@
 
 - (void)setup{
     
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"preview_background"]];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:[XYGIMFaceManager imageForEmotionPNGName:@"preview_background"]];
     [self addSubview:self.backgroundImageView = backgroundImageView];
     
     UIImageView *faceImageView = [[UIImageView alloc] init];
@@ -94,9 +94,10 @@
             imageView.hidden = index >= self.datas.count;
             if (!imageView.hidden) {
                 NSDictionary *faceDict = self.datas[index];
-                NSString *faceImageName = [XYGIMFaceManager faceImageNameWithFaceID:[faceDict[kFaceIDKey] integerValue]];
+                //NSString *faceImageName = [XYGIMFaceManager faceImageNameWithFaceID:[faceDict[kFaceIDKey] integerValue]];
+                NSString *faceImageName = faceDict[kFaceImageNameKey];
                 imageView.tag = [faceDict[kFaceIDKey] integerValue];
-                imageView.image = [UIImage imageNamed:faceImageName];
+                imageView.image = [XYGIMFaceManager imageForEmotionPNGName:faceImageName];
             }
         }
     } else {
@@ -116,7 +117,7 @@
             //计算每一个图片的起始Y位置  第几行*每行高度
             CGFloat startY = currentRow * itemHeight;
             
-            UIImageView *imageView = [self faceImageViewWithID:faceDict[kFaceIDKey]];
+            UIImageView *imageView = [self faceImageViewWithInfo:faceDict];
             [imageView setFrame:CGRectMake(startX, startY, itemWidth, itemHeight)];
             [self addSubview:imageView];
             [self.imageViews addObject:imageView];
@@ -125,13 +126,34 @@
     }
 }
 
+- (UIImageView *)faceImageViewWithInfo:(NSDictionary *)faceInfo{
+    NSString *faceImageName = faceInfo[kFaceImageNameKey];
+    
+    UIImage *img = [XYGIMFaceManager imageForEmotionPNGName:faceImageName];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
+    
+    imageView.userInteractionEnabled = YES;
+    imageView.tag = [faceInfo[kFaceIDKey] integerValue];
+    imageView.contentMode = UIViewContentModeCenter;
+    
+    //添加图片的点击手势
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+    [imageView addGestureRecognizer:tap];
+    
+    return imageView;
+}
 /**
  *  根据faceID获取一个imageView实例
  */
 - (UIImageView *)faceImageViewWithID:(NSString *)faceID{
     
     NSString *faceImageName = [XYGIMFaceManager faceImageNameWithFaceID:[faceID integerValue]];
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:faceImageName]];
+    
+    UIImage *img = [XYGIMFaceManager imageForEmotionPNGName:faceImageName];
+    
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:img];
+    
     imageView.userInteractionEnabled = YES;
     imageView.tag = [faceID integerValue];
     imageView.contentMode = UIViewContentModeCenter;
