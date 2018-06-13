@@ -37,24 +37,16 @@ static XYGIMLibType _static_lib_type;
             a = NSClassFromString(@"XYHuanXinLibCore");
             break;
         case XYGIMLibTypeRongYun:
-            
             a = NSClassFromString(@"XYRongYunLibCore");
             break;
-            
         case XYGIMLibTypeJiGuang:
-            
             a = NSClassFromString(@"XYJiGuangLibCore");
             break;
         case XYGIMLibTypeWangYiYun:
-            
             a = NSClassFromString(@"XYWangYiYunLibCore");
-            
             break;
-            
         default:
-            
             a = NSClassFromString(@"XYHuanXinLibCore");
-            
             break;
     }
     self = [[a alloc] init];

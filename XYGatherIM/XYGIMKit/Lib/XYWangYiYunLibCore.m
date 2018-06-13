@@ -11,10 +11,12 @@
 #import "NSString+XYString.h"
 #import "XYGIMFileCore+WangYiYun.h"
 #import "XYGIMContactManagerWangYiYunImpl.h"
+#import "XYGIMChatManagerWangYiYunImpl.h"
 
 @interface XYWangYiYunLibCore()<NIMLoginManagerDelegate>
 {
     XYGIMContactManagerWangYiYunImpl *_contactManagerImpl;
+    XYGIMChatManagerWangYiYunImpl *_chatManagerImpl;
 }
 @end
 @implementation XYWangYiYunLibCore
@@ -37,6 +39,9 @@
         
         [[[NIMSDK sharedSDK] loginManager] addDelegate:self];
        
+        _chatManagerImpl = [[XYGIMChatManagerWangYiYunImpl alloc] init];
+        self.chatManager = _chatManagerImpl;
+        
         _contactManagerImpl = [[XYGIMContactManagerWangYiYunImpl alloc] init];
         self.contactManager = _contactManagerImpl;
         

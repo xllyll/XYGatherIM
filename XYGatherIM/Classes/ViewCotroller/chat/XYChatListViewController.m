@@ -7,8 +7,11 @@
 //
 
 #import "XYChatListViewController.h"
+#import "XYGIMClient.h"
 
 @interface XYChatListViewController ()
+
+@property (strong , nonatomic) NSArray<XYGIMConversation*> *conversations;
 
 @end
 
@@ -21,6 +24,11 @@
 }
 - (void)setup{
     self.title = @"会话";
+    
+    _conversations = [XYGIMClient sharedClient].chatManager.getAllConversations;
+    
+    NSLog(@"");
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

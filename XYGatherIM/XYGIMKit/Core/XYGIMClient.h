@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYError.h"
+#import "XYGIMChatManager.h"
 #import "XYGIMContactManager.h"
 #import "XYGIMConfig.h"
 
@@ -63,6 +64,7 @@ typedef enum XYGIMLibType
 
 
 @property (assign , nonatomic) id<XYGIMContactManager> contactManager;
+@property (assign , nonatomic) id<XYGIMChatManager> chatManager;
 
 #pragma mark FFF
 // APP进入后台

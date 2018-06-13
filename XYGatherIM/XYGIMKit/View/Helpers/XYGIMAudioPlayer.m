@@ -238,7 +238,7 @@ NSString *const kXMNAudioDataKey;
 - (NSString *)cachePath {
     
     if (!_cachePath) {
-        _cachePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"com.XMFraker.XMNChat.audioCache"];
+        _cachePath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject] stringByAppendingPathComponent:@"com.xllyll.XYGIMChat.audioCache"];
         if (![[NSFileManager defaultManager] fileExistsAtPath:_cachePath]) {
             [[NSFileManager defaultManager] createDirectoryAtPath:_cachePath withIntermediateDirectories:YES attributes:nil error:nil];
         }

@@ -11,8 +11,9 @@
 #import "XYChatListViewController.h"
 #import "XYContactViewController.h"
 #import "XYMoreViewController.h"
+#import "XYGIMClient.h"
 
-@interface MainTabbarViewController ()
+@interface MainTabbarViewController ()<XYGIMChatManagerDelegate>
 
 @property (strong , nonatomic) XYChatListViewController *chatListVC;
 
@@ -30,9 +31,14 @@
     // Do any additional setup after loading the view.
 
     [self setup];
+    
+    [[XYGIMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
 }
 
-
+-(void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    [[XYGIMClient sharedClient].chatManager removeDelegate:self];
+}
 
 
 -(void)setup{
@@ -72,5 +78,7 @@
     // Pass the selected object to the new view controller.
 }
 */
-
+-(void)XYGIM_onRecvMessages:(NSArray<XYGIMMessage *> *)messages{
+    NSLog(@"");
+}
 @end

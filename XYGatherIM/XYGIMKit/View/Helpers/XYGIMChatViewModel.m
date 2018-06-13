@@ -82,6 +82,7 @@
     
     XYGIMChatMessageCell *messageCell = [tableView dequeueReusableCellWithIdentifier:identifier];
     [messageCell configureCellWithData:message];
+    
     messageCell.messageReadState = [[XYGIMMessageStateManager shareManager] messageReadStateForIndex:indexPath.row];
     messageCell.messageSendState = [[XYGIMMessageStateManager shareManager] messageSendStateForIndex:indexPath.row];
     messageCell.delegate = self.parentVC;

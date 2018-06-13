@@ -215,6 +215,12 @@
 		1781AB782060B1F1007D5624 /* XYGIMClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB772060B1F1007D5624 /* XYGIMClient.m */; };
 		1781AB7C2060B5B9007D5624 /* XYHuanXinLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB7B2060B5B9007D5624 /* XYHuanXinLibCore.m */; };
 		1781AB822060B91A007D5624 /* XYRongYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1781AB812060B91A007D5624 /* XYRongYunLibCore.m */; };
+		1783C65F20D01826003C85CA /* XYGIMWYYMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C65E20D01826003C85CA /* XYGIMWYYMessage.m */; };
+		1783C66220D0ACAE003C85CA /* XYGIMHXMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C66120D0ACAE003C85CA /* XYGIMHXMessage.m */; };
+		1783C66520D0B812003C85CA /* XYGIMMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C66420D0B812003C85CA /* XYGIMMessageBody.m */; };
+		1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C66720D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m */; };
+		1783C67320D0BD61003C85CA /* XYGIMConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67220D0BD61003C85CA /* XYGIMConversation.m */; };
+		1783C67620D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67520D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m */; };
 		1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */; };
 		1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84B20CA66AE000743DD /* XYJiGuangLibCore.m */; };
 		178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E05FD2084704600694CC0 /* UIImageView+XYImageView.m */; };
@@ -542,6 +548,20 @@
 		1781AB7B2060B5B9007D5624 /* XYHuanXinLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYHuanXinLibCore.m; sourceTree = "<group>"; };
 		1781AB802060B91A007D5624 /* XYRongYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYRongYunLibCore.h; sourceTree = "<group>"; };
 		1781AB812060B91A007D5624 /* XYRongYunLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYRongYunLibCore.m; sourceTree = "<group>"; };
+		1783C65D20D01826003C85CA /* XYGIMWYYMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMWYYMessage.h; sourceTree = "<group>"; };
+		1783C65E20D01826003C85CA /* XYGIMWYYMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMWYYMessage.m; sourceTree = "<group>"; };
+		1783C66020D0ACAE003C85CA /* XYGIMHXMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMHXMessage.h; sourceTree = "<group>"; };
+		1783C66120D0ACAE003C85CA /* XYGIMHXMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMHXMessage.m; sourceTree = "<group>"; };
+		1783C66320D0B812003C85CA /* XYGIMMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMMessageBody.h; sourceTree = "<group>"; };
+		1783C66420D0B812003C85CA /* XYGIMMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMMessageBody.m; sourceTree = "<group>"; };
+		1783C66620D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatManagerWangYiYunImpl.h; sourceTree = "<group>"; };
+		1783C66720D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatManagerWangYiYunImpl.m; sourceTree = "<group>"; };
+		1783C66A20D0BB5A003C85CA /* XYGIMChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatManager.h; sourceTree = "<group>"; };
+		1783C66E20D0BBAC003C85CA /* XYGIMChatManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatManagerDelegate.h; sourceTree = "<group>"; };
+		1783C67120D0BD61003C85CA /* XYGIMConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMConversation.h; sourceTree = "<group>"; };
+		1783C67220D0BD61003C85CA /* XYGIMConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMConversation.m; sourceTree = "<group>"; };
+		1783C67420D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatManagerHuanXinImpl.h; sourceTree = "<group>"; };
+		1783C67520D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatManagerHuanXinImpl.m; sourceTree = "<group>"; };
 		1786B84720CA603C000743DD /* XYWangYiYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWangYiYunLibCore.h; sourceTree = "<group>"; };
 		1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWangYiYunLibCore.m; sourceTree = "<group>"; };
 		1786B84A20CA66AE000743DD /* XYJiGuangLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYJiGuangLibCore.h; sourceTree = "<group>"; };
@@ -1135,8 +1155,12 @@
 				17A96D9B20CE4E9000ECF6CB /* XYGIMLoginData.m */,
 				17A96DA320CE57E600ECF6CB /* XYGIMMessage.h */,
 				17A96DA420CE57E600ECF6CB /* XYGIMMessage.m */,
+				1783C66320D0B812003C85CA /* XYGIMMessageBody.h */,
+				1783C66420D0B812003C85CA /* XYGIMMessageBody.m */,
 				17A96DB120CE60DF00ECF6CB /* XYGIMUser.h */,
 				17A96DB220CE60DF00ECF6CB /* XYGIMUser.m */,
+				1783C67120D0BD61003C85CA /* XYGIMConversation.h */,
+				1783C67220D0BD61003C85CA /* XYGIMConversation.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1156,6 +1180,36 @@
 				1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		1783C66920D0BB16003C85CA /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				17A96DAB20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.h */,
+				17A96DAC20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m */,
+				1783C66620D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.h */,
+				1783C66720D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m */,
+			);
+			path = Impl;
+			sourceTree = "<group>";
+		};
+		1783C66D20D0BB9B003C85CA /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				1783C66E20D0BBAC003C85CA /* XYGIMChatManagerDelegate.h */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		1783C67720D0C493003C85CA /* Impl */ = {
+			isa = PBXGroup;
+			children = (
+				17A96DAE20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.h */,
+				17A96DAF20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m */,
+				1783C67420D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.h */,
+				1783C67520D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m */,
+			);
+			path = Impl;
 			sourceTree = "<group>";
 		};
 		178E05FB2084702A00694CC0 /* Extend */ = {
@@ -1271,7 +1325,9 @@
 		17A96D9E20CE55D900ECF6CB /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				1783C66D20D0BB9B003C85CA /* Delegate */,
 				17A96DA020CE568C00ECF6CB /* XYGIMContactManager.h */,
+				1783C66A20D0BB5A003C85CA /* XYGIMChatManager.h */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1279,8 +1335,9 @@
 		17A96DA920CE5D2C00ECF6CB /* HuanXin */ = {
 			isa = PBXGroup;
 			children = (
-				17A96DAE20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.h */,
-				17A96DAF20CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m */,
+				1783C67720D0C493003C85CA /* Impl */,
+				1783C66020D0ACAE003C85CA /* XYGIMHXMessage.h */,
+				1783C66120D0ACAE003C85CA /* XYGIMHXMessage.m */,
 			);
 			path = HuanXin;
 			sourceTree = "<group>";
@@ -1288,8 +1345,9 @@
 		17A96DAA20CE5D2C00ECF6CB /* WangYiYun */ = {
 			isa = PBXGroup;
 			children = (
-				17A96DAB20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.h */,
-				17A96DAC20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m */,
+				1783C66920D0BB16003C85CA /* Impl */,
+				1783C65D20D01826003C85CA /* XYGIMWYYMessage.h */,
+				1783C65E20D01826003C85CA /* XYGIMWYYMessage.m */,
 			);
 			path = WangYiYun;
 			sourceTree = "<group>";
@@ -1852,12 +1910,15 @@
 				17A9708820CF963900ECF6CB /* XYGIMChatVideoMessageCell.m in Sources */,
 				17A9707920CF959F00ECF6CB /* XYGIMChatImageMessageCell.m in Sources */,
 				17476654207B46170080BC9E /* NSMutableAttributedString+Link.m in Sources */,
+				1783C66520D0B812003C85CA /* XYGIMMessageBody.m in Sources */,
 				178E061220848BE100694CC0 /* XYGIMConfig.m in Sources */,
 				178E061D20848EB100694CC0 /* XYLoginViewController.m in Sources */,
 				17476653207B46170080BC9E /* TLAttributedImage.m in Sources */,
 				1747670C207B46630080BC9E /* XYGIMChatMoreView.m in Sources */,
+				1783C66220D0ACAE003C85CA /* XYGIMHXMessage.m in Sources */,
 				1747664D207B46170080BC9E /* Mp3Recorder.m in Sources */,
 				17476574207B458D0080BC9E /* XYGIMChatFaceView.m in Sources */,
+				1783C67620D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m in Sources */,
 				17A9704C20CF651500ECF6CB /* XYGIMFaceManager.m in Sources */,
 				17A96DB320CE60DF00ECF6CB /* XYGIMUser.m in Sources */,
 				17A96D5420CE094700ECF6CB /* BaseNavgationViewController.m in Sources */,
@@ -1882,6 +1943,7 @@
 				17A9707C20CF95B200ECF6CB /* XYGIMChatVoiceMessageCell.m in Sources */,
 				17A96D4C20CE091600ECF6CB /* MainTabbarViewController.m in Sources */,
 				17A9709120CF970E00ECF6CB /* XYGIMAudioPlayer.m in Sources */,
+				1783C65F20D01826003C85CA /* XYGIMWYYMessage.m in Sources */,
 				17A96DAD20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m in Sources */,
 				17A96DBC20CE6A6A00ECF6CB /* XYGIMChatBaseViewController.m in Sources */,
 				17476707207B46180080BC9E /* UIView+JFFrame.m in Sources */,
@@ -1899,6 +1961,7 @@
 				17476719207B4F190080BC9E /* XYGIMChatMoreItem.m in Sources */,
 				17A96DB020CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m in Sources */,
 				17A9707620CF936C00ECF6CB /* XYGIMChatTextMessageCell.m in Sources */,
+				1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */,
 				17A96DB820CE663500ECF6CB /* XYContactTableViewCell.m in Sources */,
 				1781AB402060AD37007D5624 /* AppDelegate.m in Sources */,
 				1781AB782060B1F1007D5624 /* XYGIMClient.m in Sources */,
@@ -1919,6 +1982,7 @@
 				17A9708220CF95D800ECF6CB /* XYGIMChatLocationMessageCell.m in Sources */,
 				17A970A420CF9A7100ECF6CB /* XYGIMChatImageExpressMessageCell.m in Sources */,
 				17476659207B46170080BC9E /* TLAttributedLabel.m in Sources */,
+				1783C67320D0BD61003C85CA /* XYGIMConversation.m in Sources */,
 				1781AB492060AD37007D5624 /* XYGatherIM.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
