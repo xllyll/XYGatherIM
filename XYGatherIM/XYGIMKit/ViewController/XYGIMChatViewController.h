@@ -7,8 +7,12 @@
 //
 
 #import "XYGIMChatBaseViewController.h"
+#import "XYGIMChatUntiles.h"
+#import "XYGIMClient.h"
 
 @interface XYGIMChatViewController : XYGIMChatBaseViewController
+
+
 
 @property (copy, nonatomic) NSString *chatterName /**< 正在聊天的用户昵称 */;
 

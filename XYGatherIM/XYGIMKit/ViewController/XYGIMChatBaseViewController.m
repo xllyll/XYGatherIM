@@ -15,6 +15,16 @@
 
 @implementation XYGIMChatBaseViewController
 
+
+-(instancetype)initWithConversationChatter:(NSString *)conversationChatter conversationType:(XYGIMConversationType)conversationType{
+    self = [super initWithNibName:nil bundle:nil];
+    if (self) {
+        _conversation = [[XYGIMClient sharedClient].chatManager getConversation:conversationChatter type:conversationType createIfNotExist:YES];
+    }
+    return self;
+}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.

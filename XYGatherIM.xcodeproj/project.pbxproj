@@ -221,6 +221,15 @@
 		1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C66720D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m */; };
 		1783C67320D0BD61003C85CA /* XYGIMConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67220D0BD61003C85CA /* XYGIMConversation.m */; };
 		1783C67620D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67520D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m */; };
+		1783C67C20D0D494003C85CA /* XYChatListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67A20D0D494003C85CA /* XYChatListTableViewCell.m */; };
+		1783C67D20D0D494003C85CA /* XYChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1783C67B20D0D494003C85CA /* XYChatListTableViewCell.xib */; };
+		1783C68020D0D82C003C85CA /* NSDate+XYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */; };
+		1783C68320D0FB09003C85CA /* SDKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68220D0FB09003C85CA /* SDKHelper.m */; };
+		1783C68620D0FD88003C85CA /* SDKHelper+WangYiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */; };
+		1783C68920D10018003C85CA /* SDKHelper+HuanXin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68820D10018003C85CA /* SDKHelper+HuanXin.m */; };
+		1783C68C20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68B20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m */; };
+		1783C69020D1014C003C85CA /* XYGIMEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68F20D1014C003C85CA /* XYGIMEmoji.m */; };
+		1783C69320D10469003C85CA /* XYGIMEmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C69220D10469003C85CA /* XYGIMEmojiEmoticons.m */; };
 		1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */; };
 		1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84B20CA66AE000743DD /* XYJiGuangLibCore.m */; };
 		178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E05FD2084704600694CC0 /* UIImageView+XYImageView.m */; };
@@ -562,6 +571,23 @@
 		1783C67220D0BD61003C85CA /* XYGIMConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMConversation.m; sourceTree = "<group>"; };
 		1783C67420D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatManagerHuanXinImpl.h; sourceTree = "<group>"; };
 		1783C67520D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatManagerHuanXinImpl.m; sourceTree = "<group>"; };
+		1783C67920D0D494003C85CA /* XYChatListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYChatListTableViewCell.h; sourceTree = "<group>"; };
+		1783C67A20D0D494003C85CA /* XYChatListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYChatListTableViewCell.m; sourceTree = "<group>"; };
+		1783C67B20D0D494003C85CA /* XYChatListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYChatListTableViewCell.xib; sourceTree = "<group>"; };
+		1783C67E20D0D82C003C85CA /* NSDate+XYDate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDate+XYDate.h"; sourceTree = "<group>"; };
+		1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XYDate.m"; sourceTree = "<group>"; };
+		1783C68120D0FB09003C85CA /* SDKHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKHelper.h; sourceTree = "<group>"; };
+		1783C68220D0FB09003C85CA /* SDKHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKHelper.m; sourceTree = "<group>"; };
+		1783C68420D0FD88003C85CA /* SDKHelper+WangYiYun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKHelper+WangYiYun.h"; sourceTree = "<group>"; };
+		1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKHelper+WangYiYun.m"; sourceTree = "<group>"; };
+		1783C68720D10018003C85CA /* SDKHelper+HuanXin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKHelper+HuanXin.h"; sourceTree = "<group>"; };
+		1783C68820D10018003C85CA /* SDKHelper+HuanXin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKHelper+HuanXin.m"; sourceTree = "<group>"; };
+		1783C68A20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMConvertToCommonEmoticonsHelper.h; sourceTree = "<group>"; };
+		1783C68B20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMConvertToCommonEmoticonsHelper.m; sourceTree = "<group>"; };
+		1783C68E20D1014C003C85CA /* XYGIMEmoji.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMEmoji.h; sourceTree = "<group>"; };
+		1783C68F20D1014C003C85CA /* XYGIMEmoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMEmoji.m; sourceTree = "<group>"; };
+		1783C69120D10469003C85CA /* XYGIMEmojiEmoticons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMEmojiEmoticons.h; sourceTree = "<group>"; };
+		1783C69220D10469003C85CA /* XYGIMEmojiEmoticons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMEmojiEmoticons.m; sourceTree = "<group>"; };
 		1786B84720CA603C000743DD /* XYWangYiYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWangYiYunLibCore.h; sourceTree = "<group>"; };
 		1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWangYiYunLibCore.m; sourceTree = "<group>"; };
 		1786B84A20CA66AE000743DD /* XYJiGuangLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYJiGuangLibCore.h; sourceTree = "<group>"; };
@@ -1212,6 +1238,27 @@
 			path = Impl;
 			sourceTree = "<group>";
 		};
+		1783C67820D0D479003C85CA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1783C67920D0D494003C85CA /* XYChatListTableViewCell.h */,
+				1783C67A20D0D494003C85CA /* XYChatListTableViewCell.m */,
+				1783C67B20D0D494003C85CA /* XYChatListTableViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1783C68D20D1013C003C85CA /* Emoji */ = {
+			isa = PBXGroup;
+			children = (
+				1783C68E20D1014C003C85CA /* XYGIMEmoji.h */,
+				1783C68F20D1014C003C85CA /* XYGIMEmoji.m */,
+				1783C69120D10469003C85CA /* XYGIMEmojiEmoticons.h */,
+				1783C69220D10469003C85CA /* XYGIMEmojiEmoticons.m */,
+			);
+			path = Emoji;
+			sourceTree = "<group>";
+		};
 		178E05FB2084702A00694CC0 /* Extend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1223,6 +1270,8 @@
 				178E06032084708B00694CC0 /* UIView+XYView.m */,
 				178E0605208471C200694CC0 /* NSString+XYString.h */,
 				178E0606208471C200694CC0 /* NSString+XYString.m */,
+				1783C67E20D0D82C003C85CA /* NSDate+XYDate.h */,
+				1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1304,6 +1353,7 @@
 		178E062C20849D9600694CC0 /* chat */ = {
 			isa = PBXGroup;
 			children = (
+				1783C67820D0D479003C85CA /* Cell */,
 				17A96D4520CE08F100ECF6CB /* XYChatListViewController.h */,
 				17A96D4620CE08F100ECF6CB /* XYChatListViewController.m */,
 				17A96D4720CE08F100ECF6CB /* XYChatListViewController.xib */,
@@ -1338,6 +1388,8 @@
 				1783C67720D0C493003C85CA /* Impl */,
 				1783C66020D0ACAE003C85CA /* XYGIMHXMessage.h */,
 				1783C66120D0ACAE003C85CA /* XYGIMHXMessage.m */,
+				1783C68720D10018003C85CA /* SDKHelper+HuanXin.h */,
+				1783C68820D10018003C85CA /* SDKHelper+HuanXin.m */,
 			);
 			path = HuanXin;
 			sourceTree = "<group>";
@@ -1348,6 +1400,8 @@
 				1783C66920D0BB16003C85CA /* Impl */,
 				1783C65D20D01826003C85CA /* XYGIMWYYMessage.h */,
 				1783C65E20D01826003C85CA /* XYGIMWYYMessage.m */,
+				1783C68420D0FD88003C85CA /* SDKHelper+WangYiYun.h */,
+				1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */,
 			);
 			path = WangYiYun;
 			sourceTree = "<group>";
@@ -1374,6 +1428,11 @@
 				17A9704B20CF651400ECF6CB /* XYGIMFaceManager.m */,
 				17A9709220CF978000ECF6CB /* XYGIMMessageStateManager.h */,
 				17A9709320CF978000ECF6CB /* XYGIMMessageStateManager.m */,
+				1783C68120D0FB09003C85CA /* SDKHelper.h */,
+				1783C68220D0FB09003C85CA /* SDKHelper.m */,
+				1783C68A20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.h */,
+				1783C68B20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m */,
+				1783C68D20D1013C003C85CA /* Emoji */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1750,6 +1809,7 @@
 				174766B6207B46180080BC9E /* 055.png in Resources */,
 				17476675207B46170080BC9E /* 004@2x.png in Resources */,
 				174766E9207B46180080BC9E /* 058@2x.png in Resources */,
+				1783C67D20D0D494003C85CA /* XYChatListTableViewCell.xib in Resources */,
 				1747667B207B46170080BC9E /* 011.png in Resources */,
 				174766A9207B46180080BC9E /* 002@2x.png in Resources */,
 				17A9706120CF68E500ECF6CB /* Emotion.bundle in Resources */,
@@ -1931,6 +1991,7 @@
 				17476655207B46170080BC9E /* NSMutableAttributedString+Picture.m in Sources */,
 				17476569207B14F70080BC9E /* XYGIMChatViewController.m in Sources */,
 				17A9709F20CF995E00ECF6CB /* XYGIMChatMessageCell+XYGIMNCellIdentifier.m in Sources */,
+				1783C68920D10018003C85CA /* SDKHelper+HuanXin.m in Sources */,
 				17476658207B46170080BC9E /* NSMutableAttributedString+Config.m in Sources */,
 				17A96D5020CE092E00ECF6CB /* XYContactViewController.m in Sources */,
 				17476708207B46180080BC9E /* JFLoadProgressView.m in Sources */,
@@ -1940,10 +2001,12 @@
 				178E060B2084722800694CC0 /* XYUtils.m in Sources */,
 				178E06042084708B00694CC0 /* UIView+XYView.m in Sources */,
 				178E0607208471C200694CC0 /* NSString+XYString.m in Sources */,
+				1783C67C20D0D494003C85CA /* XYChatListTableViewCell.m in Sources */,
 				17A9707C20CF95B200ECF6CB /* XYGIMChatVoiceMessageCell.m in Sources */,
 				17A96D4C20CE091600ECF6CB /* MainTabbarViewController.m in Sources */,
 				17A9709120CF970E00ECF6CB /* XYGIMAudioPlayer.m in Sources */,
 				1783C65F20D01826003C85CA /* XYGIMWYYMessage.m in Sources */,
+				1783C68C20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m in Sources */,
 				17A96DAD20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m in Sources */,
 				17A96DBC20CE6A6A00ECF6CB /* XYGIMChatBaseViewController.m in Sources */,
 				17476707207B46180080BC9E /* UIView+JFFrame.m in Sources */,
@@ -1962,6 +2025,7 @@
 				17A96DB020CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m in Sources */,
 				17A9707620CF936C00ECF6CB /* XYGIMChatTextMessageCell.m in Sources */,
 				1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */,
+				1783C68020D0D82C003C85CA /* NSDate+XYDate.m in Sources */,
 				17A96DB820CE663500ECF6CB /* XYContactTableViewCell.m in Sources */,
 				1781AB402060AD37007D5624 /* AppDelegate.m in Sources */,
 				1781AB782060B1F1007D5624 /* XYGIMClient.m in Sources */,
@@ -1970,12 +2034,16 @@
 				1747670F207B47AE0080BC9E /* XYGIMChatFacePageView.m in Sources */,
 				17A96D9920CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m in Sources */,
 				17A9706C20CF91C200ECF6CB /* XYGIMChatMessageCell.m in Sources */,
+				1783C68620D0FD88003C85CA /* SDKHelper+WangYiYun.m in Sources */,
 				17476652207B46170080BC9E /* NSMutableAttributedString+CTFrameRef.m in Sources */,
+				1783C69020D1014C003C85CA /* XYGIMEmoji.m in Sources */,
 				178E0626208491E800694CC0 /* XYError.m in Sources */,
 				17A9704920CF644B00ECF6CB /* XYGIMChatViewModel.m in Sources */,
+				1783C69320D10469003C85CA /* XYGIMEmojiEmoticons.m in Sources */,
 				17A96D5820CE095B00ECF6CB /* XYMoreViewController.m in Sources */,
 				1747664F207B46170080BC9E /* FULocationManager.m in Sources */,
 				178E060F208488AF00694CC0 /* XYProgressHUD.m in Sources */,
+				1783C68320D0FB09003C85CA /* SDKHelper.m in Sources */,
 				17476709207B46180080BC9E /* XYAmplifyView.m in Sources */,
 				1781AB512060AD37007D5624 /* main.m in Sources */,
 				1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */,

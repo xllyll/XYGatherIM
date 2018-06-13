@@ -47,20 +47,26 @@
 
 -(void)buildViewControllers{
     
+    self.tabBar.tintColor  = [UIColor colorWithRed:26.0/255.0 green:178.0/255.0 blue:10.0/255.0 alpha:1.0];
+    
     _chatListVC = [[XYChatListViewController alloc] init];
     
     BaseNavgationViewController *chatListNav = [[BaseNavgationViewController alloc] initWithRootViewController:_chatListVC];
     chatListNav.tabBarItem.title = @"会话";
+    chatListNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_mainframe"];
+    chatListNav.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_mainframeHL"];
     
     _contactVC = [[XYContactViewController alloc] init];
     BaseNavgationViewController *contactNav = [[BaseNavgationViewController alloc] initWithRootViewController:_contactVC];
     contactNav.tabBarItem.title = @"联系人";
-    
+    contactNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_contacts"];
+    contactNav.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_contactsHL"];
     
     _moreVC = [[XYMoreViewController alloc] init];
     BaseNavgationViewController *moreNav = [[BaseNavgationViewController alloc] initWithRootViewController:_moreVC];
     moreNav.tabBarItem.title = @"更多";
-
+    moreNav.tabBarItem.image = [UIImage imageNamed:@"tabbar_me"];
+    moreNav.tabBarItem.selectedImage = [UIImage imageNamed:@"tabbar_meHL"];
     self.viewControllers = @[chatListNav,contactNav,moreNav];
 }
 
@@ -80,5 +86,6 @@
 */
 -(void)XYGIM_onRecvMessages:(NSArray<XYGIMMessage *> *)messages{
     NSLog(@"");
+    [_chatListVC reloadData];
 }
 @end

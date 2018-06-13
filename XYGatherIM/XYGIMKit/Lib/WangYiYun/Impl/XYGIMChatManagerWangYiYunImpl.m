@@ -60,30 +60,155 @@
     NSMutableArray *rs = [[NSMutableArray alloc] init];
     for (int i =0 ; i < slist.count; i++) {
         NIMRecentSession *c = slist[i];
-        XYGIMConversation *conversation = [[XYGIMConversation alloc] init];
-        conversation.conversationId = c.session.sessionId;
-        switch (c.session.sessionType) {
-            case NIMSessionTypeP2P:
-                conversation.type = XYGIMConversationTypeChat;
-                break;
-            case NIMSessionTypeTeam:
-                conversation.type = XYGIMConversationTypeGroupChat;
-                break;
-            case NIMSessionTypeChatroom:
-                conversation.type = XYGIMConversationTypeChatRoom;
-                break;
-                
-            default:
-                break;
-        }
-        XYGIMMessage *msg = [[XYGIMMessage alloc] initWithMessage:c.lastMessage];
-        conversation.latestMessage = msg;
-        conversation.unreadMessagesCount = c.unreadCount;
-        conversation.ext = c.localExt;
+        
+        XYGIMConversation *conversation = [self buildConversation:c];
+        
         [rs addObject:conversation];
     }
     return rs;
 }
+-(NIMMessage *)buildNIMMessageConversation:(XYGIMMessage*)aMessage{
+    NIMMessage *message = [[NIMMessage alloc] init];
+    message.text = aMessage.text;
+    switch (aMessage.messageType) {
+        case XYGIMMessageBodyTypeText:
+            aMessage.messageType = NIMMessageTypeText;
+            break;
+        case XYGIMMessageBodyTypeVoice:
+            aMessage.messageType = NIMMessageTypeAudio;
+            break;
+        case XYGIMMessageBodyTypeImage:
+            aMessage.messageType = NIMMessageTypeImage;
+            break;
+            
+        default:
+            break;
+    }
+    return message;
+}
+-(XYGIMConversation *)buildConversation:(NIMRecentSession*)aSession{
+    XYGIMConversation *conversation = [[XYGIMConversation alloc] init];
+    conversation.conversationId = aSession.session.sessionId;
+    switch (aSession.session.sessionType) {
+        case NIMSessionTypeP2P:
+            conversation.type = XYGIMConversationTypeChat;
+            break;
+        case NIMSessionTypeTeam:
+            conversation.type = XYGIMConversationTypeGroupChat;
+            break;
+        case NIMSessionTypeChatroom:
+            conversation.type = XYGIMConversationTypeChatRoom;
+            break;
+            
+        default:
+            break;
+    }
+    XYGIMMessage *msg = [[XYGIMMessage alloc] initWithMessage:aSession.lastMessage];
+    conversation.latestMessage = msg;
+    conversation.unreadMessagesCount = aSession.unreadCount;
+    conversation.ext = aSession.localExt;
+    return conversation;
+}
+-(NIMSession*)getSession:(NSString *)aConversationId type:(XYGIMConversationType)aType{
+    NIMSession *session = nil;
+    if (aType==XYGIMConversationTypeChat) {
+        session = [NIMSession session:aConversationId type:NIMSessionTypeP2P];
+    }
+    if (aType==XYGIMConversationTypeGroupChat) {
+        session = [NIMSession session:aConversationId type:NIMSessionTypeTeam];
+    }
+    if (aType==XYGIMConversationTypeChatRoom) {
+        session = [NIMSession session:aConversationId type:NIMSessionTypeChatroom];
+    }
+    return session;
+}
+-(XYGIMConversation *)getConversation:(NSString *)aConversationId type:(XYGIMConversationType)aType createIfNotExist:(BOOL)aIfCreate{
+    NIMSession *session = [self getSession:aConversationId type:aType];
+    XYGIMConversation *c = [self buildConversation:[_conversationManager recentSessionBySession:session]];
+    return c;
+}
+
+/**
+ *  \~chinese
+ *  发送消息已读回执
+ *
+ *  异步方法
+ *
+ *  @param aMessage             消息
+ *  @param aCompletionBlock     完成的回调
+ *
+ */
+- (void)sendMessageReadAck:(XYGIMMessage *)aMessage
+                completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
+    
+}
+
+/**
+ *  \~chinese
+ *  撤回消息
+ *
+ *  异步方法
+ *
+ *  @param aMessage             消息
+ *  @param aCompletionBlock     完成的回调
+ *
+ */
+- (void)recallMessage:(XYGIMMessage *)aMessage
+           completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
+    
+}
+
+/**
+ *  \~chinese
+ *  发送消息
+ *
+ *  @param aMessage         消息
+ *  @param aProgressBlock   附件上传进度回调block
+ *  @param aCompletionBlock 发送完成回调block
+ */
+- (void)sendMessage:(XYGIMMessage *)aMessage
+           progress:(void (^)(int))aProgressBlock
+         completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
+    XYLog(@"<网易云>发送消息");
+    NIMMessage *msg = [self buildNIMMessageConversation:aMessage];
+    NSError *error;
+    NIMSession *session;
+    switch (aMessage.chatType) {
+        case XYGIMChatTypeChat:
+            session = [self getSession:aMessage.to type:XYGIMConversationTypeChat];
+            break;
+        case XYGIMChatTypeGroupChat:
+            session = [self getSession:aMessage.to type:XYGIMConversationTypeGroupChat];
+            break;
+        case XYGIMChatTypeChatRoom:
+            session = [self getSession:aMessage.to type:XYGIMConversationTypeChatRoom];
+            break;
+            
+        default:
+            break;
+    }
+    BOOL send = [_chatManager sendMessage:msg toSession:session error:&error];
+    if (send == YES) {
+        XYLog(@"发送成功--");
+    }else{
+        XYLog(@"发送失败--%@",error.description);
+    }
+}
+
+/**
+ *  \~chinese
+ *  重发送消息
+ *
+ *  @param aMessage         消息
+ *  @param aProgressBlock   附件上传进度回调block
+ *  @param aCompletionBlock 发送完成回调block
+ */
+- (void)resendMessage:(XYGIMMessage *)aMessage
+             progress:(void (^)(int))aProgressBlock
+           completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
+    
+}
+
 #pragma mark NIMChatManagerDelegate
 /**
  *  即将发送消息回调
@@ -91,7 +216,7 @@
  *  @param message 当前发送的消息
  */
 - (void)willSendMessage:(NIMMessage *)message{
-    
+    XYLog(@"<网易云>即将发送消息回调");
 }
 
 /**
@@ -102,7 +227,7 @@
  */
 - (void)sendMessage:(NIMMessage *)message
            progress:(float)progress{
-    
+    XYLog(@"<网易云>发送消息进度回调 %.2f",progress);
 }
 
 /**
@@ -111,9 +236,8 @@
  *  @param message 当前发送的消息
  *  @param error   失败原因,如果发送成功则error为nil
  */
-- (void)sendMessage:(NIMMessage *)message
-didCompleteWithError:(nullable NSError *)error{
-    
+- (void)sendMessage:(NIMMessage *)message didCompleteWithError:(nullable NSError *)error{
+    XYLog(@"<网易云>当前发送的消息 %@",error?@"失败":@"成功");
 }
 
 
@@ -142,7 +266,7 @@ didCompleteWithError:(nullable NSError *)error{
  *  @discussion 当上层收到此消息时所有的存储和 model 层业务都已经更新，只需要更新 UI 即可。
  */
 - (void)onRecvMessageReceipts:(NSArray<NIMMessageReceipt *> *)receipts{
-    
+    XYLog(@"<网易云> 收到消息回执");
 }
 
 
@@ -153,7 +277,7 @@ didCompleteWithError:(nullable NSError *)error{
  *  @discusssion 云信在收到消息撤回后，会先从本地数据库中找到对应消息并进行删除，之后通知上层消息已删除
  */
 - (void)onRecvRevokeMessageNotification:(NIMRevokeMessageNotification *)notification{
-    
+    XYLog(@"<网易云> 收到消息被撤回的通知");
 }
 
 

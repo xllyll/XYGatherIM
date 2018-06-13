@@ -911,12 +911,12 @@
 }
 
 - (void)setFrame:(CGRect)frame animated:(BOOL)animated{
-    XYLog(@"CHAT-----------%@-->%@",NSStringFromCGRect(frame),@(animated));
+    //XYLog(@"CHAT-----------%@-->%@",NSStringFromCGRect(frame),@(animated));
     if (animated) {
         [UIView animateWithDuration:.3 animations:^{
             CGRect rect = frame;
             
-            XYLog(@"%@",NSStringFromCGRect(rect));
+            //XYLog(@"%@",NSStringFromCGRect(rect));
             [self setFrame:rect];
         }];
     }else{

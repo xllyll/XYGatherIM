@@ -79,7 +79,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     XYGIMUser *u = _friends[indexPath.row];
-    XYGIMChatViewController *vc = [[XYGIMChatViewController alloc] init];
+    XYGIMChatViewController *vc = [[XYGIMChatViewController alloc] initWithConversationChatter:u.userId conversationType:XYGIMConversationTypeChat];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

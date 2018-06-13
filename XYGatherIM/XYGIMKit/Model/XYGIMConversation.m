@@ -7,7 +7,18 @@
 //
 
 #import "XYGIMConversation.h"
+#import "NSDate+XYDate.h"
+#import "XYGIMClient.h"
 
 @implementation XYGIMConversation
+
+
+-(NSString *)showTime{
+    NSString *s = [[NSDate dateWithTimeIntervalInMilliSecondSince1970:_latestMessage.timestamp] formattedTime];
+    if ([XYGIMClient sharedClient].libType == XYGIMLibTypeWangYiYun) {
+        
+    }
+    return s;
+}
 
 @end

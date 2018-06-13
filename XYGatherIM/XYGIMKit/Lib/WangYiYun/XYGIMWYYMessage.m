@@ -29,7 +29,10 @@
 //    self.conversationId = _msg.
     self.from = _msg.from;
     self.localTime = _msg.timestamp;
+    self.timestamp = _msg.timestamp;
+    
     self.conversationId = _msg.session.sessionId;
+    self.text = _msg.text;
     
     switch (_msg.messageType) {
         case NIMMessageTypeText:

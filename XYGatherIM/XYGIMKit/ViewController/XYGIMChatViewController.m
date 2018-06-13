@@ -7,9 +7,13 @@
 //
 
 #import "XYGIMChatViewController.h"
+#import "NSDate+XYDate.h"
+#import "SDKHelper.h"
 
-@interface XYGIMChatViewController ()
-
+@interface XYGIMChatViewController ()<XYGIMChatBarDelegate>
+{
+    dispatch_queue_t _messageQueue;
+}
 @end
 
 @implementation XYGIMChatViewController
@@ -18,9 +22,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    _messageQueue = dispatch_queue_create("xllyll.com", NULL);
+    
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.chatBar];
     
+    self.chatBar.delegate = self;
     
     self.view.backgroundColor = [UIColor colorWithRed:234.0f/255.0f green:234/255.0f blue:234/255.f alpha:1.0f];
 }
@@ -40,4 +47,129 @@
 }
 */
 
+#pragma mark - public
+- (NSArray *)formatMessages:(NSArray *)messages
+{
+    NSMutableArray *formattedArray = [[NSMutableArray alloc] init];
+    if ([messages count] == 0) {
+        return formattedArray;
+    }
+    
+    for (XYGIMMessage *message in messages) {
+        //计算時間间隔
+        CGFloat interval = (self.messageTimeIntervalTag - message.timestamp) / 1000;
+        if (self.messageTimeIntervalTag < 0 || interval > 60 || interval < -60) {
+            NSDate *messageDate = [NSDate dateWithTimeIntervalInMilliSecondSince1970:(NSTimeInterval)message.timestamp];
+            NSString *timeStr = @"";
+            
+            timeStr = [messageDate formattedTime];
+            [formattedArray addObject:timeStr];
+            self.messageTimeIntervalTag = message.timestamp;
+        }
+        
+        //FIX:构建数据模型
+//        id<IMessageModel> model = nil;
+//
+//        model = [[EaseMessageModel alloc] initWithMessage:message];
+//        model.avatarImage = [UIImage imageNamed:@"EaseUIResource.bundle/user"];
+//        model.failImageName = @"imageDownloadFail";
+//
+//        if (model) {
+//            [formattedArray addObject:model];
+//        }
+    }
+    
+    return formattedArray;
+}
+-(void)addMessageToDataSource:(XYGIMMessage *)message
+                     progress:(id)progress
+{
+    [self.messsagesSource addObject:message];
+    
+    __weak XYGIMChatBaseViewController *weakSelf = self;
+    dispatch_async(_messageQueue, ^{
+        
+        //NSArray *messages = [weakSelf formatMessages:@[message]];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+//            [weakSelf.dataArray addObjectsFromArray:messages];
+//            [self addFUChatMessageModel:message];
+        });
+    });
+}
+- (XYGIMChatType)_messageTypeFromConversationType
+{
+    XYGIMChatType type = XYGIMChatTypeChat;
+    switch (self.conversation.type) {
+        case XYGIMConversationTypeChat:
+            type = XYGIMChatTypeChat;
+            break;
+        case XYGIMConversationTypeGroupChat:
+            type = XYGIMChatTypeGroupChat;
+            break;
+        case XYGIMConversationTypeChatRoom:
+            type = XYGIMChatTypeChatRoom;
+            break;
+        default:
+            break;
+    }
+    return type;
+}
+#pragma mark - send message
+
+- (void)_sendMessage:(XYGIMMessage *)message
+{
+    if (self.conversation.type == XYGIMConversationTypeGroupChat){
+        message.chatType = XYGIMChatTypeGroupChat;
+    }
+    else if (self.conversation.type == XYGIMConversationTypeChatRoom){
+        message.chatType = XYGIMChatTypeChatRoom;
+    }
+    
+    [self addMessageToDataSource:message
+                        progress:nil];
+    
+    __weak typeof(self) weakself = self;
+    [[XYGIMClient sharedClient].chatManager sendMessage:message progress:^(int progress) {
+        float progres = (float)progress/100.0;
+        NSLog(@"---->消息上传中:%.2f",progres);
+        if (message.messageType==XYGIMMessageBodyTypeImage || message.messageType==XYGIMMessageBodyTypeVideo) {
+            //[self.chatViewModel sendMessage:nil];
+//            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+//            FUChatMessageCell *messageCell = [self.tableView cellForRowAtIndexPath:indexPath];
+//            if (![self.tableView.visibleCells containsObject:messageCell]) {
+//                return;
+//            }
+//            if (messageCell.messageType == FUNMessageTypeImage) {
+//
+//                [(FUChatImageMessageCell *)messageCell setUploadProgress:progres];
+//            }
+//            dispatch_async(dispatch_get_main_queue(), ^{
+//                messageCell.messageSendState = FUNMessageSendSuccess;
+//            });
+        }
+    } completion:^(XYGIMMessage *message, XYError *error) {
+        [weakself.tableView reloadData];
+    }];
+    
+}
+
+- (void)sendTextMessage:(NSString *)text
+{
+    [self sendTextMessage:text withExt:nil];
+}
+
+- (void)sendTextMessage:(NSString *)text withExt:(NSDictionary*)ext
+{
+    XYGIMMessage *message = [SDKHelper sendTextMessage:text
+                                                    to:self.conversation.conversationId
+                                           messageType:[self _messageTypeFromConversationType]
+                                            messageExt:ext];
+    [self _sendMessage:message];
+}
+
+#pragma mark XYGIMChatBarDelegate
+-(void)chatBar:(XYGIMChatBar *)chatBar sendMessage:(NSString *)message{
+    [self sendTextMessage:message];
+}
 @end

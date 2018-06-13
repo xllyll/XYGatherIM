@@ -9,4 +9,6 @@
 
 @interface XYChatListViewController : UIViewController
 
+-(void)reloadData;
+
 @end

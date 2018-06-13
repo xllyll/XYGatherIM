@@ -61,4 +61,6 @@ typedef enum {
  */
 @property (nonatomic, strong) XYGIMMessage *latestMessage;
 
+-(NSString*)showTime;
+
 @end

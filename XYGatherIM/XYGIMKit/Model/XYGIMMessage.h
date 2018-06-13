@@ -94,7 +94,7 @@ typedef enum {
 @property (nonatomic, copy) NSString *conversationId;
 
 
-
+@property (nonatomic, copy) NSString *text;
 /*!
  *  \~chinese
  *  发送方
