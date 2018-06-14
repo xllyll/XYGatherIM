@@ -10,4 +10,13 @@
 
 @implementation XYGIMFileMessageBody
 
+-(instancetype)initWithLocalPath:(NSString *)aLocalPath displayName:(NSString *)aDisplayName{
+    self = [super init];
+    if (self) {
+        self.type = XYGIMMessageBodyTypeFile;
+        self.localPath = aLocalPath;
+    }
+    return self;
+}
+
 @end

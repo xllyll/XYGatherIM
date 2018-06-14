@@ -22,4 +22,5 @@
  */
 @property (nonatomic) int duration;
 
+-(instancetype)initWithLocalPath:(NSString *)aLocalPath url:(NSString *)url duration:(int)duration;
 @end

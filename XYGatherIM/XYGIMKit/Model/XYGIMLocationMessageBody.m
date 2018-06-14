@@ -10,4 +10,15 @@
 
 @implementation XYGIMLocationMessageBody
 
+-(instancetype)initWithLatitude:(double)aLatitude longitude:(double)aLongitude address:(NSString *)aAddress{
+    self = [super init];
+    if (self) {
+        self.type = XYGIMMessageBodyTypeLocation;
+        _latitude = aLatitude;
+        _longitude = aLongitude;
+        _address = aAddress;
+    }
+    return self;
+}
+
 @end

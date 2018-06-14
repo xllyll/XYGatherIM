@@ -73,14 +73,12 @@
         case XYGIMNMessageTypeCallAudio:
             typeKey = @"CallAudioMessage";
             break;
-        case XYGIMNMessageTypeFamilyTree:
-            typeKey = @"FamilyTreeMessage";
-            break;
-        case XYGIMNMessageTypeFamilyTreeInvitaion:
-            typeKey = @"FamilyTreeMessage";
+        case XYGIMNMessageTypeFile:
+            typeKey = @"FileMessage";
             break;
         default:
-            NSAssert(NO, @"Message Type Unknow");
+            typeKey = @"TextMessage";
+            //NSAssert(NO, @"Message Type Unknow");
             break;
     }
     switch (messageChat) {

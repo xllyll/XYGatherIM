@@ -15,14 +15,16 @@
  *  Message body type
  */
 typedef enum {
-    XYGIMMessageBodyTypeText   = 1,    /*! \~chinese 文本类型 \~english Text */
-    XYGIMMessageBodyTypeImage,         /*! \~chinese 图片类型 \~english Image */
+    XYGIMMessageBodyTypeText   = 1    /*! \~chinese 文本类型 \~english Text */,
+    XYGIMMessageBodyTypeImage         /*! \~chinese 图片类型 \~english Image */,
     XYGIMMessageBodyTypeVideo,         /*! \~chinese 视频类型 \~english Video */
     XYGIMMessageBodyTypeLocation,      /*! \~chinese 位置类型 \~english Location */
     XYGIMMessageBodyTypeVoice,         /*! \~chinese 语音类型 \~english Voice */
     XYGIMMessageBodyTypeFile,          /*! \~chinese 文件类型 \~english File */
     XYGIMMessageBodyTypeCmd,           /*! \~chinese 命令类型 \~english Command */
-    XYGIMMessageBodyTypeNotification
+    XYGIMMessageBodyTypeNotification, 
+    XYGIMMessageBodyTypeCustom,
+    XYGIMMessageBodyTypeRobot
 } XYGIMMessageBodyType;
 
 @interface XYGIMMessageBody : NSObject

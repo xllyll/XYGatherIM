@@ -42,8 +42,7 @@ typedef NS_ENUM(NSUInteger, XYGIMNMessageType){
     XYGIMNMessageTypeCallVideo /**< 视频通话消息 */,
     XYGIMNMessageTypeCallAudio /**< 音频通话消息 */,
     
-    XYGIMNMessageTypeFamilyTree /**< 家谱赠送消息 */,
-    XYGIMNMessageTypeFamilyTreeInvitaion /**< 家谱邀请消息 */,
+    XYGIMNMessageTypeFile /**< 文件消息 */,
 };
 
 /**

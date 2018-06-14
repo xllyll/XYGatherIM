@@ -106,6 +106,9 @@
 
 + (NSMutableAttributedString *)emotionStrWithString:(NSString *)text
 {
+    if (text==nil) {
+        return [[NSMutableAttributedString alloc] initWithString:@""];
+    }
     //1、创建一个可变的属性字符串
     NSMutableAttributedString *attributeString = [[NSMutableAttributedString alloc] initWithString:text];
     //2、通过正则表达式来匹配字符串

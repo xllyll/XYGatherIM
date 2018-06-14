@@ -16,10 +16,17 @@
 #import "XYGIMChatVideoMessageCell.h"
 #import "XYGIMChatVideoCallMessageCell.h"
 #import "XYGIMChatAudioCallMessageCell.h"
+#import "XYGIMChatFileMessageCell.h"
 
 @implementation UITableView(XYGIMNCellRegister)
 
 -(void)registerXYGIMNChatMessageCellClass{
+    
+    
+    [self registerClass:[XYGIMChatFileMessageCell class] forCellReuseIdentifier:@"XYGIMChatMessageCell_OwnerSelf_FileMessage_GroupCell"];
+    [self registerClass:[XYGIMChatFileMessageCell class] forCellReuseIdentifier:@"XYGIMChatMessageCell_OwnerSelf_FileMessage_SingleCell"];
+    [self registerClass:[XYGIMChatFileMessageCell class] forCellReuseIdentifier:@"XYGIMChatMessageCell_OwnerOther_FileMessage_GroupCell"];
+    [self registerClass:[XYGIMChatFileMessageCell class] forCellReuseIdentifier:@"XYGIMChatMessageCell_OwnerOther_FileMessage_SingleCell"];
     
     [self registerClass:[XYGIMChatVideoCallMessageCell class] forCellReuseIdentifier:@"XYGIMChatMessageCell_OwnerSelf_CallVideoMessage_GroupCell"];
     [self registerClass:[XYGIMChatVideoCallMessageCell class] forCellReuseIdentifier:@"XYGIMChatMessageCell_OwnerSelf_CallVideoMessage_SingleCell"];

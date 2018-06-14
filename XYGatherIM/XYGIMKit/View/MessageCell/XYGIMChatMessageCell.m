@@ -453,10 +453,12 @@ NSString * const kXYGIMNChatMessageCellMenuControllerKey;
         menuController = [UIMenuController sharedMenuController];
         UIMenuItem *copyItem = [[UIMenuItem alloc] initWithTitle:@"复制" action:@selector(menuCopyAction)];
         UIMenuItem *shareItem = [[UIMenuItem alloc] initWithTitle:@"转发" action:@selector(menuRelayAction)];
+        UIMenuItem *shoucItem = [[UIMenuItem alloc] initWithTitle:@"收藏" action:@selector(menuRelayAction)];
+        UIMenuItem *deleteItem = [[UIMenuItem alloc] initWithTitle:@"删除" action:@selector(menuRelayAction)];
         if (self.messageType == XYGIMNMessageTypeText) {
-            [menuController setMenuItems:@[copyItem,shareItem]];
+            [menuController setMenuItems:@[copyItem,shareItem,shoucItem,deleteItem]];
         }else{
-            [menuController setMenuItems:@[shareItem]];
+            [menuController setMenuItems:@[shareItem,shoucItem,deleteItem]];
         }
         [menuController setArrowDirection:UIMenuControllerArrowDown];
         objc_setAssociatedObject(self, &kXYGIMNChatMessageCellMenuControllerKey, menuController, OBJC_ASSOCIATION_RETAIN_NONATOMIC);

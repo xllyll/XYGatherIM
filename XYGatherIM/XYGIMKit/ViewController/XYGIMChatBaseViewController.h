@@ -11,6 +11,7 @@
 #import "XYGIMChatViewModel.h"
 #import "XYGIMClient.h"
 #import "XYGIMAudioPlayer.h"
+#import "XYGIMChatMessageCell.h"
 
 @interface XYGIMChatBaseViewController : UIViewController
 

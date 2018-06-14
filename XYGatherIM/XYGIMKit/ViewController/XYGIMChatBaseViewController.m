@@ -313,7 +313,7 @@
 
 - (UITableView *)tableView{
     if (!_tableView) {
-        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - kMinHeight - 64) style:UITableViewStylePlain];
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, self.view.frame.size.height - kMinHeight - 64) style:UITableViewStylePlain];
         
         _tableView.estimatedRowHeight = 66;
         _tableView.delegate = self.chatViewModel;
@@ -342,6 +342,14 @@
 }
 
 #pragma mark XYGIMChatViewModelDelegate
+- (NSString *)chatterNickname {
+    
+    return @"";
+}
+
+- (NSString *)chatterHeadAvator {
+    return @"";
+}
 - (void)messageReadStateChanged:(XYGIMNMessageReadState)readState withProgress:(CGFloat)progress forIndex:(NSUInteger)index {
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
     XYGIMChatMessageCell *messageCell = [self.tableView cellForRowAtIndexPath:indexPath];

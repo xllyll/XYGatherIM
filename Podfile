@@ -15,6 +15,13 @@ target 'XYGatherIM' do
   pod 'CocoaLumberjack', '~> 3.2.1'
   pod 'MJExtension'
   pod 'SDWebImage'
+  pod 'TZImagePickerController'
+  
+  pod 'AMap3DMap'
+  pod 'AMap2DMap'
+  pod 'AMapSearch'
+  pod 'AMapLocation'
+  
   #融云IM SDK POD
   pod 'RongCloudIM/IMLib', '~> 2.8.3'
   pod 'RongCloudIM/IMKit', '~> 2.8.3'
@@ -24,6 +31,8 @@ target 'XYGatherIM' do
   pod 'Hyphenate'
   #网易云
   pod 'NIMSDK'
+  #极光IM
+  pod 'JMessage'
   
   target 'XYGatherIMTests' do
     inherit! :search_paths

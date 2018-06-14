@@ -79,7 +79,8 @@
             XYGIMMessage *msg = [[XYGIMMessage alloc] initWithMessage:m];
             [list addObject:msg];
         }
-        
+        XYGIMMessage *xymsg = [[XYGIMMessage alloc] initWithMessage:msg];
+        [list addObject:xymsg];
         //通知主线程刷新
         dispatch_async(dispatch_get_main_queue(), ^{
             

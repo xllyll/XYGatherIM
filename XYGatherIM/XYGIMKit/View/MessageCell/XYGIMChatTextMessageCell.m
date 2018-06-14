@@ -25,7 +25,8 @@
 - (void)updateConstraints {
     [super updateConstraints];
     [self.messageTextL mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.edges.equalTo(self.messageContentV).with.insets(UIEdgeInsetsMake(8, 16, 8, 16));
+        make.edges.equalTo(self.messageContentV).with.insets(UIEdgeInsetsMake(8, 16, 18, 16));
+        make.width.lessThanOrEqualTo(@([UIScreen mainScreen].bounds.size.width*0.512));
     }];
 }
 
