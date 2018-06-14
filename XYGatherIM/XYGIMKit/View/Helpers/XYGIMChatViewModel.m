@@ -27,18 +27,19 @@
 @interface XYGIMChatViewModel ()<XYGIMNChatServerDelegate>
 
 @property (nonatomic, strong) NSMutableArray *dataArray;
+
 @property (nonatomic, weak) UIViewController<XYGIMChatMessageCellDelegate> *parentVC;
+
 @property (nonatomic, strong) id<XYGIMNChatServer> chatServer;
 
 @end
 
 @implementation XYGIMChatViewModel
+
 - (instancetype)initWithParentVC:(UIViewController<XYGIMChatMessageCellDelegate> *)parentVC {
     if ([super init]) {
         _dataArray = [NSMutableArray array];
         _parentVC = parentVC;
-//        _chatServer = [[XMNChatServerExample alloc] init];
-//        _chatServer.delegate = self;
     }
     return self;
 }

@@ -21,7 +21,7 @@
     XYGIMNMessageType messageType = [messageConfiguration[kXYGIMNMessageConfigurationTypeKey] integerValue];
     XYGIMNMessageOwner messageOwner = [messageConfiguration[kXYGIMNMessageConfigurationOwnerKey] integerValue];
     XYGIMNMessageChat messageChat = [messageConfiguration[kXYGIMNMessageConfigurationGroupKey] integerValue];
-    NSString *identifierKey = @"FUChatMessageCell";
+    NSString *identifierKey = @"XYGIMChatMessageCell";
     NSString *ownerKey;
     NSString *typeKey;
     NSString *groupKey;

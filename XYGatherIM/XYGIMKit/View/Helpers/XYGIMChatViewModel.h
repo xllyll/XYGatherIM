@@ -21,7 +21,7 @@
 
 @end
 
-@protocol FUChatMessageCellDelegate;
+@protocol XYGIMChatMessageCellDelegate;
 
 @interface XYGIMChatViewModel : NSObject<UITableViewDelegate,UITableViewDataSource>
 
@@ -31,7 +31,7 @@
 
 
 
-- (instancetype)initWithParentVC:(UIViewController<FUChatMessageCellDelegate> *)parentVC;
+- (instancetype)initWithParentVC:(UIViewController<XYGIMChatMessageCellDelegate> *)parentVC;
 
 /**
  *  添加一条消息到XMNChatViewModel,并不会出发发送消息到服务器的方法

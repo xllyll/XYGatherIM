@@ -10,6 +10,7 @@
 #import "XYGIMChatBar.h"
 #import "XYGIMChatViewModel.h"
 #import "XYGIMClient.h"
+#import "XYGIMAudioPlayer.h"
 
 @interface XYGIMChatBaseViewController : UIViewController
 
@@ -44,4 +45,19 @@
  @brief 时间间隔标记
  */
 @property (nonatomic) NSTimeInterval messageTimeIntervalTag;
+
+/*!
+ @property
+ @brief 加载的每页message的条数
+ */
+@property (nonatomic) NSInteger messageCountOfPage;
+/*!
+ @property
+ @brief 页面是否处于显示状态
+ */
+@property (nonatomic) BOOL isViewDidAppear;
+
+
+-(void)addMessageToDataSource:(XYGIMMessage *)message
+                     progress:(id)progress;
 @end

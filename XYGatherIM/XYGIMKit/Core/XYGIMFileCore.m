@@ -21,7 +21,7 @@
 
 +(NSString*)getPath:(NSString*)p{
     XYGIMLibType libtype = [[XYGIMClient sharedClient] libType];
-    NSString *userId = [[XYGIMClient sharedClient] currentUser];
+    NSString *userId = [[XYGIMClient sharedClient] currentUsername];
     if (userId==nil) {
         userId = @"DATA";
     }

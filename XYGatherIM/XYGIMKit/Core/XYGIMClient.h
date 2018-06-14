@@ -4,6 +4,7 @@
 //
 //  Created by 杨卢银 on 2018/3/20.
 //  Copyright © 2018年 杨卢银. All rights reserved.
+//  address : https://github.com/xllyll/XYGatherIM
 //
 
 #import <UIKit/UIKit.h>
@@ -37,7 +38,7 @@ typedef enum XYGIMLibType
 /**
  当前用户
  */
-@property(copy,nonatomic)NSString *currentUser;
+@property(copy,nonatomic)NSString *currentUsername;
 /**
  聊天服务版本
  */

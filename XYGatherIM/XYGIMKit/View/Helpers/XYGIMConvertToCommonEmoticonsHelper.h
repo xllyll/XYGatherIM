@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface XYGIMConvertToCommonEmoticonsHelper : NSObject
+
 + (NSString *)convertToCommonEmoticons:(NSString *)text;
 
 + (NSString *)convertToSystemEmoticons:(NSString *)text;
+
 @end

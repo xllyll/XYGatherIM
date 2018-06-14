@@ -56,7 +56,7 @@ static XYGIMLibType _static_lib_type;
     return self;
 }
 
--(NSString *)currentUser{
+-(NSString *)currentUsername{
     return @"";
 }
 -(NSString *)version{

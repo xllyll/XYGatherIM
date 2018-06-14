@@ -11,9 +11,7 @@
 #import "SDKHelper.h"
 
 @interface XYGIMChatViewController ()<XYGIMChatBarDelegate>
-{
-    dispatch_queue_t _messageQueue;
-}
+
 @end
 
 @implementation XYGIMChatViewController
@@ -22,7 +20,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    _messageQueue = dispatch_queue_create("xllyll.com", NULL);
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.chatBar];
@@ -47,56 +44,8 @@
 }
 */
 
-#pragma mark - public
-- (NSArray *)formatMessages:(NSArray *)messages
-{
-    NSMutableArray *formattedArray = [[NSMutableArray alloc] init];
-    if ([messages count] == 0) {
-        return formattedArray;
-    }
-    
-    for (XYGIMMessage *message in messages) {
-        //计算時間间隔
-        CGFloat interval = (self.messageTimeIntervalTag - message.timestamp) / 1000;
-        if (self.messageTimeIntervalTag < 0 || interval > 60 || interval < -60) {
-            NSDate *messageDate = [NSDate dateWithTimeIntervalInMilliSecondSince1970:(NSTimeInterval)message.timestamp];
-            NSString *timeStr = @"";
-            
-            timeStr = [messageDate formattedTime];
-            [formattedArray addObject:timeStr];
-            self.messageTimeIntervalTag = message.timestamp;
-        }
-        
-        //FIX:构建数据模型
-//        id<IMessageModel> model = nil;
-//
-//        model = [[EaseMessageModel alloc] initWithMessage:message];
-//        model.avatarImage = [UIImage imageNamed:@"EaseUIResource.bundle/user"];
-//        model.failImageName = @"imageDownloadFail";
-//
-//        if (model) {
-//            [formattedArray addObject:model];
-//        }
-    }
-    
-    return formattedArray;
-}
--(void)addMessageToDataSource:(XYGIMMessage *)message
-                     progress:(id)progress
-{
-    [self.messsagesSource addObject:message];
-    
-    __weak XYGIMChatBaseViewController *weakSelf = self;
-    dispatch_async(_messageQueue, ^{
-        
-        //NSArray *messages = [weakSelf formatMessages:@[message]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-//            [weakSelf.dataArray addObjectsFromArray:messages];
-//            [self addFUChatMessageModel:message];
-        });
-    });
-}
+
+
 - (XYGIMChatType)_messageTypeFromConversationType
 {
     XYGIMChatType type = XYGIMChatTypeChat;

@@ -12,13 +12,44 @@
 
 @implementation XYGIMConversation
 
-
+-(instancetype)initWithConversation:(id)conversation{
+    Class a = nil;
+    
+    switch ([XYGIMClient sharedClient].libType) {
+        case XYGIMLibTypeHuanXin:
+            a = NSClassFromString(@"XYGIMHXConversation");
+            break;
+        case XYGIMLibTypeRongYun:
+            a = NSClassFromString(@"XYGIMRYConversation");
+            break;
+        case XYGIMLibTypeJiGuang:
+            a = NSClassFromString(@"XYGIMJGConversation");
+            break;
+        case XYGIMLibTypeWangYiYun:
+            a = NSClassFromString(@"XYGIMWYYConversation");
+            break;
+        default:
+            break;
+    }
+    self = [[a alloc] init];
+    if (self) {
+        self.conversation = conversation;
+    }
+    return self;
+}
+-(void)setConversation:(id)conversation{
+    _conversation = conversation;
+}
 -(NSString *)showTime{
     NSString *s = [[NSDate dateWithTimeIntervalInMilliSecondSince1970:_latestMessage.timestamp] formattedTime];
     if ([XYGIMClient sharedClient].libType == XYGIMLibTypeWangYiYun) {
         
     }
     return s;
+}
+
+-(void)markAllMessagesAsRead:(XYError *__autoreleasing *)pError{
+    
 }
 
 @end

@@ -87,7 +87,7 @@
     return message;
 }
 -(XYGIMConversation *)buildConversation:(NIMRecentSession*)aSession{
-    XYGIMConversation *conversation = [[XYGIMConversation alloc] init];
+    XYGIMConversation *conversation = [[XYGIMConversation alloc] initWithConversation:aSession];
     conversation.conversationId = aSession.session.sessionId;
     switch (aSession.session.sessionType) {
         case NIMSessionTypeP2P:

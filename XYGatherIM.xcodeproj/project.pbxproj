@@ -230,6 +230,17 @@
 		1783C68C20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68B20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m */; };
 		1783C69020D1014C003C85CA /* XYGIMEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68F20D1014C003C85CA /* XYGIMEmoji.m */; };
 		1783C69320D10469003C85CA /* XYGIMEmojiEmoticons.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C69220D10469003C85CA /* XYGIMEmojiEmoticons.m */; };
+		1783C6D720D11670003C85CA /* XYGIMWYYConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6D620D11670003C85CA /* XYGIMWYYConversation.m */; };
+		1783C6DC20D16AE4003C85CA /* XYGIMRYConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6DB20D16AE4003C85CA /* XYGIMRYConversation.m */; };
+		1783C6DF20D16AF6003C85CA /* XYGIMJGConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6DE20D16AF6003C85CA /* XYGIMJGConversation.m */; };
+		1783C6E220D16B0C003C85CA /* XYGIMHXConversation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6E120D16B0C003C85CA /* XYGIMHXConversation.m */; };
+		1783C6E620D1705B003C85CA /* XYNMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6E520D1705B003C85CA /* XYNMessage.m */; };
+		1783C6E920D1FF7B003C85CA /* XYGIMImageMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6E820D1FF7B003C85CA /* XYGIMImageMessageBody.m */; };
+		1783C6EC20D1FF8C003C85CA /* XYGIMTextMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6EB20D1FF8C003C85CA /* XYGIMTextMessageBody.m */; };
+		1783C6EF20D20040003C85CA /* XYGIMFileMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6EE20D20040003C85CA /* XYGIMFileMessageBody.m */; };
+		1783C6F220D20148003C85CA /* XYGIMLocationMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6F120D20148003C85CA /* XYGIMLocationMessageBody.m */; };
+		1783C6F520D2019C003C85CA /* XYGIMVoiceMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6F420D2019C003C85CA /* XYGIMVoiceMessageBody.m */; };
+		1783C6F820D20200003C85CA /* XYGIMVideoMessageBody.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6F720D20200003C85CA /* XYGIMVideoMessageBody.m */; };
 		1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */; };
 		1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84B20CA66AE000743DD /* XYJiGuangLibCore.m */; };
 		178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E05FD2084704600694CC0 /* UIImageView+XYImageView.m */; };
@@ -588,6 +599,28 @@
 		1783C68F20D1014C003C85CA /* XYGIMEmoji.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMEmoji.m; sourceTree = "<group>"; };
 		1783C69120D10469003C85CA /* XYGIMEmojiEmoticons.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMEmojiEmoticons.h; sourceTree = "<group>"; };
 		1783C69220D10469003C85CA /* XYGIMEmojiEmoticons.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMEmojiEmoticons.m; sourceTree = "<group>"; };
+		1783C6D520D11670003C85CA /* XYGIMWYYConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMWYYConversation.h; sourceTree = "<group>"; };
+		1783C6D620D11670003C85CA /* XYGIMWYYConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMWYYConversation.m; sourceTree = "<group>"; };
+		1783C6DA20D16AE4003C85CA /* XYGIMRYConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMRYConversation.h; sourceTree = "<group>"; };
+		1783C6DB20D16AE4003C85CA /* XYGIMRYConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMRYConversation.m; sourceTree = "<group>"; };
+		1783C6DD20D16AF6003C85CA /* XYGIMJGConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMJGConversation.h; sourceTree = "<group>"; };
+		1783C6DE20D16AF6003C85CA /* XYGIMJGConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMJGConversation.m; sourceTree = "<group>"; };
+		1783C6E020D16B0C003C85CA /* XYGIMHXConversation.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMHXConversation.h; sourceTree = "<group>"; };
+		1783C6E120D16B0C003C85CA /* XYGIMHXConversation.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMHXConversation.m; sourceTree = "<group>"; };
+		1783C6E420D1705B003C85CA /* XYNMessage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNMessage.h; sourceTree = "<group>"; };
+		1783C6E520D1705B003C85CA /* XYNMessage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNMessage.m; sourceTree = "<group>"; };
+		1783C6E720D1FF7B003C85CA /* XYGIMImageMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMImageMessageBody.h; sourceTree = "<group>"; };
+		1783C6E820D1FF7B003C85CA /* XYGIMImageMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMImageMessageBody.m; sourceTree = "<group>"; };
+		1783C6EA20D1FF8C003C85CA /* XYGIMTextMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMTextMessageBody.h; sourceTree = "<group>"; };
+		1783C6EB20D1FF8C003C85CA /* XYGIMTextMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMTextMessageBody.m; sourceTree = "<group>"; };
+		1783C6ED20D20040003C85CA /* XYGIMFileMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMFileMessageBody.h; sourceTree = "<group>"; };
+		1783C6EE20D20040003C85CA /* XYGIMFileMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMFileMessageBody.m; sourceTree = "<group>"; };
+		1783C6F020D20148003C85CA /* XYGIMLocationMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMLocationMessageBody.h; sourceTree = "<group>"; };
+		1783C6F120D20148003C85CA /* XYGIMLocationMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMLocationMessageBody.m; sourceTree = "<group>"; };
+		1783C6F320D2019C003C85CA /* XYGIMVoiceMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMVoiceMessageBody.h; sourceTree = "<group>"; };
+		1783C6F420D2019C003C85CA /* XYGIMVoiceMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMVoiceMessageBody.m; sourceTree = "<group>"; };
+		1783C6F620D20200003C85CA /* XYGIMVideoMessageBody.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMVideoMessageBody.h; sourceTree = "<group>"; };
+		1783C6F720D20200003C85CA /* XYGIMVideoMessageBody.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMVideoMessageBody.m; sourceTree = "<group>"; };
 		1786B84720CA603C000743DD /* XYWangYiYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWangYiYunLibCore.h; sourceTree = "<group>"; };
 		1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWangYiYunLibCore.m; sourceTree = "<group>"; };
 		1786B84A20CA66AE000743DD /* XYJiGuangLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYJiGuangLibCore.h; sourceTree = "<group>"; };
@@ -766,6 +799,7 @@
 			isa = PBXGroup;
 			children = (
 				17A9706720CF911100ECF6CB /* XYGIMChatUntiles.h */,
+				1783C6E320D17040003C85CA /* Model */,
 				17A9706D20CF930500ECF6CB /* View */,
 				17A9709520CF995E00ECF6CB /* Categories */,
 				1747656E207B42370080BC9E /* ChatBar */,
@@ -1183,6 +1217,18 @@
 				17A96DA420CE57E600ECF6CB /* XYGIMMessage.m */,
 				1783C66320D0B812003C85CA /* XYGIMMessageBody.h */,
 				1783C66420D0B812003C85CA /* XYGIMMessageBody.m */,
+				1783C6EA20D1FF8C003C85CA /* XYGIMTextMessageBody.h */,
+				1783C6EB20D1FF8C003C85CA /* XYGIMTextMessageBody.m */,
+				1783C6ED20D20040003C85CA /* XYGIMFileMessageBody.h */,
+				1783C6EE20D20040003C85CA /* XYGIMFileMessageBody.m */,
+				1783C6E720D1FF7B003C85CA /* XYGIMImageMessageBody.h */,
+				1783C6E820D1FF7B003C85CA /* XYGIMImageMessageBody.m */,
+				1783C6F020D20148003C85CA /* XYGIMLocationMessageBody.h */,
+				1783C6F120D20148003C85CA /* XYGIMLocationMessageBody.m */,
+				1783C6F320D2019C003C85CA /* XYGIMVoiceMessageBody.h */,
+				1783C6F420D2019C003C85CA /* XYGIMVoiceMessageBody.m */,
+				1783C6F620D20200003C85CA /* XYGIMVideoMessageBody.h */,
+				1783C6F720D20200003C85CA /* XYGIMVideoMessageBody.m */,
 				17A96DB120CE60DF00ECF6CB /* XYGIMUser.h */,
 				17A96DB220CE60DF00ECF6CB /* XYGIMUser.m */,
 				1783C67120D0BD61003C85CA /* XYGIMConversation.h */,
@@ -1194,6 +1240,8 @@
 		1781AB792060B59A007D5624 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				1783C6D820D16AD3003C85CA /* JiGuang */,
+				1783C6D920D16AD3003C85CA /* RongYun */,
 				17A96DA920CE5D2C00ECF6CB /* HuanXin */,
 				17A96DAA20CE5D2C00ECF6CB /* WangYiYun */,
 				1781AB7A2060B5B9007D5624 /* XYHuanXinLibCore.h */,
@@ -1257,6 +1305,33 @@
 				1783C69220D10469003C85CA /* XYGIMEmojiEmoticons.m */,
 			);
 			path = Emoji;
+			sourceTree = "<group>";
+		};
+		1783C6D820D16AD3003C85CA /* JiGuang */ = {
+			isa = PBXGroup;
+			children = (
+				1783C6DD20D16AF6003C85CA /* XYGIMJGConversation.h */,
+				1783C6DE20D16AF6003C85CA /* XYGIMJGConversation.m */,
+			);
+			path = JiGuang;
+			sourceTree = "<group>";
+		};
+		1783C6D920D16AD3003C85CA /* RongYun */ = {
+			isa = PBXGroup;
+			children = (
+				1783C6DA20D16AE4003C85CA /* XYGIMRYConversation.h */,
+				1783C6DB20D16AE4003C85CA /* XYGIMRYConversation.m */,
+			);
+			path = RongYun;
+			sourceTree = "<group>";
+		};
+		1783C6E320D17040003C85CA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1783C6E420D1705B003C85CA /* XYNMessage.h */,
+				1783C6E520D1705B003C85CA /* XYNMessage.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		178E05FB2084702A00694CC0 /* Extend */ = {
@@ -1390,6 +1465,8 @@
 				1783C66120D0ACAE003C85CA /* XYGIMHXMessage.m */,
 				1783C68720D10018003C85CA /* SDKHelper+HuanXin.h */,
 				1783C68820D10018003C85CA /* SDKHelper+HuanXin.m */,
+				1783C6E020D16B0C003C85CA /* XYGIMHXConversation.h */,
+				1783C6E120D16B0C003C85CA /* XYGIMHXConversation.m */,
 			);
 			path = HuanXin;
 			sourceTree = "<group>";
@@ -1402,6 +1479,8 @@
 				1783C65E20D01826003C85CA /* XYGIMWYYMessage.m */,
 				1783C68420D0FD88003C85CA /* SDKHelper+WangYiYun.h */,
 				1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */,
+				1783C6D520D11670003C85CA /* XYGIMWYYConversation.h */,
+				1783C6D620D11670003C85CA /* XYGIMWYYConversation.m */,
 			);
 			path = WangYiYun;
 			sourceTree = "<group>";
@@ -1965,6 +2044,8 @@
 				1781AB822060B91A007D5624 /* XYRongYunLibCore.m in Sources */,
 				17A970A120CF995E00ECF6CB /* UITableView+XYGIMNCellRegister.m in Sources */,
 				17A9707F20CF95C800ECF6CB /* XYGIMChatSystemMessageCell.m in Sources */,
+				1783C6F220D20148003C85CA /* XYGIMLocationMessageBody.m in Sources */,
+				1783C6EC20D1FF8C003C85CA /* XYGIMTextMessageBody.m in Sources */,
 				17A9708520CF95F500ECF6CB /* XYGIMChatNotConnectCell.m in Sources */,
 				17A96D9C20CE4E9000ECF6CB /* XYGIMLoginData.m in Sources */,
 				17A9708820CF963900ECF6CB /* XYGIMChatVideoMessageCell.m in Sources */,
@@ -1978,6 +2059,7 @@
 				1783C66220D0ACAE003C85CA /* XYGIMHXMessage.m in Sources */,
 				1747664D207B46170080BC9E /* Mp3Recorder.m in Sources */,
 				17476574207B458D0080BC9E /* XYGIMChatFaceView.m in Sources */,
+				1783C6E620D1705B003C85CA /* XYNMessage.m in Sources */,
 				1783C67620D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m in Sources */,
 				17A9704C20CF651500ECF6CB /* XYGIMFaceManager.m in Sources */,
 				17A96DB320CE60DF00ECF6CB /* XYGIMUser.m in Sources */,
@@ -1985,8 +2067,10 @@
 				17A96D9620CE48C300ECF6CB /* XYGIMFileCore.m in Sources */,
 				178E062A20849CF100694CC0 /* MainViewController.m in Sources */,
 				17476571207B42D50080BC9E /* XYGIMChatBar.m in Sources */,
+				1783C6E220D16B0C003C85CA /* XYGIMHXConversation.m in Sources */,
 				17A9708B20CF967F00ECF6CB /* XYGIMChatAudioCallMessageCell.m in Sources */,
 				17A9707020CF931000ECF6CB /* XYGIMContentView.m in Sources */,
+				1783C6EF20D20040003C85CA /* XYGIMFileMessageBody.m in Sources */,
 				1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */,
 				17476655207B46170080BC9E /* NSMutableAttributedString+Picture.m in Sources */,
 				17476569207B14F70080BC9E /* XYGIMChatViewController.m in Sources */,
@@ -2006,6 +2090,7 @@
 				17A96D4C20CE091600ECF6CB /* MainTabbarViewController.m in Sources */,
 				17A9709120CF970E00ECF6CB /* XYGIMAudioPlayer.m in Sources */,
 				1783C65F20D01826003C85CA /* XYGIMWYYMessage.m in Sources */,
+				1783C6F520D2019C003C85CA /* XYGIMVoiceMessageBody.m in Sources */,
 				1783C68C20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m in Sources */,
 				17A96DAD20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m in Sources */,
 				17A96DBC20CE6A6A00ECF6CB /* XYGIMChatBaseViewController.m in Sources */,
@@ -2014,6 +2099,7 @@
 				178E06222084909F00694CC0 /* XYRegisterViewController.m in Sources */,
 				17476716207B49A20080BC9E /* XYGIMEmotion.m in Sources */,
 				17A9707320CF933400ECF6CB /* XYGIMSendImageView.m in Sources */,
+				1783C6F820D20200003C85CA /* XYGIMVideoMessageBody.m in Sources */,
 				17A96D4820CE08F100ECF6CB /* XYChatListViewController.m in Sources */,
 				17476657207B46170080BC9E /* TLAttributedLabelConst.m in Sources */,
 				17476651207B46170080BC9E /* UIImageView+GIF.m in Sources */,
@@ -2022,6 +2108,7 @@
 				17A96DA520CE57E600ECF6CB /* XYGIMMessage.m in Sources */,
 				17476656207B46170080BC9E /* TLAttributedLabelUtils.m in Sources */,
 				17476719207B4F190080BC9E /* XYGIMChatMoreItem.m in Sources */,
+				1783C6DC20D16AE4003C85CA /* XYGIMRYConversation.m in Sources */,
 				17A96DB020CE5F9000ECF6CB /* XYGIMContactManagerHuanXinImpl.m in Sources */,
 				17A9707620CF936C00ECF6CB /* XYGIMChatTextMessageCell.m in Sources */,
 				1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */,
@@ -2038,6 +2125,8 @@
 				17476652207B46170080BC9E /* NSMutableAttributedString+CTFrameRef.m in Sources */,
 				1783C69020D1014C003C85CA /* XYGIMEmoji.m in Sources */,
 				178E0626208491E800694CC0 /* XYError.m in Sources */,
+				1783C6DF20D16AF6003C85CA /* XYGIMJGConversation.m in Sources */,
+				1783C6D720D11670003C85CA /* XYGIMWYYConversation.m in Sources */,
 				17A9704920CF644B00ECF6CB /* XYGIMChatViewModel.m in Sources */,
 				1783C69320D10469003C85CA /* XYGIMEmojiEmoticons.m in Sources */,
 				17A96D5820CE095B00ECF6CB /* XYMoreViewController.m in Sources */,
@@ -2045,6 +2134,7 @@
 				178E060F208488AF00694CC0 /* XYProgressHUD.m in Sources */,
 				1783C68320D0FB09003C85CA /* SDKHelper.m in Sources */,
 				17476709207B46180080BC9E /* XYAmplifyView.m in Sources */,
+				1783C6E920D1FF7B003C85CA /* XYGIMImageMessageBody.m in Sources */,
 				1781AB512060AD37007D5624 /* main.m in Sources */,
 				1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */,
 				17A9708220CF95D800ECF6CB /* XYGIMChatLocationMessageCell.m in Sources */,

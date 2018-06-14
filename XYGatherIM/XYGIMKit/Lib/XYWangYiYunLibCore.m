@@ -48,6 +48,9 @@
     }
     return self;
 }
+-(NSString *)currentUsername{
+    return [NIMSDK sharedSDK].loginManager.currentAccount;
+}
 -(NSString *)version{
     XYLog(@"========= 网易云 IM =========");
     return [[NIMSDK sharedSDK] sdkVersion];

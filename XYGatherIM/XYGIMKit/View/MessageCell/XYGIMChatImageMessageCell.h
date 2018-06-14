@@ -10,4 +10,10 @@
 
 @interface XYGIMChatImageMessageCell : XYGIMChatMessageCell
 
+- (void)setUploadProgress:(CGFloat)uploadProgress;
+
+- (void)setDownloadProgress:(CGFloat)downloadProgress;
+- (void)dismissProgress;
+- (void)showImage;
+
 @end

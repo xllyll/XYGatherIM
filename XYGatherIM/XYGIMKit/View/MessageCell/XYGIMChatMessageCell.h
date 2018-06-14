@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "XYGIMChatUntiles.h"
-#import "XYGIMMessage.h"
+#import "XYNMessage.h"
 #import "XYGIMContentView.h"
 #import "XYGIMSendImageView.h"
 #import "Masonry.h"
@@ -30,7 +30,7 @@
 /**
  *  消息类容
  */
-@property (nonatomic, strong) XYGIMMessage *message;
+@property (nonatomic, strong) XYNMessage *message;
 /**
  *  显示用户头像的UIImageView
  */

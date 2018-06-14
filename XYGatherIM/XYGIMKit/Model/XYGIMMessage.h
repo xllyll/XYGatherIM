@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "XYGIMMessageBody.h"
+#import "XYGIMTextMessageBody.h"
+#import "XYGIMImageMessageBody.h"
+#import "XYGIMLocationMessageBody.h"
+#import "XYGIMVoiceMessageBody.h"
+#import "XYGIMVideoMessageBody.h"
+
+
+#define K_EASE_MESSAGE_EXT_CALL_VIDEO @"is_video_call"
+#define K_EASE_MESSAGE_EXT_CALL_AUDIO @"is_voice_call"
 
 /*!
  *  \~chinese
@@ -49,23 +57,7 @@ typedef enum {
 } XYGIMMessageDirection;
 
 
-/*!
- *  \~chinese
- *  消息体类型
- *
- *  \~english
- *  Message body type
- */
-typedef enum {
-    XYGIMMessageBodyTypeText   = 1,    /*! \~chinese 文本类型 \~english Text */
-    XYGIMMessageBodyTypeImage,         /*! \~chinese 图片类型 \~english Image */
-    XYGIMMessageBodyTypeVideo,         /*! \~chinese 视频类型 \~english Video */
-    XYGIMMessageBodyTypeLocation,      /*! \~chinese 位置类型 \~english Location */
-    XYGIMMessageBodyTypeVoice,         /*! \~chinese 语音类型 \~english Voice */
-    XYGIMMessageBodyTypeFile,          /*! \~chinese 文件类型 \~english File */
-    XYGIMMessageBodyTypeCmd,           /*! \~chinese 命令类型 \~english Command */
-    XYGIMMessageBodyTypeNotification
-} XYGIMMessageBodyType;
+
 
 
 @interface XYGIMMessage : NSObject
@@ -83,7 +75,14 @@ typedef enum {
  *  Unique identifier of the message
  */
 @property (nonatomic, copy) NSString *messageId;
-
+/*!
+ *  \~chinese
+ *  消息的方向
+ *
+ *  \~english
+ *  Message delivery direction
+ */
+@property (nonatomic) XYGIMMessageDirection direction;
 /*!
  *  \~chinese
  *  所属会话的唯一标识符

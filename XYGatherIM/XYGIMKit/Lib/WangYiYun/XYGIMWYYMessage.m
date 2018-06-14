@@ -30,17 +30,25 @@
     self.from = _msg.from;
     self.localTime = _msg.timestamp;
     self.timestamp = _msg.timestamp;
-    
+    self.direction = [_msg.from isEqualToString:[NIMSDK sharedSDK].loginManager.currentAccount]?XYGIMMessageDirectionSend:XYGIMMessageDirectionReceive;
     self.conversationId = _msg.session.sessionId;
     self.text = _msg.text;
     
     switch (_msg.messageType) {
-        case NIMMessageTypeText:
+        case NIMMessageTypeText:{
             self.messageType = XYGIMMessageBodyTypeText;
+            XYGIMTextMessageBody *textBody = [[XYGIMTextMessageBody alloc] initWithText:_msg.text];
+            self.body = textBody;
             break;
-        case NIMMessageTypeImage:
+        }
+        case NIMMessageTypeImage:{
             self.messageType = XYGIMMessageBodyTypeImage;
+            NIMImageObject *imgObjc =  _msg.messageObject;
+            NSString *thumbPath = [imgObjc thumbPath];
+            XYGIMImageMessageBody *imgBody = [[XYGIMImageMessageBody alloc] initWithPath:thumbPath thumbnailPath:thumbPath];
+            self.body = imgBody;
             break;
+        }
         case NIMMessageTypeFile:
             self.messageType = XYGIMMessageBodyTypeFile;
             break;

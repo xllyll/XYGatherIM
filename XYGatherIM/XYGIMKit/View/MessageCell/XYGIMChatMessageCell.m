@@ -181,7 +181,7 @@
         //
         
         
-        UIImage *leftBgImage = [UIImage imageNamed:@"chat_bubble_right"];
+        UIImage *leftBgImage = [UIImage imageNamed:@"SenderTextNodeBkg"];
         leftBgImage = [leftBgImage resizableImageWithCapInsets:(UIEdgeInsetsMake(30, 20, 10, 15))];
         // 左端盖宽度
         NSInteger leftCapWidth = leftBgImage.size.width * 0.5f;
@@ -193,7 +193,7 @@
     }else if (self.messageOwner == XYGIMNMessageOwnerOther){
         //        [self.messageContentBackgroundIV setImage:[[UIImage imageNamed:@"chat_bubble_left"] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 16, 16, 24) resizingMode:UIImageResizingModeStretch]];
         //        [self.messageContentBackgroundIV setHighlightedImage:[[UIImage imageNamed:@"message_receiver_background_highlight"] resizableImageWithCapInsets:UIEdgeInsetsMake(30, 16, 16, 24) resizingMode:UIImageResizingModeStretch]];
-        UIImage *rightBgImage = [UIImage imageNamed:@"chat_bubble_left"];
+        UIImage *rightBgImage = [UIImage imageNamed:@"ReceiverTextNodeBkg"];
         rightBgImage = [rightBgImage resizableImageWithCapInsets:(UIEdgeInsetsMake(30, 20, 10, 15))];
         // 左端盖宽度
         NSInteger rightCapWidth = rightBgImage.size.width * 0.5f;

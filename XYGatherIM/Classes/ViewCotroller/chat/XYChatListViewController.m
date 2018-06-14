@@ -35,7 +35,7 @@
     _tableView.tableFooterView = v;
     _tableView.dataSource = self;
     [_tableView registerNib:[UINib nibWithNibName:@"XYChatListTableViewCell" bundle:nil] forCellReuseIdentifier:@"CELL"];
-    [self reloadData];
+    //[self reloadData];
     
 }
 -(void)reloadData{
@@ -43,6 +43,10 @@
     [self getUnreadMessageCount];
     [self.tableView reloadData];
     
+}
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self reloadData];
 }
 -(NSInteger)getUnreadMessageCount{
     NSInteger count = 0;
