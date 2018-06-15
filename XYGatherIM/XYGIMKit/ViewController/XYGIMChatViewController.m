@@ -124,10 +124,24 @@
                                             messageExt:ext];
     [self _sendMessage:message];
 }
-
+- (void)sendLocationMessageLatitude:(double)latitude
+                          longitude:(double)longitude
+                         andAddress:(NSString *)address
+{
+    XYGIMMessage *message = [SDKHelper sendLocationMessageWithLatitude:latitude
+                                                              longitude:longitude
+                                                                address:address
+                                                                     to:self.conversation.conversationId
+                                                            messageType:[self _messageTypeFromConversationType]
+                                                             messageExt:nil];
+    [self _sendMessage:message];
+}
 #pragma mark XYGIMChatBarDelegate
 -(void)chatBar:(XYGIMChatBar *)chatBar sendMessage:(NSString *)message{
     [self sendTextMessage:message];
+}
+-(void)chatBar:(XYGIMChatBar *)chatBar sendLocation:(CLLocationCoordinate2D)locationCoordinate locationText:(NSString *)locationText{
+    [self sendLocationMessageLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude andAddress:locationText];
 }
 #pragma mark - XYGIMChatMessageCellDelegate
 

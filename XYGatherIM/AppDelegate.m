@@ -8,6 +8,8 @@
 
 #import "AppDelegate.h"
 #import "XYGIMClient.h"
+#import "XYGDConfig.h"
+#import <AMapFoundationKit/AMapFoundationKit.h>
 
 @interface AppDelegate ()
 
@@ -47,10 +49,19 @@
     [XYGIMClient initIMType:XYGIMLibTypeWangYiYun];
     //[[XYGIMClient sharedClient] initWithType:XYGIMLibTypeWangYiYun];
     NSLog(@"-----%@-----",[[XYGIMClient sharedClient] version]);
+    [self configureGDAPIKey];
     return YES;
 }
 
+#pragma mark - 配置高德地图
 
+- (void)configureGDAPIKey {
+    if ([APIKey length] == 0) {
+        //[XYUtils showMessageAlertWithTitle:@"OK" message:@"apiKey为空，请检查key是否正确设置。"];
+    }
+    
+    [AMapServices sharedServices].apiKey = (NSString *)APIKey;
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.

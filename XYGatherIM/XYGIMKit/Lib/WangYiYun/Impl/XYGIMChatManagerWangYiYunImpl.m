@@ -80,7 +80,13 @@
         case XYGIMMessageBodyTypeImage:
             aMessage.messageType = NIMMessageTypeImage;
             break;
-            
+        case XYGIMMessageBodyTypeLocation:{
+            aMessage.messageType = NIMMessageTypeLocation;
+            XYGIMLocationMessageBody *body = (XYGIMLocationMessageBody*)aMessage.body;
+            NIMLocationObject *locationObject = [[NIMLocationObject alloc] initWithLatitude:body.latitude longitude:body.longitude title:body.address];
+            message.messageObject=locationObject;
+            break;
+        }
         default:
             break;
     }

@@ -43,5 +43,15 @@
     return msg;
     
 }
-
++(XYGIMMessage *)sendLocationMessageWithLatitude:(double)latitude longitude:(double)longitude address:(NSString *)address to:(NSString *)to messageType:(XYGIMChatType)messageType messageExt:(NSDictionary *)messageExt{
+    XYGIMMessage *msg = [[XYGIMMessage alloc] init];
+    msg.text = @"发送一条地理位置";
+    msg.to = to;
+    msg.chatType = messageType;
+    msg.messageType = XYGIMMessageBodyTypeLocation;
+    msg.ext = messageExt;
+    XYGIMLocationMessageBody *body = [[XYGIMLocationMessageBody alloc] initWithLatitude:latitude longitude:longitude address:address];
+    msg.body = body;
+    return msg;
+}
 @end

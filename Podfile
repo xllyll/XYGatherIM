@@ -17,7 +17,6 @@ target 'XYGatherIM' do
   pod 'SDWebImage'
   pod 'TZImagePickerController'
   
-  pod 'AMap3DMap'
   pod 'AMap2DMap'
   pod 'AMapSearch'
   pod 'AMapLocation'

@@ -1,4 +1,11 @@
 PODS:
+  - AMap2DMap (5.6.0):
+    - AMapFoundation (~> 1.4)
+  - AMapFoundation (1.5.2)
+  - AMapLocation (2.6.0):
+    - AMapFoundation (~> 1.4)
+  - AMapSearch (6.1.1):
+    - AMapFoundation (~> 1.4)
   - CocoaLumberjack (3.2.1):
     - CocoaLumberjack/Default (= 3.2.1)
     - CocoaLumberjack/Extensions (= 3.2.1)
@@ -6,6 +13,9 @@ PODS:
   - CocoaLumberjack/Extensions (3.2.1):
     - CocoaLumberjack/Default
   - Hyphenate (3.4.1)
+  - JCore (1.2.0)
+  - JMessage (3.6.1):
+    - JCore (~> 1.0)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - MJExtension (3.0.15)
@@ -17,10 +27,15 @@ PODS:
   - SDWebImage (4.4.1):
     - SDWebImage/Core (= 4.4.1)
   - SDWebImage/Core (4.4.1)
+  - TZImagePickerController (2.1.6)
 
 DEPENDENCIES:
+  - AMap2DMap
+  - AMapLocation
+  - AMapSearch
   - CocoaLumberjack (~> 3.2.1)
   - Hyphenate
+  - JMessage
   - Masonry
   - MBProgressHUD
   - MJExtension
@@ -29,11 +44,18 @@ DEPENDENCIES:
   - RongCloudIM/IMKit (~> 2.8.3)
   - RongCloudIM/IMLib (~> 2.8.3)
   - SDWebImage
+  - TZImagePickerController
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - AMap2DMap
+    - AMapFoundation
+    - AMapLocation
+    - AMapSearch
     - CocoaLumberjack
     - Hyphenate
+    - JCore
+    - JMessage
     - Masonry
     - MBProgressHUD
     - MJExtension
@@ -41,10 +63,17 @@ SPEC REPOS:
     - Reachability
     - RongCloudIM
     - SDWebImage
+    - TZImagePickerController
 
 SPEC CHECKSUMS:
+  AMap2DMap: cf0bfd6ae97951b55cc061903b814f924ba6c221
+  AMapFoundation: 46b194013a3b06e0e82e8963108ceb972d4200b8
+  AMapLocation: 55116a2c8956eab7550cbb56e989aa5cdcc424e3
+  AMapSearch: 3dcbf85c403a2a0fe0eda5318caabc272b31f5e1
   CocoaLumberjack: 2800c03334042fe80589423c8d80e582dcaec482
   Hyphenate: 8f14ff0b69a5af878391c55b0536e8c7378e18af
+  JCore: b52e3dd73625eec70afd1244bb9c41038aa06087
+  JMessage: f245ba75ba47959ec7d4408a62dcf703235ddaeb
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   MJExtension: 3f039575db1b135a20699ad298713b26acec1528
@@ -52,7 +81,8 @@ SPEC CHECKSUMS:
   Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
   RongCloudIM: 48bfc2fcb8d7cae8ce1e19cb5fb26d6d90616375
   SDWebImage: 47e9b5b925cbce75946c23f0c42dd19464189af4
+  TZImagePickerController: bc25e933c9d970a622d052f0d4de16202bbcd863
 
-PODFILE CHECKSUM: 88d7ac049a859205462ecec7e980f2dedab6f04e
+PODFILE CHECKSUM: feaa344dfdac433275c5a64f7f54d16e2ce21a72
 
 COCOAPODS: 1.5.2

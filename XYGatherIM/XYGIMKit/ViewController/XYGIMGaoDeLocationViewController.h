@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "XYNMessage.h"
+#import "XYNavigationController.h"
+#import <MAMapKit/MAMapKit.h>
+#import <AMapLocationKit/AMapLocationKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 @class XYGIMGaoDeLocationViewController;
 
@@ -29,5 +33,9 @@
 @end
 
 @interface XYGIMGaoDeLocationViewController : UIViewController
+
+@property (nonatomic, weak) id<XYGIMLocationViewDelegate> delegate;
+
+- (void)didRowWithModelSelected:(AMapPOI *)poiModel;
 
 @end

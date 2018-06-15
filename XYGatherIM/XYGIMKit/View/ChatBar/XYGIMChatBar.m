@@ -19,8 +19,9 @@
 #import "XYProgressHUD.h"
 #import "XYGIMConfig.h"
 #import "UIView+XYView.h"
+#import "XYGIMGaoDeLocationViewController.h"
 
-@interface XYGIMChatBar ()<UITextViewDelegate,XYGIMChatFaceViewDelegate,XYGIMChatMoreViewDataSource,XYGIMChatMoreViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,Mp3RecorderDelegate>
+@interface XYGIMChatBar ()<UITextViewDelegate,XYGIMChatFaceViewDelegate,XYGIMChatMoreViewDataSource,XYGIMChatMoreViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,Mp3RecorderDelegate,XYGIMLocationViewDelegate>
 {
     BOOL issinglechat;
 }
@@ -305,16 +306,20 @@
 }
 
 #pragma mark - XMLocationControllerDelegate
-
-- (void)cancelLocation{
-    [self.rootViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)sendLocation:(CLPlacemark *)placemark{
-    [self cancelLocation];
-    if (self.delegate && [self.delegate respondsToSelector:@selector(chatBar:sendLocation:locationText:)]) {
-        [self.delegate chatBar:self sendLocation:placemark.location.coordinate locationText:placemark.name];
+-(XYNMessage *)didFinishWithLocationLatitude:(double)latitude longitude:(double)longitude name:(NSString *)name address:(NSString *)address zoomLevel:(double)zoomLevel snapshot:(UIImage *)snapshot{
+    [self.rootViewController.navigationController dismissViewControllerAnimated:YES completion:nil];
+    XYGIMMessage *msg = [[XYGIMMessage alloc] init];
+    XYGIMLocationMessageBody*body= [[XYGIMLocationMessageBody alloc] initWithLatitude:latitude longitude:longitude address:address];
+    msg.body = body;
+    msg.messageType = XYGIMMessageBodyTypeLocation;
+    if (_delegate) {
+        CLLocationCoordinate2D coord2d = CLLocationCoordinate2DMake(latitude, longitude);
+        [_delegate chatBar:self sendLocation:coord2d locationText:address];
     }
+    return [[XYNMessage alloc] initWithMessage:msg];
+}
+-(void)didCancelLocationViewController:(XYGIMGaoDeLocationViewController *)locationViewController{
+    [locationViewController.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 #pragma mark FUChatLuckyMoneyControllerDelegate
 //-(void)chatLuckyMoneyController:(FUChatLuckyMoneyController *)luckyMoneyVC isSuccess:(BOOL)isSuccess sendRedBag:(FUPRedBag *)redBag{
@@ -397,9 +402,10 @@
             
         }
             break;
-        case XYGIMChatMoreItemLocation:
-            
+        case XYGIMChatMoreItemLocation:{
+            [self pushLocation];
             break;
+        }
         case XYGIMChatMoreItemLuckyMoney:
             
             break;
@@ -461,7 +467,14 @@
     
     return @[@"sharemore_pic",@"sharemore_video",@"sharemore_videovoip",@"sharemore_location",@"sharemore_voipvoice",@"sharemore_multitalk"];
 }
-
+-(void)pushLocation{
+    XYGIMGaoDeLocationViewController *locationVC = [[XYGIMGaoDeLocationViewController alloc] init];
+    locationVC.delegate = self;
+    
+    XYNavigationController *navigationVC = [[XYNavigationController alloc] initWithRootViewController:locationVC];
+    
+    [self.rootViewController.navigationController presentViewController:navigationVC animated:YES completion:nil];
+}
 #pragma mark - XMChatFaceViewDelegate
 
 - (void)faceViewSendFace:(NSString *)faceName{

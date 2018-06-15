@@ -6,6 +6,10 @@
 //  Copyright © 2018年 杨卢银. All rights reserved.
 //
 
+typedef NS_ENUM(NSInteger, XYGIMConnectionState) {
+    XYGIMConnectionStateConnected = 0,
+    XYGIMConnectionStateDisconnected,
+};
 /**
  *  消息拥有者类型
  */

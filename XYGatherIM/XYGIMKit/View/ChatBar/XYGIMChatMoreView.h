@@ -14,8 +14,8 @@
 typedef NS_ENUM(NSUInteger, XYGIMChatMoreItemType){
     XYGIMChatMoreItemCamera = 0           /**< 显示拍照 */,
     XYGIMChatMoreItemAlbum                /**< 显示相册 */,
-    XYGIMChatMoreItemLocation             /**< 显示地理位置 */,
     XYGIMChatMoreItemVideo                /**< 显示视频 */,
+    XYGIMChatMoreItemLocation             /**< 显示地理位置 */,
     XYGIMChatMoreItemCallAudio            /**< 显示语音通话 */,
     XYGIMChatMoreItemCallVideo            /**< 显示视频通话 */,
     XYGIMChatMoreItemFamilyTreeShare      /**< 显示家谱分享 */,

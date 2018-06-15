@@ -19,4 +19,11 @@
                       messageType:(XYGIMChatType)messageType
                        messageExt:(NSDictionary *)messageExt;
 
+
++ (XYGIMMessage *)sendLocationMessageWithLatitude:(double)latitude
+                                        longitude:(double)longitude
+                                          address:(NSString *)address
+                                               to:(NSString *)to
+                                      messageType:(XYGIMChatType)messageType
+                                       messageExt:(NSDictionary *)messageExt;
 @end

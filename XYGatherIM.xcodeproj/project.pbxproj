@@ -244,6 +244,20 @@
 		1783C6FB20D241B5003C85CA /* XYGIMChatFileMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6FA20D241B5003C85CA /* XYGIMChatFileMessageCell.m */; };
 		1783C6FF20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C6FD20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.m */; };
 		1783C70020D25B0A003C85CA /* XYGIMGaoDeLocationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1783C6FE20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.xib */; };
+		1783C70320D2B442003C85CA /* XYSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C70220D2B441003C85CA /* XYSearchBar.m */; };
+		1783C70620D2B4F4003C85CA /* UIColor+XYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C70520D2B4F4003C85CA /* UIColor+XYExt.m */; };
+		1783C70A20D2B7F8003C85CA /* XYSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C70920D2B7F8003C85CA /* XYSearchViewController.m */; };
+		1783C71320D2BB59003C85CA /* XYUtils+Application.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C71220D2BB59003C85CA /* XYUtils+Application.m */; };
+		1783C71620D2BD39003C85CA /* XYConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C71520D2BD39003C85CA /* XYConfig.m */; };
+		1783C71920D2BE31003C85CA /* XYLocationSearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C71820D2BE31003C85CA /* XYLocationSearchResultController.m */; };
+		1783C71C20D2BF18003C85CA /* XYLocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C71B20D2BF18003C85CA /* XYLocationTableViewCell.m */; };
+		1783C71F20D2BFB0003C85CA /* UIView+XYExt.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C71E20D2BFB0003C85CA /* UIView+XYExt.m */; };
+		1783C72220D2C0AF003C85CA /* XYUtils+CGHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C72120D2C0AF003C85CA /* XYUtils+CGHelper.m */; };
+		1783C72820D33F91003C85CA /* XYLocationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C72720D33F91003C85CA /* XYLocationManager.m */; };
+		1783C72B20D3403D003C85CA /* XYUtils+IPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C72A20D3403D003C85CA /* XYUtils+IPhone.m */; };
+		1783C72E20D3412C003C85CA /* XYUtils+Popover.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C72D20D3412C003C85CA /* XYUtils+Popover.m */; };
+		1783C73220D341BB003C85CA /* XYTipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C73120D341BB003C85CA /* XYTipView.m */; };
+		1783C73620D399FA003C85CA /* XYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C73520D399FA003C85CA /* XYNavigationController.m */; };
 		1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */; };
 		1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */ = {isa = PBXBuildFile; fileRef = 1786B84B20CA66AE000743DD /* XYJiGuangLibCore.m */; };
 		178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 178E05FD2084704600694CC0 /* UIImageView+XYImageView.m */; };
@@ -629,6 +643,40 @@
 		1783C6FC20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMGaoDeLocationViewController.h; sourceTree = "<group>"; };
 		1783C6FD20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMGaoDeLocationViewController.m; sourceTree = "<group>"; };
 		1783C6FE20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYGIMGaoDeLocationViewController.xib; sourceTree = "<group>"; };
+		1783C70120D2B441003C85CA /* XYSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSearchBar.h; sourceTree = "<group>"; };
+		1783C70220D2B441003C85CA /* XYSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSearchBar.m; sourceTree = "<group>"; };
+		1783C70420D2B4F4003C85CA /* UIColor+XYExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+XYExt.h"; sourceTree = "<group>"; };
+		1783C70520D2B4F4003C85CA /* UIColor+XYExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+XYExt.m"; sourceTree = "<group>"; };
+		1783C70720D2B55A003C85CA /* XYColors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYColors.h; sourceTree = "<group>"; };
+		1783C70820D2B7F8003C85CA /* XYSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSearchViewController.h; sourceTree = "<group>"; };
+		1783C70920D2B7F8003C85CA /* XYSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYSearchViewController.m; sourceTree = "<group>"; };
+		1783C70B20D2B844003C85CA /* XYSearchResultDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSearchResultDelegate.h; sourceTree = "<group>"; };
+		1783C70C20D2B893003C85CA /* XYSearchControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYSearchControllerDelegate.h; sourceTree = "<group>"; };
+		1783C70D20D2B9B7003C85CA /* XYMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYMacro.h; sourceTree = "<group>"; };
+		1783C71120D2BB59003C85CA /* XYUtils+Application.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYUtils+Application.h"; sourceTree = "<group>"; };
+		1783C71220D2BB59003C85CA /* XYUtils+Application.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYUtils+Application.m"; sourceTree = "<group>"; };
+		1783C71420D2BD39003C85CA /* XYConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYConfig.h; sourceTree = "<group>"; };
+		1783C71520D2BD39003C85CA /* XYConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYConfig.m; sourceTree = "<group>"; };
+		1783C71720D2BE31003C85CA /* XYLocationSearchResultController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYLocationSearchResultController.h; sourceTree = "<group>"; };
+		1783C71820D2BE31003C85CA /* XYLocationSearchResultController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYLocationSearchResultController.m; sourceTree = "<group>"; };
+		1783C71A20D2BF18003C85CA /* XYLocationTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYLocationTableViewCell.h; sourceTree = "<group>"; };
+		1783C71B20D2BF18003C85CA /* XYLocationTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYLocationTableViewCell.m; sourceTree = "<group>"; };
+		1783C71D20D2BFB0003C85CA /* UIView+XYExt.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+XYExt.h"; sourceTree = "<group>"; };
+		1783C71E20D2BFB0003C85CA /* UIView+XYExt.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+XYExt.m"; sourceTree = "<group>"; };
+		1783C72020D2C0AF003C85CA /* XYUtils+CGHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYUtils+CGHelper.h"; sourceTree = "<group>"; };
+		1783C72120D2C0AF003C85CA /* XYUtils+CGHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYUtils+CGHelper.m"; sourceTree = "<group>"; };
+		1783C72320D2C194003C85CA /* XYGDConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGDConfig.h; sourceTree = "<group>"; };
+		1783C72620D33F91003C85CA /* XYLocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYLocationManager.h; sourceTree = "<group>"; };
+		1783C72720D33F91003C85CA /* XYLocationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYLocationManager.m; sourceTree = "<group>"; };
+		1783C72920D3403D003C85CA /* XYUtils+IPhone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYUtils+IPhone.h"; sourceTree = "<group>"; };
+		1783C72A20D3403D003C85CA /* XYUtils+IPhone.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYUtils+IPhone.m"; sourceTree = "<group>"; };
+		1783C72C20D3412C003C85CA /* XYUtils+Popover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYUtils+Popover.h"; sourceTree = "<group>"; };
+		1783C72D20D3412C003C85CA /* XYUtils+Popover.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYUtils+Popover.m"; sourceTree = "<group>"; };
+		1783C73020D341BB003C85CA /* XYTipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYTipView.h; sourceTree = "<group>"; };
+		1783C73120D341BB003C85CA /* XYTipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYTipView.m; sourceTree = "<group>"; };
+		1783C73320D341DC003C85CA /* XYTipDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYTipDelegate.h; sourceTree = "<group>"; };
+		1783C73420D399FA003C85CA /* XYNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYNavigationController.h; sourceTree = "<group>"; };
+		1783C73520D399FA003C85CA /* XYNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYNavigationController.m; sourceTree = "<group>"; };
 		1786B84720CA603C000743DD /* XYWangYiYunLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYWangYiYunLibCore.h; sourceTree = "<group>"; };
 		1786B84820CA603D000743DD /* XYWangYiYunLibCore.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYWangYiYunLibCore.m; sourceTree = "<group>"; };
 		1786B84A20CA66AE000743DD /* XYJiGuangLibCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYJiGuangLibCore.h; sourceTree = "<group>"; };
@@ -799,9 +847,19 @@
 				17A96DBB20CE6A6A00ECF6CB /* XYGIMChatBaseViewController.m */,
 				17476567207B14F70080BC9E /* XYGIMChatViewController.h */,
 				17476568207B14F70080BC9E /* XYGIMChatViewController.m */,
+				1783C70820D2B7F8003C85CA /* XYSearchViewController.h */,
+				1783C70920D2B7F8003C85CA /* XYSearchViewController.m */,
 				1783C6FC20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.h */,
 				1783C6FD20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.m */,
 				1783C6FE20D25B0A003C85CA /* XYGIMGaoDeLocationViewController.xib */,
+				1783C71720D2BE31003C85CA /* XYLocationSearchResultController.h */,
+				1783C71820D2BE31003C85CA /* XYLocationSearchResultController.m */,
+				1783C71A20D2BF18003C85CA /* XYLocationTableViewCell.h */,
+				1783C71B20D2BF18003C85CA /* XYLocationTableViewCell.m */,
+				1783C72620D33F91003C85CA /* XYLocationManager.h */,
+				1783C72720D33F91003C85CA /* XYLocationManager.m */,
+				1783C73420D399FA003C85CA /* XYNavigationController.h */,
+				1783C73520D399FA003C85CA /* XYNavigationController.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1206,7 +1264,12 @@
 				1781AB772060B1F1007D5624 /* XYGIMClient.m */,
 				178E061020848BE100694CC0 /* XYGIMConfig.h */,
 				178E061120848BE100694CC0 /* XYGIMConfig.m */,
+				1783C71420D2BD39003C85CA /* XYConfig.h */,
+				1783C71520D2BD39003C85CA /* XYConfig.m */,
+				1783C72320D2C194003C85CA /* XYGDConfig.h */,
 				178E061620848C3A00694CC0 /* XYGIMMacros.h */,
+				1783C70D20D2B9B7003C85CA /* XYMacro.h */,
+				1783C70720D2B55A003C85CA /* XYColors.h */,
 				17A96D9420CE48C300ECF6CB /* XYGIMFileCore.h */,
 				17A96D9520CE48C300ECF6CB /* XYGIMFileCore.m */,
 				17A96D9720CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.h */,
@@ -1345,6 +1408,16 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		1783C72F20D341A4003C85CA /* Tip */ = {
+			isa = PBXGroup;
+			children = (
+				1783C73020D341BB003C85CA /* XYTipView.h */,
+				1783C73120D341BB003C85CA /* XYTipView.m */,
+				1783C73320D341DC003C85CA /* XYTipDelegate.h */,
+			);
+			path = Tip;
+			sourceTree = "<group>";
+		};
 		178E05FB2084702A00694CC0 /* Extend */ = {
 			isa = PBXGroup;
 			children = (
@@ -1358,6 +1431,10 @@
 				178E0606208471C200694CC0 /* NSString+XYString.m */,
 				1783C67E20D0D82C003C85CA /* NSDate+XYDate.h */,
 				1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */,
+				1783C70420D2B4F4003C85CA /* UIColor+XYExt.h */,
+				1783C70520D2B4F4003C85CA /* UIColor+XYExt.m */,
+				1783C71D20D2BFB0003C85CA /* UIView+XYExt.h */,
+				1783C71E20D2BFB0003C85CA /* UIView+XYExt.m */,
 			);
 			path = Extend;
 			sourceTree = "<group>";
@@ -1367,6 +1444,14 @@
 			children = (
 				178E06092084722800694CC0 /* XYUtils.h */,
 				178E060A2084722800694CC0 /* XYUtils.m */,
+				1783C71120D2BB59003C85CA /* XYUtils+Application.h */,
+				1783C71220D2BB59003C85CA /* XYUtils+Application.m */,
+				1783C72020D2C0AF003C85CA /* XYUtils+CGHelper.h */,
+				1783C72120D2C0AF003C85CA /* XYUtils+CGHelper.m */,
+				1783C72920D3403D003C85CA /* XYUtils+IPhone.h */,
+				1783C72A20D3403D003C85CA /* XYUtils+IPhone.m */,
+				1783C72C20D3412C003C85CA /* XYUtils+Popover.h */,
+				1783C72D20D3412C003C85CA /* XYUtils+Popover.m */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -1583,10 +1668,15 @@
 		17A9706D20CF930500ECF6CB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1783C72F20D341A4003C85CA /* Tip */,
 				17A9706E20CF931000ECF6CB /* XYGIMContentView.h */,
 				17A9706F20CF931000ECF6CB /* XYGIMContentView.m */,
 				17A9707120CF933400ECF6CB /* XYGIMSendImageView.h */,
 				17A9707220CF933400ECF6CB /* XYGIMSendImageView.m */,
+				1783C70120D2B441003C85CA /* XYSearchBar.h */,
+				1783C70220D2B441003C85CA /* XYSearchBar.m */,
+				1783C70B20D2B844003C85CA /* XYSearchResultDelegate.h */,
+				1783C70C20D2B893003C85CA /* XYSearchControllerDelegate.h */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1983,21 +2073,25 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-XYGatherIM/Pods-XYGatherIM-resources.sh",
+				"${PODS_ROOT}/AMap2DMap/MAMapKit.framework/AMap.bundle",
 				"${PODS_ROOT}/NIMSDK/NIMAVChat/Resources/NMCVideoFilter.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RongCloud.bundle",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/en.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/zh-Hans.lproj",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/Emoji.plist",
 				"${PODS_ROOT}/RongCloudIM/RongCloudIM/RCConfig.plist",
+				"${PODS_ROOT}/TZImagePickerController/TZImagePickerController/TZImagePickerController/TZImagePickerController.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/AMap.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/NMCVideoFilter.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RongCloud.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/zh-Hans.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Emoji.plist",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/RCConfig.plist",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/TZImagePickerController.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -2063,11 +2157,15 @@
 				17A9708520CF95F500ECF6CB /* XYGIMChatNotConnectCell.m in Sources */,
 				17A96D9C20CE4E9000ECF6CB /* XYGIMLoginData.m in Sources */,
 				17A9708820CF963900ECF6CB /* XYGIMChatVideoMessageCell.m in Sources */,
+				1783C71320D2BB59003C85CA /* XYUtils+Application.m in Sources */,
 				17A9707920CF959F00ECF6CB /* XYGIMChatImageMessageCell.m in Sources */,
 				17476654207B46170080BC9E /* NSMutableAttributedString+Link.m in Sources */,
 				1783C66520D0B812003C85CA /* XYGIMMessageBody.m in Sources */,
 				178E061220848BE100694CC0 /* XYGIMConfig.m in Sources */,
+				1783C72B20D3403D003C85CA /* XYUtils+IPhone.m in Sources */,
 				178E061D20848EB100694CC0 /* XYLoginViewController.m in Sources */,
+				1783C73220D341BB003C85CA /* XYTipView.m in Sources */,
+				1783C72220D2C0AF003C85CA /* XYUtils+CGHelper.m in Sources */,
 				17476653207B46170080BC9E /* TLAttributedImage.m in Sources */,
 				1747670C207B46630080BC9E /* XYGIMChatMoreView.m in Sources */,
 				1783C66220D0ACAE003C85CA /* XYGIMHXMessage.m in Sources */,
@@ -2076,15 +2174,19 @@
 				17476574207B458D0080BC9E /* XYGIMChatFaceView.m in Sources */,
 				1783C6E620D1705B003C85CA /* XYNMessage.m in Sources */,
 				1783C67620D0C24D003C85CA /* XYGIMChatManagerHuanXinImpl.m in Sources */,
+				1783C72E20D3412C003C85CA /* XYUtils+Popover.m in Sources */,
 				17A9704C20CF651500ECF6CB /* XYGIMFaceManager.m in Sources */,
 				17A96DB320CE60DF00ECF6CB /* XYGIMUser.m in Sources */,
+				1783C70A20D2B7F8003C85CA /* XYSearchViewController.m in Sources */,
 				17A96D5420CE094700ECF6CB /* BaseNavgationViewController.m in Sources */,
 				17A96D9620CE48C300ECF6CB /* XYGIMFileCore.m in Sources */,
 				178E062A20849CF100694CC0 /* MainViewController.m in Sources */,
+				1783C71620D2BD39003C85CA /* XYConfig.m in Sources */,
 				17476571207B42D50080BC9E /* XYGIMChatBar.m in Sources */,
 				1783C6E220D16B0C003C85CA /* XYGIMHXConversation.m in Sources */,
 				17A9708B20CF967F00ECF6CB /* XYGIMChatAudioCallMessageCell.m in Sources */,
 				17A9707020CF931000ECF6CB /* XYGIMContentView.m in Sources */,
+				1783C71F20D2BFB0003C85CA /* UIView+XYExt.m in Sources */,
 				1783C6EF20D20040003C85CA /* XYGIMFileMessageBody.m in Sources */,
 				1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */,
 				17476655207B46170080BC9E /* NSMutableAttributedString+Picture.m in Sources */,
@@ -2118,6 +2220,7 @@
 				17A96D4820CE08F100ECF6CB /* XYChatListViewController.m in Sources */,
 				17476657207B46170080BC9E /* TLAttributedLabelConst.m in Sources */,
 				17476651207B46170080BC9E /* UIImageView+GIF.m in Sources */,
+				1783C71920D2BE31003C85CA /* XYLocationSearchResultController.m in Sources */,
 				17A970A020CF995E00ECF6CB /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				17476650207B46170080BC9E /* SwipeView.m in Sources */,
 				17A96DA520CE57E600ECF6CB /* XYGIMMessage.m in Sources */,
@@ -2129,6 +2232,7 @@
 				1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */,
 				1783C68020D0D82C003C85CA /* NSDate+XYDate.m in Sources */,
 				17A96DB820CE663500ECF6CB /* XYContactTableViewCell.m in Sources */,
+				1783C70320D2B442003C85CA /* XYSearchBar.m in Sources */,
 				1781AB402060AD37007D5624 /* AppDelegate.m in Sources */,
 				1781AB782060B1F1007D5624 /* XYGIMClient.m in Sources */,
 				178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */,
@@ -2142,9 +2246,11 @@
 				178E0626208491E800694CC0 /* XYError.m in Sources */,
 				1783C6DF20D16AF6003C85CA /* XYGIMJGConversation.m in Sources */,
 				1783C6D720D11670003C85CA /* XYGIMWYYConversation.m in Sources */,
+				1783C73620D399FA003C85CA /* XYNavigationController.m in Sources */,
 				1783C6FB20D241B5003C85CA /* XYGIMChatFileMessageCell.m in Sources */,
 				17A9704920CF644B00ECF6CB /* XYGIMChatViewModel.m in Sources */,
 				1783C69320D10469003C85CA /* XYGIMEmojiEmoticons.m in Sources */,
+				1783C71C20D2BF18003C85CA /* XYLocationTableViewCell.m in Sources */,
 				17A96D5820CE095B00ECF6CB /* XYMoreViewController.m in Sources */,
 				1747664F207B46170080BC9E /* FULocationManager.m in Sources */,
 				178E060F208488AF00694CC0 /* XYProgressHUD.m in Sources */,
@@ -2152,8 +2258,10 @@
 				17476709207B46180080BC9E /* XYAmplifyView.m in Sources */,
 				1783C6E920D1FF7B003C85CA /* XYGIMImageMessageBody.m in Sources */,
 				1781AB512060AD37007D5624 /* main.m in Sources */,
+				1783C70620D2B4F4003C85CA /* UIColor+XYExt.m in Sources */,
 				1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */,
 				17A9708220CF95D800ECF6CB /* XYGIMChatLocationMessageCell.m in Sources */,
+				1783C72820D33F91003C85CA /* XYLocationManager.m in Sources */,
 				17A970A420CF9A7100ECF6CB /* XYGIMChatImageExpressMessageCell.m in Sources */,
 				17476659207B46170080BC9E /* TLAttributedLabel.m in Sources */,
 				1783C67320D0BD61003C85CA /* XYGIMConversation.m in Sources */,
@@ -2329,7 +2437,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XYGatherIM/XYGIMKit/Utils/3thparty/Vendors/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xllyll.me.XYGatherIM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xllyll.xygather.im;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "21b49d58-99cd-4a14-b25e-9c443a5272b9";
 				PROVISIONING_PROFILE_SPECIFIER = "XC-DEV";
@@ -2351,7 +2459,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/XYGatherIM/XYGIMKit/Utils/3thparty/Vendors/VoiceLib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.xllyll.me.XYGatherIM;
+				PRODUCT_BUNDLE_IDENTIFIER = com.xllyll.xygather.im;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6dbaf6e1-9a53-4ef7-9cfd-ac9f5a32b9d9";
 				PROVISIONING_PROFILE_SPECIFIER = "XC-HOC";
