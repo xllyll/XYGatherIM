@@ -77,9 +77,13 @@
         case XYGIMMessageBodyTypeVoice:
             aMessage.messageType = NIMMessageTypeAudio;
             break;
-        case XYGIMMessageBodyTypeImage:
+        case XYGIMMessageBodyTypeImage:{
             aMessage.messageType = NIMMessageTypeImage;
+            XYGIMImageMessageBody *imgBody = (XYGIMImageMessageBody*)aMessage.body;
+            NIMImageObject *imageObjc = [[NIMImageObject alloc] initWithData:imgBody.data extension:[imgBody.displayName componentsSeparatedByString:@"."].lastObject];
+            message.messageObject = imageObjc;
             break;
+        }
         case XYGIMMessageBodyTypeLocation:{
             aMessage.messageType = NIMMessageTypeLocation;
             XYGIMLocationMessageBody *body = (XYGIMLocationMessageBody*)aMessage.body;

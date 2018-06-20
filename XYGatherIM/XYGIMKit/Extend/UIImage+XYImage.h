@@ -10,6 +10,7 @@
 
 @interface UIImage (XYImage)
 
+
 + (UIImage *)imageWithView:(UIView *)view;
 
 + (UIImage *)imageWithColor:(UIColor *)color size:(CGSize)size;

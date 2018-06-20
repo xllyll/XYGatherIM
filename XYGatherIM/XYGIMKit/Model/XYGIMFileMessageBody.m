@@ -18,5 +18,13 @@
     }
     return self;
 }
+-(instancetype)initWithData:(NSData *)aData displayName:(NSString *)aDisplayName{
+    self = [super init];
+    if (self) {
+        self.data = aData;
+        self.displayName = aDisplayName;
+    }
+    return self;
+}
 
 @end

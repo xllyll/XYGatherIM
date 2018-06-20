@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		171822B220D9EE8E00799283 /* NSData+XYData.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822B120D9EE8E00799283 /* NSData+XYData.m */; };
 		17476569207B14F70080BC9E /* XYGIMChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17476568207B14F70080BC9E /* XYGIMChatViewController.m */; };
 		17476571207B42D50080BC9E /* XYGIMChatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 17476570207B42D50080BC9E /* XYGIMChatBar.m */; };
 		17476574207B458D0080BC9E /* XYGIMChatFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17476573207B458D0080BC9E /* XYGIMChatFaceView.m */; };
@@ -342,6 +343,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		171822B020D9EE8E00799283 /* NSData+XYData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+XYData.h"; sourceTree = "<group>"; };
+		171822B120D9EE8E00799283 /* NSData+XYData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+XYData.m"; sourceTree = "<group>"; };
 		17476567207B14F70080BC9E /* XYGIMChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatViewController.h; sourceTree = "<group>"; };
 		17476568207B14F70080BC9E /* XYGIMChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatViewController.m; sourceTree = "<group>"; };
 		1747656F207B42D50080BC9E /* XYGIMChatBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatBar.h; sourceTree = "<group>"; };
@@ -1431,6 +1434,8 @@
 				178E0606208471C200694CC0 /* NSString+XYString.m */,
 				1783C67E20D0D82C003C85CA /* NSDate+XYDate.h */,
 				1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */,
+				171822B020D9EE8E00799283 /* NSData+XYData.h */,
+				171822B120D9EE8E00799283 /* NSData+XYData.m */,
 				1783C70420D2B4F4003C85CA /* UIColor+XYExt.h */,
 				1783C70520D2B4F4003C85CA /* UIColor+XYExt.m */,
 				1783C71D20D2BFB0003C85CA /* UIView+XYExt.h */,
@@ -2238,6 +2243,7 @@
 				178E05FE2084704600694CC0 /* UIImageView+XYImageView.m in Sources */,
 				17A9709420CF978000ECF6CB /* XYGIMMessageStateManager.m in Sources */,
 				1747670F207B47AE0080BC9E /* XYGIMChatFacePageView.m in Sources */,
+				171822B220D9EE8E00799283 /* NSData+XYData.m in Sources */,
 				17A96D9920CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m in Sources */,
 				17A9706C20CF91C200ECF6CB /* XYGIMChatMessageCell.m in Sources */,
 				1783C68620D0FD88003C85CA /* SDKHelper+WangYiYun.m in Sources */,

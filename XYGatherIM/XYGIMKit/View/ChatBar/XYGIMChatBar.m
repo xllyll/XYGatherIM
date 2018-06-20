@@ -20,6 +20,7 @@
 #import "XYGIMConfig.h"
 #import "UIView+XYView.h"
 #import "XYGIMGaoDeLocationViewController.h"
+#import "TZImagePickerController.h"
 
 @interface XYGIMChatBar ()<UITextViewDelegate,XYGIMChatFaceViewDelegate,XYGIMChatMoreViewDataSource,XYGIMChatMoreViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,Mp3RecorderDelegate,XYGIMLocationViewDelegate>
 {
@@ -362,7 +363,27 @@
     switch (itemType) {
         case XYGIMChatMoreItemAlbum:
         {
+            //显示相册
             
+//            UIImagePickerController *pickerC = [[UIImagePickerController alloc] init];
+//            pickerC.delegate = self;
+//            [self.rootViewController presentViewController:pickerC animated:YES completion:nil];
+//            
+            TZImagePickerController *imagePickerVc = [[TZImagePickerController alloc] initWithMaxImagesCount:9 delegate:nil];
+            imagePickerVc.allowPickingGif = YES;
+            // You can get the photos by block, the same as by delegate.
+            // 你可以通过block或者代理，来得到用户选择的照片.
+            [imagePickerVc setDidFinishPickingPhotosHandle:^(NSArray<UIImage *> *photos, NSArray *assets, BOOL isSelectOriginalPhoto) {
+                XYLog(@"图片选择完成");
+                for (UIImage *img in photos) {
+                    [self sendImageMessage:img];
+                }
+            }];
+            [self.rootViewController presentViewController:imagePickerVc animated:YES completion:nil];
+        }
+            break;
+        case XYGIMChatMoreItemCamera:
+        {
             //显示拍照
             if (![UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
                 UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:nil message:@"您的设备不支持拍照" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil];
@@ -372,18 +393,6 @@
             
             UIImagePickerController *pickerC = [[UIImagePickerController alloc] init];
             pickerC.sourceType = UIImagePickerControllerSourceTypeCamera;
-            pickerC.delegate = self;
-            [self.rootViewController presentViewController:pickerC animated:YES completion:nil];
-            
-            
-            
-        }
-            break;
-        case XYGIMChatMoreItemCamera:
-        {
-            //显示相册
-            
-            UIImagePickerController *pickerC = [[UIImagePickerController alloc] init];
             pickerC.delegate = self;
             [self.rootViewController presentViewController:pickerC animated:YES completion:nil];
             
@@ -416,11 +425,15 @@
                 [alertView show];
                 break;
             }
+            
             UIImagePickerController *pickerC = [[UIImagePickerController alloc] init];
             pickerC.sourceType = UIImagePickerControllerSourceTypeCamera;
             pickerC.mediaTypes = @[(NSString *)kUTTypeMovie];
             pickerC.delegate = self;
             [self.rootViewController presentViewController:pickerC animated:YES completion:nil];
+             
+            
+            
         }
             
             break;
@@ -435,12 +448,6 @@
                 [self.delegate chatBar:self sendCall:@"" isCaller:NO];
             }
         }
-            break;
-        case XYGIMChatMoreItemFamilyTreeShare:
-            
-            break;
-        case XYGIMChatMoreItemFamilyTreeInvitation:
-            
             break;
         case XYGIMChatMoreItemAudio:
             

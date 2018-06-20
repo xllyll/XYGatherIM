@@ -13,6 +13,7 @@
 #import "XYGIMChatImageMessageCell.h"
 #import "XYGIMChatVoiceMessageCell.h"
 #import "NSDate+XYDate.h"
+#import "SDKHelper.h"
 
 @interface XYGIMChatBaseViewController ()<XYGIMAudioPlayerDelegate,XYGIMChatViewModelDelegate,XYGIMChatMessageCellDelegate>
 {
@@ -119,21 +120,26 @@
     
     return formattedArray;
 }
--(void)addMessageToDataSource:(XYGIMMessage *)message
+-(void)addMessageToDataSource:(XYGIMMessage *)aMessage
                      progress:(id)progress
 {
-    [self.messsagesSource addObject:message];
+    [self.messsagesSource addObject:aMessage];
+    NSArray *messages = [self formatMessages:@[aMessage]];
+    [self.dataArray addObjectsFromArray:messages];
+    [self addXYGIMChatMessageModel:aMessage];
     
-    __weak XYGIMChatBaseViewController *weakSelf = self;
-    dispatch_async(_messageQueue, ^{
-        
-        //NSArray *messages = [weakSelf formatMessages:@[message]];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            //            [weakSelf.dataArray addObjectsFromArray:messages];
-            //            [self addFUChatMessageModel:message];
-        });
-    });
+    
+//    __weak XYGIMChatBaseViewController *weakSelf = self;
+//
+//    dispatch_async(_messageQueue, ^{
+//
+//        NSArray *messages = [weakSelf formatMessages:@[aMessage]];
+//
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//                [weakSelf.dataArray addObjectsFromArray:messages];
+//                [self addXYGIMChatMessageModel:aMessage];
+//        });
+//    });
 }
 - (void)tableViewDidTriggerHeaderRefresh
 {
@@ -244,6 +250,24 @@
             }];
         }
     }
+}
+- (XYGIMChatType)_messageTypeFromConversationType
+{
+    XYGIMChatType type = XYGIMChatTypeChat;
+    switch (self.conversation.type) {
+        case XYGIMConversationTypeChat:
+            type = XYGIMChatTypeChat;
+            break;
+        case XYGIMConversationTypeGroupChat:
+            type = XYGIMChatTypeGroupChat;
+            break;
+        case XYGIMConversationTypeChatRoom:
+            type = XYGIMChatTypeChatRoom;
+            break;
+        default:
+            break;
+    }
+    return type;
 }
 -(void)addXYGIMChatModel:(NSArray*)list{
     if (list) {
@@ -395,5 +419,91 @@
     [self.tableView reloadData];
     [self.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:NO];
     //    [self.chatViewModel sendMessage:message];
+}
+
+#pragma mark - send message
+
+- (void)_sendMessage:(XYGIMMessage *)message
+{
+    if (self.conversation.type == XYGIMConversationTypeGroupChat){
+        message.chatType = XYGIMChatTypeGroupChat;
+    }
+    else if (self.conversation.type == XYGIMConversationTypeChatRoom){
+        message.chatType = XYGIMChatTypeChatRoom;
+    }
+    
+    [self addMessageToDataSource:message
+                        progress:nil];
+    
+    __weak typeof(self) weakself = self;
+    [[XYGIMClient sharedClient].chatManager sendMessage:message progress:^(int progress) {
+        float progres = (float)progress/100.0;
+        NSLog(@"---->消息上传中:%.2f",progres);
+        if (message.messageType==XYGIMMessageBodyTypeImage || message.messageType==XYGIMMessageBodyTypeVideo) {
+            //[self.chatViewModel sendMessage:nil];
+            //            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
+            //            FUChatMessageCell *messageCell = [self.tableView cellForRowAtIndexPath:indexPath];
+            //            if (![self.tableView.visibleCells containsObject:messageCell]) {
+            //                return;
+            //            }
+            //            if (messageCell.messageType == XYGIMNMessageTypeImage) {
+            //
+            //                [(FUChatImageMessageCell *)messageCell setUploadProgress:progres];
+            //            }
+            //            dispatch_async(dispatch_get_main_queue(), ^{
+            //                messageCell.messageSendState = XYGIMNMessageSendSuccess;
+            //            });
+        }
+    } completion:^(XYGIMMessage *message, XYError *error) {
+        [weakself.tableView reloadData];
+    }];
+    
+}
+
+- (void)sendTextMessage:(NSString *)text
+{
+    [self sendTextMessage:text withExt:nil];
+}
+
+- (void)sendTextMessage:(NSString *)text withExt:(NSDictionary*)ext
+{
+    XYGIMMessage *message = [SDKHelper sendTextMessage:text
+                                                    to:self.conversation.conversationId
+                                           messageType:[self _messageTypeFromConversationType]
+                                            messageExt:ext];
+    [self _sendMessage:message];
+}
+- (void)sendLocationMessageLatitude:(double)latitude
+                          longitude:(double)longitude
+                         andAddress:(NSString *)address
+{
+    XYGIMMessage *message = [SDKHelper sendLocationMessageWithLatitude:latitude
+                                                             longitude:longitude
+                                                               address:address
+                                                                    to:self.conversation.conversationId
+                                                           messageType:[self _messageTypeFromConversationType]
+                                                            messageExt:nil];
+    [self _sendMessage:message];
+}
+- (void)sendImageMessageWithData:(NSData *)imageData
+{
+    
+    
+    XYGIMMessage *message = [SDKHelper sendImageMessageWithImageData:imageData
+                                                                   to:self.conversation.conversationId
+                                                          messageType:[self _messageTypeFromConversationType]
+                                                           messageExt:nil];
+    [self _sendMessage:message];
+}
+
+- (void)sendImageMessage:(UIImage *)image
+{
+    
+    
+    XYGIMMessage *message = [SDKHelper sendImageMessageWithImage:image
+                                                               to:self.conversation.conversationId
+                                                      messageType:[self _messageTypeFromConversationType]
+                                                       messageExt:nil];
+    [self _sendMessage:message];
 }
 @end

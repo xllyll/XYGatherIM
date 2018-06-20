@@ -7,8 +7,7 @@
 //
 
 #import "XYGIMChatBaseViewController.h"
-#import "XYGIMChatUntiles.h"
-#import "XYGIMClient.h"
+
 
 
 @interface XYGIMChatViewController : XYGIMChatBaseViewController

@@ -20,6 +20,17 @@
                        messageExt:(NSDictionary *)messageExt;
 
 
++ (XYGIMMessage *)sendImageMessageWithImageData:(NSData *)imageData
+                                             to:(NSString *)to
+                                    messageType:(XYGIMChatType)messageType
+                                     messageExt:(NSDictionary *)messageExt;
+
++ (XYGIMMessage *)sendImageMessageWithImage:(UIImage *)image
+                                         to:(NSString *)to
+                                messageType:(XYGIMChatType)messageType
+                                 messageExt:(NSDictionary *)messageExt;
+
+
 + (XYGIMMessage *)sendLocationMessageWithLatitude:(double)latitude
                                         longitude:(double)longitude
                                           address:(NSString *)address

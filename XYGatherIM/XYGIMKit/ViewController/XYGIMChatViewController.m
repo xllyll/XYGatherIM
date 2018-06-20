@@ -54,91 +54,21 @@
 
 
 
-- (XYGIMChatType)_messageTypeFromConversationType
-{
-    XYGIMChatType type = XYGIMChatTypeChat;
-    switch (self.conversation.type) {
-        case XYGIMConversationTypeChat:
-            type = XYGIMChatTypeChat;
-            break;
-        case XYGIMConversationTypeGroupChat:
-            type = XYGIMChatTypeGroupChat;
-            break;
-        case XYGIMConversationTypeChatRoom:
-            type = XYGIMChatTypeChatRoom;
-            break;
-        default:
-            break;
-    }
-    return type;
-}
-#pragma mark - send message
 
-- (void)_sendMessage:(XYGIMMessage *)message
-{
-    if (self.conversation.type == XYGIMConversationTypeGroupChat){
-        message.chatType = XYGIMChatTypeGroupChat;
-    }
-    else if (self.conversation.type == XYGIMConversationTypeChatRoom){
-        message.chatType = XYGIMChatTypeChatRoom;
-    }
-    
-    [self addMessageToDataSource:message
-                        progress:nil];
-    
-    __weak typeof(self) weakself = self;
-    [[XYGIMClient sharedClient].chatManager sendMessage:message progress:^(int progress) {
-        float progres = (float)progress/100.0;
-        NSLog(@"---->消息上传中:%.2f",progres);
-        if (message.messageType==XYGIMMessageBodyTypeImage || message.messageType==XYGIMMessageBodyTypeVideo) {
-            //[self.chatViewModel sendMessage:nil];
-//            NSIndexPath *indexPath = [NSIndexPath indexPathForRow:self.dataArray.count-1 inSection:0];
-//            FUChatMessageCell *messageCell = [self.tableView cellForRowAtIndexPath:indexPath];
-//            if (![self.tableView.visibleCells containsObject:messageCell]) {
-//                return;
-//            }
-//            if (messageCell.messageType == XYGIMNMessageTypeImage) {
-//
-//                [(FUChatImageMessageCell *)messageCell setUploadProgress:progres];
-//            }
-//            dispatch_async(dispatch_get_main_queue(), ^{
-//                messageCell.messageSendState = XYGIMNMessageSendSuccess;
-//            });
-        }
-    } completion:^(XYGIMMessage *message, XYError *error) {
-        [weakself.tableView reloadData];
-    }];
-    
-}
 
-- (void)sendTextMessage:(NSString *)text
-{
-    [self sendTextMessage:text withExt:nil];
-}
-
-- (void)sendTextMessage:(NSString *)text withExt:(NSDictionary*)ext
-{
-    XYGIMMessage *message = [SDKHelper sendTextMessage:text
-                                                    to:self.conversation.conversationId
-                                           messageType:[self _messageTypeFromConversationType]
-                                            messageExt:ext];
-    [self _sendMessage:message];
-}
-- (void)sendLocationMessageLatitude:(double)latitude
-                          longitude:(double)longitude
-                         andAddress:(NSString *)address
-{
-    XYGIMMessage *message = [SDKHelper sendLocationMessageWithLatitude:latitude
-                                                              longitude:longitude
-                                                                address:address
-                                                                     to:self.conversation.conversationId
-                                                            messageType:[self _messageTypeFromConversationType]
-                                                             messageExt:nil];
-    [self _sendMessage:message];
-}
 #pragma mark XYGIMChatBarDelegate
 -(void)chatBar:(XYGIMChatBar *)chatBar sendMessage:(NSString *)message{
     [self sendTextMessage:message];
+}
+-(void)chatBar:(XYGIMChatBar *)chatBar sendPictures:(NSArray *)pictures{
+    if (pictures) {
+        for (UIImage *img in pictures) {
+            [self sendImageMessage:img];
+        }
+    }
+}
+-(void)chatBar:(XYGIMChatBar *)chatBar sendImageDatas:(NSArray *)imagesDatas{
+    
 }
 -(void)chatBar:(XYGIMChatBar *)chatBar sendLocation:(CLLocationCoordinate2D)locationCoordinate locationText:(NSString *)locationText{
     [self sendLocationMessageLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude andAddress:locationText];

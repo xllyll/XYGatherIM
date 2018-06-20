@@ -31,7 +31,7 @@ typedef enum {
  *  Display name of attachment
  */
 @property (nonatomic, copy) NSString *displayName;
-
+@property (nonatomic, strong) NSData *data;
 /*!
  *  \~chinese
  *  附件的本地路径

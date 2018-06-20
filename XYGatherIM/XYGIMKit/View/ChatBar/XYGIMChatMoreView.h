@@ -12,14 +12,12 @@
  *  moreItem类型
  */
 typedef NS_ENUM(NSUInteger, XYGIMChatMoreItemType){
-    XYGIMChatMoreItemCamera = 0           /**< 显示拍照 */,
-    XYGIMChatMoreItemAlbum                /**< 显示相册 */,
+    XYGIMChatMoreItemAlbum = 0           /**< 显示拍照 */,
+    XYGIMChatMoreItemCamera               /**< 显示相册 */,
     XYGIMChatMoreItemVideo                /**< 显示视频 */,
     XYGIMChatMoreItemLocation             /**< 显示地理位置 */,
     XYGIMChatMoreItemCallAudio            /**< 显示语音通话 */,
     XYGIMChatMoreItemCallVideo            /**< 显示视频通话 */,
-    XYGIMChatMoreItemFamilyTreeShare      /**< 显示家谱分享 */,
-    XYGIMChatMoreItemFamilyTreeInvitation /**< 显示家谱邀请 */,
     XYGIMChatMoreItemLuckyMoney           /**< 显示红包 */,
     XYGIMChatMoreItemAudio                /**< 显示音频 */,
 };

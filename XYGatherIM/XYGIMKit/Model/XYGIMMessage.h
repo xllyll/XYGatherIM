@@ -139,7 +139,7 @@ typedef enum {
  */
 @property (nonatomic) XYGIMChatType chatType;
 
-@property (nonatomic) XYGIMMessageBodyType messageType;
+@property (nonatomic,assign) XYGIMMessageBodyType messageType;
 /*!
  *  \~chinese
  *  消息状态

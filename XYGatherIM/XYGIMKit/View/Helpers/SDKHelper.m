@@ -8,6 +8,8 @@
 
 #import "SDKHelper.h"
 #import "XYGIMClient.h"
+#import "UIImage+XYImage.h"
+#import "NSData+XYData.h"
 
 @implementation SDKHelper
 //+(Class)getSDKHelper{
@@ -40,9 +42,51 @@
     msg.chatType = messageType;
     msg.messageType = XYGIMMessageBodyTypeText;
     msg.ext = messageExt;
+    XYGIMTextMessageBody *body = [[XYGIMTextMessageBody alloc] initWithText:text];
+    msg.body = body;
     return msg;
     
 }
+
++ (XYGIMMessage *)sendImageMessageWithImageData:(NSData *)imageData
+                                             to:(NSString *)to
+                                    messageType:(XYGIMChatType)messageType
+                                     messageExt:(NSDictionary *)messageExt
+{
+    
+    NSString *img_format = [NSData xy_contentTypeForImageData:imageData];
+    XYGIMImageMessageBody *body = [[XYGIMImageMessageBody alloc] initWithData:imageData displayName:@"image.png"];
+    if (img_format != nil) {
+        NSString *f = [[img_format componentsSeparatedByString:@"/"] lastObject];
+        if ([f isEqualToString:@"gif"] || [f isEqualToString:@"GIF"]) {
+            body = [[XYGIMImageMessageBody alloc] initWithData:imageData displayName:@"image.gif"];
+        }
+    }
+    /*
+    NSString *from = [[EMClient sharedClient] currentUsername];
+    EMMessage *message = [[EMMessage alloc] initWithConversationID:to from:from to:to body:body ext:messageExt];
+    message.chatType = messageType;
+    */
+    XYGIMMessage *msg = [[XYGIMMessage alloc] init];
+    msg.text = @"发送一张图片";
+    msg.to = to;
+    msg.chatType = messageType;
+    msg.messageType = XYGIMMessageBodyTypeImage;
+    msg.ext = messageExt;
+    msg.body = body;
+    return msg;
+}
+
++ (XYGIMMessage *)sendImageMessageWithImage:(UIImage *)image
+                                      to:(NSString *)to
+                             messageType:(XYGIMChatType)messageType
+                              messageExt:(NSDictionary *)messageExt
+{
+    NSData *data = UIImageJPEGRepresentation(image, 1);
+    
+    return [self sendImageMessageWithImageData:data to:to messageType:messageType messageExt:messageExt];
+}
+
 +(XYGIMMessage *)sendLocationMessageWithLatitude:(double)latitude longitude:(double)longitude address:(NSString *)address to:(NSString *)to messageType:(XYGIMChatType)messageType messageExt:(NSDictionary *)messageExt{
     XYGIMMessage *msg = [[XYGIMMessage alloc] init];
     msg.text = @"发送一条地理位置";
