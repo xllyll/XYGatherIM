@@ -18,7 +18,9 @@
 
 @property (nonatomic) UIViewController<XYSearchResultDelegate>* searchResultController;
 
+
 @property (nonatomic, weak) id<XYSearchControllerDelegate> delegate;
+
 
 @property (nonatomic) XYSearchBar *searchBar;
 
