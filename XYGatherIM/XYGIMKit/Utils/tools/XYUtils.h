@@ -58,3 +58,6 @@ NS_ASSUME_NONNULL_END
 #import "XYUtils+CGHelper.h"
 #import "XYUtils+IPhone.h"
 #import "XYUtils+Popover.h"
+#import "XYUtils+Audio.h"
+#import "XYUtils+Text.h"
+

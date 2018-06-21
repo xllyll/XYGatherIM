@@ -71,16 +71,21 @@
                 msg = [mesgs firstObject];
             }
         }
-        
         // 处理耗时操作的代码块...
-        NSArray *msglsit = [[NIMSDK sharedSDK].conversationManager messagesInSession:_recentSession.session message:msg limit:aCount];
         NSMutableArray *list = [NSMutableArray array];
-        for (NIMMessage *m in msglsit) {
-            XYGIMMessage *msg = [[XYGIMMessage alloc] initWithMessage:m];
-            [list addObject:msg];
+        if (msg==nil) {
+            
+        }else{
+            
+            NSArray *msglsit = [[NIMSDK sharedSDK].conversationManager messagesInSession:_recentSession.session message:msg limit:aCount];
+            
+            for (NIMMessage *m in msglsit) {
+                XYGIMMessage *msg = [[XYGIMMessage alloc] initWithMessage:m];
+                [list addObject:msg];
+            }
+            XYGIMMessage *xymsg = [[XYGIMMessage alloc] initWithMessage:msg];
+            [list addObject:xymsg];
         }
-        XYGIMMessage *xymsg = [[XYGIMMessage alloc] initWithMessage:msg];
-        [list addObject:xymsg];
         //通知主线程刷新
         dispatch_async(dispatch_get_main_queue(), ^{
             

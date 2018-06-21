@@ -10,4 +10,16 @@
 
 @interface XYGIMChatVideoMessageCell : XYGIMChatMessageCell
 
+- (void)setUploadProgress:(CGFloat)uploadProgress;
+
+- (void)setDownloadProgress:(CGFloat)downloadProgress;
+
+- (void)dismissProgress;
+
+- (void)showVideo;
+
+
+- (void)willExitFullScreenShow;
+
+- (void)didExitFullScreenShow;
 @end

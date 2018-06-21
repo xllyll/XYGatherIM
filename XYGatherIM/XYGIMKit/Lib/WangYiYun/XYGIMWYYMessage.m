@@ -45,7 +45,8 @@
             self.messageType = XYGIMMessageBodyTypeImage;
             NIMImageObject *imgObjc =  _msg.messageObject;
             NSString *thumbPath = [imgObjc thumbPath];
-            XYGIMImageMessageBody *imgBody = [[XYGIMImageMessageBody alloc] initWithPath:thumbPath thumbnailPath:thumbPath];
+            NSString *path = [imgObjc path];
+            XYGIMImageMessageBody *imgBody = [[XYGIMImageMessageBody alloc] initWithPath:path thumbnailPath:thumbPath];
             self.body = imgBody;
             break;
         }
@@ -68,9 +69,16 @@
             self.body = vbody;
             break;
         }
-        case NIMMessageTypeVideo:
+        case NIMMessageTypeVideo:{
             self.messageType = XYGIMMessageBodyTypeVideo;
+            
+            NIMVideoObject *videoOB = _msg.messageObject;
+            XYGIMVideoMessageBody *vbody = [[XYGIMVideoMessageBody alloc] initWithLocalPath:videoOB.path displayName:videoOB.displayName];
+            vbody.thumbnailRemotePath = videoOB.coverUrl;
+            vbody.thumbnailLocalPath = videoOB.coverPath;
+            self.body = vbody;
             break;
+        }
         case NIMMessageTypeNotification:
             self.messageType = XYGIMMessageBodyTypeNotification;
             break;

@@ -17,7 +17,7 @@
 #define K_EASE_MESSAGE_EXT_CALL_VIDEO @"is_video_call"
 #define K_EASE_MESSAGE_EXT_CALL_AUDIO @"is_voice_call"
 
-/*!
+/**
  *  \~chinese
  *  聊天类型
  *
@@ -51,9 +51,9 @@ typedef enum {
  *  \~english
  *  Message direction
  */
-typedef enum {
-    XYGIMMessageDirectionSend = 0,    /*! \~chinese 发送的消息 \~english Send */
-    XYGIMMessageDirectionReceive,     /*! \~chinese 接收的消息 \~english Receive */
+typedef enum {                     /** \~chinese 发送的消息 \~english Send */
+    XYGIMMessageDirectionSend = 0, /*! \~chinese 接收的消息 \~english Receive */
+    XYGIMMessageDirectionReceive,
 } XYGIMMessageDirection;
 
 

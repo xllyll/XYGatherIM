@@ -64,5 +64,26 @@
     }
     return rs;
 }
-
+-(void)deleteConversation:(XYGIMConversation *)aConversation isDeleteMessages:(BOOL)aIsDeleteMessages completion:(void (^)(NSString *, XYError *))aCompletionBlock{
+    [_chatManager deleteConversation:aConversation.conversationId isDeleteMessages:aIsDeleteMessages completion:^(NSString *atheConversationId, EMError *aError) {
+        if (aError) {
+            aCompletionBlock(nil,[XYError new]);
+        }else{
+            aCompletionBlock(atheConversationId,nil);
+        }
+    }];
+}
+-(void)deleteConversations:(NSArray<XYGIMConversation *> *)aConversations isDeleteMessages:(BOOL)aIsDeleteMessages completion:(void (^)(XYError *))aCompletionBlock{
+    NSMutableArray *ids = [NSMutableArray array];
+    for (XYGIMConversation *c in aConversations) {
+        [ids addObject:c.conversationId];
+    }
+    [_chatManager deleteConversations:ids isDeleteMessages:aIsDeleteMessages completion:^(EMError *aError) {
+        if (aError) {
+            aCompletionBlock([XYError new]);
+        }else{
+            aCompletionBlock(nil);
+        }
+    }];
+}
 @end

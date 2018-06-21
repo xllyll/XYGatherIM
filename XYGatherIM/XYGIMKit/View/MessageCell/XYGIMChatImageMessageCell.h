@@ -16,4 +16,8 @@
 - (void)dismissProgress;
 - (void)showImage;
 
+- (void)willExitFullScreenShow;
+
+- (void)didExitFullScreenShow;
+
 @end

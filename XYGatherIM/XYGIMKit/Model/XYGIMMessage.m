@@ -10,7 +10,13 @@
 #import "XYGIMClient.h"
 
 @implementation XYGIMMessage
-
+-(instancetype)init{
+    self = [super init];
+    if (self) {
+        _timestamp = [[NSDate date] timeIntervalSince1970];
+    }
+    return self;
+}
 -(instancetype)initWithMessage:(id)aMessage{
     
     Class a = nil;

@@ -12,10 +12,16 @@
 #import "XYGIMChatTextMessageCell.h"
 #import "XYGIMChatImageMessageCell.h"
 #import "XYGIMChatVoiceMessageCell.h"
+#import "XYGIMChatVideoMessageCell.h"
 #import "NSDate+XYDate.h"
 #import "SDKHelper.h"
+#import "XYConfig.h"
 
-@interface XYGIMChatBaseViewController ()<XYGIMAudioPlayerDelegate,XYGIMChatViewModelDelegate,XYGIMChatMessageCellDelegate>
+#import <MobileCoreServices/MobileCoreServices.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import "XYGIMChatAssetDisplayController.h"
+
+@interface XYGIMChatBaseViewController ()<XYGIMAudioPlayerDelegate,XYGIMChatViewModelDelegate,XYGIMChatMessageCellDelegate,XYGIMChatImagePreviewDelegate>
 {
     dispatch_queue_t _messageQueue;
 }
@@ -79,6 +85,34 @@
         _dataArray = [NSMutableArray array];
     }
     return _dataArray;
+}
+#pragma mark - 视频、图片弹出、弹入动画 -
+
+- (void)showAssetFromCell:(XYGIMChatMessageCell *)cell {
+//    [[LLAudioManager sharedManager] stopPlaying];
+//    [self.chatInputView dismissKeyboard];
+    
+    NSMutableArray *array = [NSMutableArray array];
+    for (XYNMessage *model in self.dataArray) {
+        if ([model isKindOfClass:[XYNMessage class]]) {
+            if (model.bodyType == XYGIMMessageBodyTypeImage ||
+                model.bodyType == XYGIMMessageBodyTypeVideo) {
+                [array addObject:model];
+            }
+        }
+    }
+    
+    XYGIMChatAssetDisplayController *vc = [[XYGIMChatAssetDisplayController alloc] initWithNibName:nil bundle:nil];
+    vc.allAssets = array;
+    vc.curShowMessageModel = cell.message;
+    vc.originalWindowFrame = [cell contentFrameInWindow];
+    vc.delegate = self;
+    
+    [self.navigationController pushViewController:vc animated:NO];
+    
+}
+-(void)didFinishWithMessageModel:(XYNMessage *)model targetView:(UIView<XYGIMAssetDisplayView> *)assetView scrollToTop:(BOOL)scrollToTop{
+   
 }
 #pragma mark - public
 - (NSArray *)formatMessages:(NSArray *)messages
@@ -222,6 +256,34 @@
 {
     
 }
+- (void)_reloadTableViewDataWithMessage:(XYGIMMessage *)message{
+    __weak XYGIMChatBaseViewController *weakSelf = self;
+    dispatch_async(_messageQueue, ^{
+        if ([weakSelf.conversation.conversationId isEqualToString:message.conversationId])
+        {
+            for (int i = 0; i < weakSelf.dataArray.count; i ++) {
+                id object = [weakSelf.dataArray objectAtIndex:i];
+                if ([object isKindOfClass:[XYNMessage class]]) {
+                    XYNMessage *model = object;
+                    if ([message.messageId isEqualToString:model.messageId]) {
+                        XYNMessage *model = nil;
+                        model = [[XYNMessage alloc] initWithMessage:message];
+                        model.avatarImage = [UIImage imageNamed:@"EaseUIResource.bundle/user"];
+                        model.failImageName = @"imageDownloadFail";
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            //                            [weakSelf.tableView beginUpdates];
+                            [weakSelf.dataArray replaceObjectAtIndex:i withObject:model];
+                            //                            [weakSelf.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:i inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+                            //                            [weakSelf.tableView endUpdates];
+                        });
+                        break;
+                    }
+                }
+            }
+        }
+    });
+}
 - (void)_sendHasReadResponseForMessages:(NSArray*)messages
                                  isRead:(BOOL)isRead
 {
@@ -268,6 +330,176 @@
             break;
     }
     return type;
+}
+- (void)_imageMessageCellSelected:(XYNMessage*)model messageCell:(XYGIMChatMessageCell*)messageCell;
+{
+    __weak XYGIMChatBaseViewController *weakSelf = self;
+    XYGIMImageMessageBody *imageBody = (XYGIMImageMessageBody*)[model.message body];
+    
+    if ([imageBody type] == XYGIMMessageBodyTypeImage) {
+        if (imageBody.thumbnailDownloadStatus == XYGIMDownloadStatusSuccessed) {
+            if (imageBody.downloadStatus == XYGIMDownloadStatusSuccessed)
+            {
+                //发送已读回执
+                [weakSelf _sendHasReadResponseForMessages:@[model.message] isRead:YES];
+                NSString *localPath = model.message == nil ? model.fileLocalPath : [imageBody localPath];
+                if (localPath && localPath.length > 0) {
+                    UIImage *image = [UIImage imageWithContentsOfFile:localPath];
+                    [(XYGIMChatImageMessageCell*)messageCell dismissProgress];
+                    if (image)
+                    {
+                        //[[EaseMessageReadManager defaultManager] showBrowserWithImages:@[image] inViewController:self];
+                        [self showAssetFromCell:messageCell];
+                    }
+                    else
+                    {
+                        NSLog(@"Read %@ failed!", localPath);
+                    }
+                    return;
+                }
+            }
+            NSLog(@"图片正在下载！");
+            //[weakSelf showHudInView:weakSelf.view hint:NSEaseLocalizedString(@"message.downloadingImage", @"downloading a image...")];
+            [[XYGIMClient sharedClient].chatManager downloadMessageAttachment:model.message progress:^(int progress) {
+                if (messageCell.messageType == XYGIMNMessageTypeImage) {
+                    
+                    float downf = (float)progress/100.0;
+                    
+                    NSLog(@"图片下载中－－－－%.2f！",downf);
+                    
+                    [(XYGIMChatImageMessageCell*)messageCell setDownloadProgress:downf];
+                }
+            } completion:^(XYGIMMessage *message, XYError *error) {
+                //[weakSelf hideHud];
+                if (!error) {
+                    //发送已读回执
+                    [weakSelf _sendHasReadResponseForMessages:@[model.message] isRead:YES];
+                    NSString *localPath = message == nil ? model.fileLocalPath : [(XYGIMImageMessageBody*)message.body localPath];
+                    if (localPath && localPath.length > 0) {
+                        UIImage *image = [UIImage imageWithContentsOfFile:localPath];
+                        //                                weakSelf.isScrollToBottom = NO;
+                        if (image)
+                        {
+                            //[[EaseMessageReadManager defaultManager] showBrowserWithImages:@[image] inViewController:self];
+                            [self showAssetFromCell:messageCell];
+                        }
+                        else
+                        {
+                            NSLog(@"Read %@ failed!", localPath);
+                        }
+                        return ;
+                    }
+                }
+                //[weakSelf showHint:NSEaseLocalizedString(@"message.imageFail", @"image for failure!")];
+            }];
+        }else{
+            //获取缩略图
+            [[XYGIMClient sharedClient].chatManager downloadMessageThumbnail:model.message progress:nil completion:^(XYGIMMessage *message, XYError *error) {
+                
+                if (!error) {
+                    [weakSelf _reloadTableViewDataWithMessage:model.message];
+                }else{
+                    //[weakSelf showHint:NSEaseLocalizedString(@"message.thumImageFail", @"thumbnail for failure!")];
+                }
+            }];
+        }
+    }
+}
+
+- (void)_videoMessageCellSelected:(XYNMessage*)model messageCell:(XYGIMChatVideoMessageCell*)messageCell
+{
+    _scrollToBottomWhenAppear = NO;
+    
+    XYGIMVideoMessageBody *videoBody = (XYGIMVideoMessageBody*)model.message.body;
+    
+    //判断本地路劲是否存在
+    NSString *localPath = [model.fileLocalPath length] > 0 ? model.fileLocalPath : videoBody.localPath;
+    if ([localPath length] == 0) {
+        //[self showHint:NSEaseLocalizedString(@"message.videoFail", @"video for failure!")];
+        //视频获取失败!
+        return;
+    }
+    
+    dispatch_block_t block = ^{
+        //发送已读回执
+        [self _sendHasReadResponseForMessages:@[model.message]
+                                       isRead:YES];
+        [messageCell dismissProgress];
+        NSURL *videoURL = [NSURL fileURLWithPath:localPath];
+        MPMoviePlayerViewController *moviePlayerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
+        [moviePlayerController.moviePlayer prepareToPlay];
+        moviePlayerController.moviePlayer.movieSourceType = MPMovieSourceTypeFile;
+        [self presentMoviePlayerViewControllerAnimated:moviePlayerController];
+    };
+    
+    __weak typeof(self) weakSelf = self;
+    
+    void (^completion)(XYGIMMessage *aMessage, XYError *error) = ^(XYGIMMessage *aMessage, XYError *error) {
+        if (!error)
+        {
+            
+            [weakSelf _reloadTableViewDataWithMessage:aMessage];
+        }
+        else
+        {
+            //缩略图获取失败!
+            //[weakSelf showHint:NSEaseLocalizedString(@"message.thumImageFail", @"thumbnail for failure!")];
+        }
+    };
+    
+    if (videoBody.thumbnailDownloadStatus == XYGIMDownloadStatusFailed || ![[NSFileManager defaultManager] fileExistsAtPath:videoBody.thumbnailLocalPath]) {
+        //[self showHint:@"begin downloading thumbnail image, click later"];
+        [[XYGIMClient sharedClient].chatManager downloadMessageThumbnail:model.message progress:^(int progress) {
+            if (messageCell.messageType == XYGIMNMessageTypeVideo) {
+                
+                float downf = (float)progress/100.0;
+                [messageCell setDownloadProgress:downf];
+            }
+        } completion:completion];
+        return;
+    }
+    
+    if (videoBody.downloadStatus == XYGIMDownloadStatusSuccessed && [[NSFileManager defaultManager] fileExistsAtPath:localPath])
+    {
+        block();
+        return;
+    }
+    
+    /*
+     [[EMClient sharedClient].chatManager asyncDownloadMessageAttachments:model.message progress:^(int progress) {
+     if (messageCell.messageType == FUNMessageTypeVideo) {
+     
+     float downf = (float)progress/100.0;
+     
+     NSLog(@"图片下载中－－－－%.2f！",downf);
+     
+     [messageCell setDownloadProgress:downf];
+     }
+     } completion:^(XYGIMMessage *message, EMError *error) {
+     //[weakSelf hideHud];
+     if (!error) {
+     block();
+     }else{
+     //[weakSelf showHint:NSEaseLocalizedString(@"message.videoFail", @"video for failure!")];
+     }
+     }];
+     */
+    [[XYGIMClient sharedClient].chatManager downloadMessageAttachment:model.message progress:^(int progress) {
+        if (messageCell.messageType == XYGIMNMessageTypeVideo) {
+            
+            float downf = (float)progress/100.0;
+            
+            NSLog(@"图片下载中－－－－%.2f！",downf);
+            
+            [messageCell setDownloadProgress:downf];
+        }
+    } completion:^(XYGIMMessage *message, XYError *error) {
+        if (!error) {
+            block();
+        }else{
+            //[weakSelf showHint:NSEaseLocalizedString(@"message.videoFail", @"video for failure!")];
+        }
+    }];
 }
 -(void)addXYGIMChatModel:(NSArray*)list{
     if (list) {
@@ -505,5 +737,21 @@
                                                       messageType:[self _messageTypeFromConversationType]
                                                        messageExt:nil];
     [self _sendMessage:message];
+}
+-(void)sendVoiceMessageWithLocalPath:(NSString *)localPath duration:(NSInteger)duration{
+    XYGIMMessage *message = [SDKHelper sendVoiceMessageWithLocalPath:localPath
+                                                            duration:duration
+                                                                  to:self.conversation.conversationId
+                                                          messageType:[self _messageTypeFromConversationType]
+                                                           messageExt:nil];
+    [self _sendMessage:message];
+}
+
+#pragma mark SELECT
+- (void)imageMessageCellSelected:(id)model messageCell:(UIView *)messageCell{
+    [self _imageMessageCellSelected:model messageCell:(XYGIMChatMessageCell*)messageCell];
+}
+- (void)videoMessageCellSelected:(id)model messageCell:(UIView *)messageCell{
+    [self _videoMessageCellSelected:model messageCell:(XYGIMChatVideoMessageCell*)messageCell];
 }
 @end

@@ -55,6 +55,9 @@
  */
 @property (nonatomic) CGSize thumbnailSize;
 
+
+
+
 /*!
  *  \~chinese
  *  缩略图下载状态

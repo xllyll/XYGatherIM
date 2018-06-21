@@ -8,6 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		171822B220D9EE8E00799283 /* NSData+XYData.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822B120D9EE8E00799283 /* NSData+XYData.m */; };
+		171822D920DB7B2000799283 /* XYGIMChatAssetDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822D720DB7B2000799283 /* XYGIMChatAssetDisplayController.m */; };
+		171822DA20DB7B2000799283 /* XYGIMChatAssetDisplayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171822D820DB7B2000799283 /* XYGIMChatAssetDisplayController.xib */; };
+		171822DD20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822DC20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.m */; };
+		171822E120DB7DAE00799283 /* XYGIMVideoPlaybackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822DF20DB7DAE00799283 /* XYGIMVideoPlaybackController.m */; };
+		171822E220DB7DAE00799283 /* XYGIMVideoPlaybackController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171822E020DB7DAE00799283 /* XYGIMVideoPlaybackController.xib */; };
+		171822E520DB7DF500799283 /* XYGIMVideoPlaybackView.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822E420DB7DF500799283 /* XYGIMVideoPlaybackView.m */; };
+		171822E820DB810000799283 /* XYGIMImageBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822E720DB810000799283 /* XYGIMImageBottomBar.m */; };
+		171822EA20DB813B00799283 /* XYGIMImageBottomBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171822E920DB813B00799283 /* XYGIMImageBottomBar.xib */; };
+		171822ED20DB828800799283 /* XYGIMImageAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822EC20DB828800799283 /* XYGIMImageAnimationView.m */; };
+		171822F020DB836B00799283 /* XYGIMActionSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822EF20DB836B00799283 /* XYGIMActionSheet.m */; };
+		171822F320DB85C800799283 /* XYUtils+Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822F220DB85C800799283 /* XYUtils+Audio.m */; };
+		171822F620DB8E9300799283 /* XYGIMChatImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822F520DB8E9300799283 /* XYGIMChatImageScrollView.m */; };
+		171822FC20DB91F000799283 /* XYGIMVideoDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822FB20DB91F000799283 /* XYGIMVideoDisplayView.m */; };
+		171822FF20DB980700799283 /* XYUtils+Text.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822FE20DB980700799283 /* XYUtils+Text.m */; };
+		1718230120DB9CF100799283 /* XYGIMImageDownloadFailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1718230020DB9CF100799283 /* XYGIMImageDownloadFailView.xib */; };
 		17476569207B14F70080BC9E /* XYGIMChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 17476568207B14F70080BC9E /* XYGIMChatViewController.m */; };
 		17476571207B42D50080BC9E /* XYGIMChatBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 17476570207B42D50080BC9E /* XYGIMChatBar.m */; };
 		17476574207B458D0080BC9E /* XYGIMChatFaceView.m in Sources */ = {isa = PBXBuildFile; fileRef = 17476573207B458D0080BC9E /* XYGIMChatFaceView.m */; };
@@ -226,7 +241,6 @@
 		1783C67D20D0D494003C85CA /* XYChatListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1783C67B20D0D494003C85CA /* XYChatListTableViewCell.xib */; };
 		1783C68020D0D82C003C85CA /* NSDate+XYDate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */; };
 		1783C68320D0FB09003C85CA /* SDKHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68220D0FB09003C85CA /* SDKHelper.m */; };
-		1783C68620D0FD88003C85CA /* SDKHelper+WangYiYun.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */; };
 		1783C68920D10018003C85CA /* SDKHelper+HuanXin.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68820D10018003C85CA /* SDKHelper+HuanXin.m */; };
 		1783C68C20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68B20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.m */; };
 		1783C69020D1014C003C85CA /* XYGIMEmoji.m in Sources */ = {isa = PBXBuildFile; fileRef = 1783C68F20D1014C003C85CA /* XYGIMEmoji.m */; };
@@ -345,6 +359,33 @@
 /* Begin PBXFileReference section */
 		171822B020D9EE8E00799283 /* NSData+XYData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+XYData.h"; sourceTree = "<group>"; };
 		171822B120D9EE8E00799283 /* NSData+XYData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+XYData.m"; sourceTree = "<group>"; };
+		171822D620DB7B2000799283 /* XYGIMChatAssetDisplayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatAssetDisplayController.h; sourceTree = "<group>"; };
+		171822D720DB7B2000799283 /* XYGIMChatAssetDisplayController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatAssetDisplayController.m; sourceTree = "<group>"; };
+		171822D820DB7B2000799283 /* XYGIMChatAssetDisplayController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYGIMChatAssetDisplayController.xib; sourceTree = "<group>"; };
+		171822DB20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMVideoDownloadStatusHUD.h; sourceTree = "<group>"; };
+		171822DC20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMVideoDownloadStatusHUD.m; sourceTree = "<group>"; };
+		171822DE20DB7DAE00799283 /* XYGIMVideoPlaybackController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMVideoPlaybackController.h; sourceTree = "<group>"; };
+		171822DF20DB7DAE00799283 /* XYGIMVideoPlaybackController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMVideoPlaybackController.m; sourceTree = "<group>"; };
+		171822E020DB7DAE00799283 /* XYGIMVideoPlaybackController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYGIMVideoPlaybackController.xib; sourceTree = "<group>"; };
+		171822E320DB7DF500799283 /* XYGIMVideoPlaybackView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMVideoPlaybackView.h; sourceTree = "<group>"; };
+		171822E420DB7DF500799283 /* XYGIMVideoPlaybackView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMVideoPlaybackView.m; sourceTree = "<group>"; };
+		171822E620DB810000799283 /* XYGIMImageBottomBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMImageBottomBar.h; sourceTree = "<group>"; };
+		171822E720DB810000799283 /* XYGIMImageBottomBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMImageBottomBar.m; sourceTree = "<group>"; };
+		171822E920DB813B00799283 /* XYGIMImageBottomBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XYGIMImageBottomBar.xib; sourceTree = "<group>"; };
+		171822EB20DB828800799283 /* XYGIMImageAnimationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMImageAnimationView.h; sourceTree = "<group>"; };
+		171822EC20DB828800799283 /* XYGIMImageAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMImageAnimationView.m; sourceTree = "<group>"; };
+		171822EE20DB836B00799283 /* XYGIMActionSheet.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMActionSheet.h; sourceTree = "<group>"; };
+		171822EF20DB836B00799283 /* XYGIMActionSheet.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMActionSheet.m; sourceTree = "<group>"; };
+		171822F120DB85C800799283 /* XYUtils+Audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYUtils+Audio.h"; sourceTree = "<group>"; };
+		171822F220DB85C800799283 /* XYUtils+Audio.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYUtils+Audio.m"; sourceTree = "<group>"; };
+		171822F420DB8E9300799283 /* XYGIMChatImageScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatImageScrollView.h; sourceTree = "<group>"; };
+		171822F520DB8E9300799283 /* XYGIMChatImageScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatImageScrollView.m; sourceTree = "<group>"; };
+		171822F720DB8FD500799283 /* XYGIMAssetDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMAssetDisplayView.h; sourceTree = "<group>"; };
+		171822FA20DB91F000799283 /* XYGIMVideoDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMVideoDisplayView.h; sourceTree = "<group>"; };
+		171822FB20DB91F000799283 /* XYGIMVideoDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMVideoDisplayView.m; sourceTree = "<group>"; };
+		171822FD20DB980700799283 /* XYUtils+Text.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "XYUtils+Text.h"; sourceTree = "<group>"; };
+		171822FE20DB980700799283 /* XYUtils+Text.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "XYUtils+Text.m"; sourceTree = "<group>"; };
+		1718230020DB9CF100799283 /* XYGIMImageDownloadFailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XYGIMImageDownloadFailView.xib; sourceTree = "<group>"; };
 		17476567207B14F70080BC9E /* XYGIMChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatViewController.h; sourceTree = "<group>"; };
 		17476568207B14F70080BC9E /* XYGIMChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatViewController.m; sourceTree = "<group>"; };
 		1747656F207B42D50080BC9E /* XYGIMChatBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatBar.h; sourceTree = "<group>"; };
@@ -609,8 +650,6 @@
 		1783C67F20D0D82C003C85CA /* NSDate+XYDate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDate+XYDate.m"; sourceTree = "<group>"; };
 		1783C68120D0FB09003C85CA /* SDKHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SDKHelper.h; sourceTree = "<group>"; };
 		1783C68220D0FB09003C85CA /* SDKHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SDKHelper.m; sourceTree = "<group>"; };
-		1783C68420D0FD88003C85CA /* SDKHelper+WangYiYun.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKHelper+WangYiYun.h"; sourceTree = "<group>"; };
-		1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKHelper+WangYiYun.m"; sourceTree = "<group>"; };
 		1783C68720D10018003C85CA /* SDKHelper+HuanXin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SDKHelper+HuanXin.h"; sourceTree = "<group>"; };
 		1783C68820D10018003C85CA /* SDKHelper+HuanXin.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "SDKHelper+HuanXin.m"; sourceTree = "<group>"; };
 		1783C68A20D10090003C85CA /* XYGIMConvertToCommonEmoticonsHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMConvertToCommonEmoticonsHelper.h; sourceTree = "<group>"; };
@@ -863,6 +902,29 @@
 				1783C72720D33F91003C85CA /* XYLocationManager.m */,
 				1783C73420D399FA003C85CA /* XYNavigationController.h */,
 				1783C73520D399FA003C85CA /* XYNavigationController.m */,
+				171822DB20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.h */,
+				171822DC20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.m */,
+				171822D620DB7B2000799283 /* XYGIMChatAssetDisplayController.h */,
+				171822D720DB7B2000799283 /* XYGIMChatAssetDisplayController.m */,
+				171822D820DB7B2000799283 /* XYGIMChatAssetDisplayController.xib */,
+				171822DE20DB7DAE00799283 /* XYGIMVideoPlaybackController.h */,
+				171822DF20DB7DAE00799283 /* XYGIMVideoPlaybackController.m */,
+				171822E020DB7DAE00799283 /* XYGIMVideoPlaybackController.xib */,
+				171822E320DB7DF500799283 /* XYGIMVideoPlaybackView.h */,
+				171822E420DB7DF500799283 /* XYGIMVideoPlaybackView.m */,
+				171822E620DB810000799283 /* XYGIMImageBottomBar.h */,
+				171822E720DB810000799283 /* XYGIMImageBottomBar.m */,
+				171822E920DB813B00799283 /* XYGIMImageBottomBar.xib */,
+				1718230020DB9CF100799283 /* XYGIMImageDownloadFailView.xib */,
+				171822EB20DB828800799283 /* XYGIMImageAnimationView.h */,
+				171822EC20DB828800799283 /* XYGIMImageAnimationView.m */,
+				171822EE20DB836B00799283 /* XYGIMActionSheet.h */,
+				171822EF20DB836B00799283 /* XYGIMActionSheet.m */,
+				171822F720DB8FD500799283 /* XYGIMAssetDisplayView.h */,
+				171822F420DB8E9300799283 /* XYGIMChatImageScrollView.h */,
+				171822F520DB8E9300799283 /* XYGIMChatImageScrollView.m */,
+				171822FA20DB91F000799283 /* XYGIMVideoDisplayView.h */,
+				171822FB20DB91F000799283 /* XYGIMVideoDisplayView.m */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -1457,6 +1519,10 @@
 				1783C72A20D3403D003C85CA /* XYUtils+IPhone.m */,
 				1783C72C20D3412C003C85CA /* XYUtils+Popover.h */,
 				1783C72D20D3412C003C85CA /* XYUtils+Popover.m */,
+				171822F120DB85C800799283 /* XYUtils+Audio.h */,
+				171822F220DB85C800799283 /* XYUtils+Audio.m */,
+				171822FD20DB980700799283 /* XYUtils+Text.h */,
+				171822FE20DB980700799283 /* XYUtils+Text.m */,
 			);
 			path = tools;
 			sourceTree = "<group>";
@@ -1578,8 +1644,6 @@
 				1783C66920D0BB16003C85CA /* Impl */,
 				1783C65D20D01826003C85CA /* XYGIMWYYMessage.h */,
 				1783C65E20D01826003C85CA /* XYGIMWYYMessage.m */,
-				1783C68420D0FD88003C85CA /* SDKHelper+WangYiYun.h */,
-				1783C68520D0FD88003C85CA /* SDKHelper+WangYiYun.m */,
 				1783C6D520D11670003C85CA /* XYGIMWYYConversation.h */,
 				1783C6D620D11670003C85CA /* XYGIMWYYConversation.m */,
 			);
@@ -1827,6 +1891,7 @@
 			files = (
 				174766E0207B46180080BC9E /* 022.png in Resources */,
 				174766D7207B46180080BC9E /* 044.png in Resources */,
+				171822E220DB7DAE00799283 /* XYGIMVideoPlaybackController.xib in Resources */,
 				17A9706020CF68E500ECF6CB /* Media.xcassets in Resources */,
 				174766D9207B46180080BC9E /* 005@2x.png in Resources */,
 				178E061E20848EB100694CC0 /* XYLoginViewController.xib in Resources */,
@@ -1888,6 +1953,7 @@
 				174766AA207B46180080BC9E /* 061@2x.png in Resources */,
 				174766EA207B46180080BC9E /* 021.png in Resources */,
 				1747668C207B46170080BC9E /* 074.png in Resources */,
+				171822EA20DB813B00799283 /* XYGIMImageBottomBar.xib in Resources */,
 				17476676207B46170080BC9E /* 079@2x.png in Resources */,
 				174766B2207B46180080BC9E /* 031@2x.png in Resources */,
 				17A96D5920CE095B00ECF6CB /* XYMoreViewController.xib in Resources */,
@@ -1928,6 +1994,7 @@
 				17476679207B46170080BC9E /* 039.png in Resources */,
 				174766D8207B46180080BC9E /* 078@2x.png in Resources */,
 				174766FB207B46180080BC9E /* 024.png in Resources */,
+				1718230120DB9CF100799283 /* XYGIMImageDownloadFailView.xib in Resources */,
 				17476660207B46170080BC9E /* 018@2x.png in Resources */,
 				1747665E207B46170080BC9E /* 003.png in Resources */,
 				174766B3207B46180080BC9E /* 064@2x.png in Resources */,
@@ -1985,6 +2052,7 @@
 				174766EB207B46180080BC9E /* 035.png in Resources */,
 				174766C3207B46180080BC9E /* 056.png in Resources */,
 				1747665A207B46170080BC9E /* 084@2x.png in Resources */,
+				171822DA20DB7B2000799283 /* XYGIMChatAssetDisplayController.xib in Resources */,
 				1747668E207B46170080BC9E /* 048.png in Resources */,
 				17476667207B46170080BC9E /* 077@2x.png in Resources */,
 				174766D2207B46180080BC9E /* 017@2x.png in Resources */,
@@ -2191,13 +2259,16 @@
 				1783C6E220D16B0C003C85CA /* XYGIMHXConversation.m in Sources */,
 				17A9708B20CF967F00ECF6CB /* XYGIMChatAudioCallMessageCell.m in Sources */,
 				17A9707020CF931000ECF6CB /* XYGIMContentView.m in Sources */,
+				171822E120DB7DAE00799283 /* XYGIMVideoPlaybackController.m in Sources */,
 				1783C71F20D2BFB0003C85CA /* UIView+XYExt.m in Sources */,
 				1783C6EF20D20040003C85CA /* XYGIMFileMessageBody.m in Sources */,
 				1786B84920CA603D000743DD /* XYWangYiYunLibCore.m in Sources */,
 				17476655207B46170080BC9E /* NSMutableAttributedString+Picture.m in Sources */,
 				17476569207B14F70080BC9E /* XYGIMChatViewController.m in Sources */,
+				171822D920DB7B2000799283 /* XYGIMChatAssetDisplayController.m in Sources */,
 				17A9709F20CF995E00ECF6CB /* XYGIMChatMessageCell+XYGIMNCellIdentifier.m in Sources */,
 				1783C68920D10018003C85CA /* SDKHelper+HuanXin.m in Sources */,
+				171822F620DB8E9300799283 /* XYGIMChatImageScrollView.m in Sources */,
 				17476658207B46170080BC9E /* NSMutableAttributedString+Config.m in Sources */,
 				17A96D5020CE092E00ECF6CB /* XYContactViewController.m in Sources */,
 				17476708207B46180080BC9E /* JFLoadProgressView.m in Sources */,
@@ -2206,6 +2277,7 @@
 				1781AB7C2060B5B9007D5624 /* XYHuanXinLibCore.m in Sources */,
 				178E060B2084722800694CC0 /* XYUtils.m in Sources */,
 				178E06042084708B00694CC0 /* UIView+XYView.m in Sources */,
+				171822FC20DB91F000799283 /* XYGIMVideoDisplayView.m in Sources */,
 				178E0607208471C200694CC0 /* NSString+XYString.m in Sources */,
 				1783C67C20D0D494003C85CA /* XYChatListTableViewCell.m in Sources */,
 				17A9707C20CF95B200ECF6CB /* XYGIMChatVoiceMessageCell.m in Sources */,
@@ -2227,6 +2299,7 @@
 				17476651207B46170080BC9E /* UIImageView+GIF.m in Sources */,
 				1783C71920D2BE31003C85CA /* XYLocationSearchResultController.m in Sources */,
 				17A970A020CF995E00ECF6CB /* UITableView+FDTemplateLayoutCell.m in Sources */,
+				171822E520DB7DF500799283 /* XYGIMVideoPlaybackView.m in Sources */,
 				17476650207B46170080BC9E /* SwipeView.m in Sources */,
 				17A96DA520CE57E600ECF6CB /* XYGIMMessage.m in Sources */,
 				17476656207B46170080BC9E /* TLAttributedLabelUtils.m in Sources */,
@@ -2236,6 +2309,7 @@
 				17A9707620CF936C00ECF6CB /* XYGIMChatTextMessageCell.m in Sources */,
 				1783C66820D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m in Sources */,
 				1783C68020D0D82C003C85CA /* NSDate+XYDate.m in Sources */,
+				171822FF20DB980700799283 /* XYUtils+Text.m in Sources */,
 				17A96DB820CE663500ECF6CB /* XYContactTableViewCell.m in Sources */,
 				1783C70320D2B442003C85CA /* XYSearchBar.m in Sources */,
 				1781AB402060AD37007D5624 /* AppDelegate.m in Sources */,
@@ -2246,7 +2320,6 @@
 				171822B220D9EE8E00799283 /* NSData+XYData.m in Sources */,
 				17A96D9920CE4DC800ECF6CB /* XYGIMFileCore+WangYiYun.m in Sources */,
 				17A9706C20CF91C200ECF6CB /* XYGIMChatMessageCell.m in Sources */,
-				1783C68620D0FD88003C85CA /* SDKHelper+WangYiYun.m in Sources */,
 				17476652207B46170080BC9E /* NSMutableAttributedString+CTFrameRef.m in Sources */,
 				1783C69020D1014C003C85CA /* XYGIMEmoji.m in Sources */,
 				178E0626208491E800694CC0 /* XYError.m in Sources */,
@@ -2254,6 +2327,7 @@
 				1783C6D720D11670003C85CA /* XYGIMWYYConversation.m in Sources */,
 				1783C73620D399FA003C85CA /* XYNavigationController.m in Sources */,
 				1783C6FB20D241B5003C85CA /* XYGIMChatFileMessageCell.m in Sources */,
+				171822F020DB836B00799283 /* XYGIMActionSheet.m in Sources */,
 				17A9704920CF644B00ECF6CB /* XYGIMChatViewModel.m in Sources */,
 				1783C69320D10469003C85CA /* XYGIMEmojiEmoticons.m in Sources */,
 				1783C71C20D2BF18003C85CA /* XYLocationTableViewCell.m in Sources */,
@@ -2261,17 +2335,21 @@
 				1747664F207B46170080BC9E /* FULocationManager.m in Sources */,
 				178E060F208488AF00694CC0 /* XYProgressHUD.m in Sources */,
 				1783C68320D0FB09003C85CA /* SDKHelper.m in Sources */,
+				171822F320DB85C800799283 /* XYUtils+Audio.m in Sources */,
 				17476709207B46180080BC9E /* XYAmplifyView.m in Sources */,
 				1783C6E920D1FF7B003C85CA /* XYGIMImageMessageBody.m in Sources */,
 				1781AB512060AD37007D5624 /* main.m in Sources */,
 				1783C70620D2B4F4003C85CA /* UIColor+XYExt.m in Sources */,
 				1786B84C20CA66AE000743DD /* XYJiGuangLibCore.m in Sources */,
+				171822ED20DB828800799283 /* XYGIMImageAnimationView.m in Sources */,
 				17A9708220CF95D800ECF6CB /* XYGIMChatLocationMessageCell.m in Sources */,
 				1783C72820D33F91003C85CA /* XYLocationManager.m in Sources */,
+				171822DD20DB7B8400799283 /* XYGIMVideoDownloadStatusHUD.m in Sources */,
 				17A970A420CF9A7100ECF6CB /* XYGIMChatImageExpressMessageCell.m in Sources */,
 				17476659207B46170080BC9E /* TLAttributedLabel.m in Sources */,
 				1783C67320D0BD61003C85CA /* XYGIMConversation.m in Sources */,
 				1781AB492060AD37007D5624 /* XYGatherIM.xcdatamodeld in Sources */,
+				171822E820DB810000799283 /* XYGIMImageBottomBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

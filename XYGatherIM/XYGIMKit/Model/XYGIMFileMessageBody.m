@@ -26,5 +26,13 @@
     }
     return self;
 }
-
+-(XYGIMDownloadStatus)downloadStatus{
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL result = [fileManager fileExistsAtPath:_localPath];
+    if (result) {
+        return XYGIMDownloadStatusSucceed;
+    }else{
+        return XYGIMDownloadStatusPending;
+    }
+}
 @end

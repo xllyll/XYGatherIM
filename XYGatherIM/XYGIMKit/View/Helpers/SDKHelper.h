@@ -37,4 +37,10 @@
                                                to:(NSString *)to
                                       messageType:(XYGIMChatType)messageType
                                        messageExt:(NSDictionary *)messageExt;
+
++ (XYGIMMessage *)sendVoiceMessageWithLocalPath:(NSString *)localPath
+                                       duration:(NSInteger)duration
+                                             to:(NSString *)to
+                                    messageType:(XYGIMChatType)messageType
+                                     messageExt:(NSDictionary *)messageExt;
 @end

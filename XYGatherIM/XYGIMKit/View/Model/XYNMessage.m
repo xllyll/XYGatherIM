@@ -10,6 +10,7 @@
 #import "XYGIMChatUntiles.h"
 #import "XYGIMConvertToCommonEmoticonsHelper.h"
 #import "XYGIMEmotion.h"
+#import "XYMacro.h"
 
 @implementation XYNMessage
 
@@ -29,6 +30,9 @@
         _nickname = message.from;
         _isSender = message.direction == XYGIMMessageDirectionSend ? YES : NO;
         
+        _fromMe = message.direction == XYGIMMessageDirectionSend;
+        _messageDownloadStatus = XYGIMDownloadStatusPending;
+        _thumbnailDownloadStatus = XYGIMDownloadStatusPending;
         switch (_message.messageType) {
             case XYGIMMessageBodyTypeText:
             {
@@ -79,7 +83,15 @@
                 }
                 
                 // 音频路径
-                self.fileURLPath = voiceBody.remotePath;
+                NSFileManager *fileManager = [NSFileManager defaultManager];
+                BOOL result = [fileManager fileExistsAtPath:voiceBody.localPath];
+                //XYLog(@"这个文件已经存在：%@",result?@"是的":@"不存在");
+                if (result) {
+                    self.fileURLPath = voiceBody.localPath;
+                }else{
+                    self.fileURLPath = voiceBody.remotePath;
+                }
+                
             }
                 break;
             case XYGIMMessageBodyTypeVideo:
@@ -277,9 +289,63 @@
             type = XYGIMNMessageTypeVideo;
             break;
         default:
-            
+            type = XYGIMNMessageTypeText;
             break;
     }
     return type;
+}
+- (XYGIMDownloadStatus)messageDownloadStatus {
+    XYGIMFileMessageBody *body = (XYGIMFileMessageBody*)self.message.body;
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    BOOL result = [fileManager fileExistsAtPath:body.localPath];
+    if (result) {
+        return XYGIMDownloadStatusSucceed;
+    }
+    return XYGIMDownloadStatusPending;
+}
+
+- (XYGIMDownloadStatus)thumbnailDownloadStatus {
+    return XYGIMDownloadStatusPending;
+    
+}
+
+//FIXME: 环信有时候会出现DownloadStatus==Success,但文件获取为空的情况
+- (UIImage *)fullImage {
+    if (self.bodyType == XYGIMMessageBodyTypeImage) {
+        XYGIMImageMessageBody *imgMessageBody = (XYGIMImageMessageBody *)self.message.body;
+        if (_fromMe || imgMessageBody.downloadStatus == XYGIMDownloadStatusSuccessed) {
+            UIImage *fullImage = [UIImage imageWithContentsOfFile:imgMessageBody.localPath];
+            return fullImage;
+        }
+    }
+    
+    return nil;
+}
+
+#pragma mark - 辅助 -
+
+- (long long)fileAttachmentSize {
+    switch (self.bodyType) {
+        case XYGIMMessageBodyTypeImage:
+        case XYGIMMessageBodyTypeVideo:
+        case XYGIMMessageBodyTypeFile:
+            return _fileSize;
+            
+        default:
+            return 0;
+    }
+    
+}
+
+- (BOOL)isVideoPlayable {
+    return (self.bodyType == XYGIMMessageBodyTypeVideo) && (self.fromMe || self.messageDownloadStatus == XYGIMDownloadStatusSucceed);
+}
+
+- (BOOL)isFullImageAvailable {
+    return (self.bodyType == XYGIMMessageBodyTypeImage) && (self.fromMe || self.messageDownloadStatus == XYGIMDownloadStatusSucceed);
+}
+
+- (BOOL)isVoicePlayable {
+    return (self.bodyType == XYGIMMessageBodyTypeVoice) && (self.fromMe || self.messageDownloadStatus == XYGIMDownloadStatusSucceed);
 }
 @end

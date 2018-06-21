@@ -94,6 +94,25 @@ typedef enum {
 - (void)markAllMessagesAsRead:(XYError **)pError;
 
 
+/**
+ *  \~chinese
+ *  删除一条消息
+ *
+ *  @param aMessageId   要删除消失的ID
+ *  @param pError       错误信息
+ *
+ */
+- (void)deleteMessageWithId:(NSString *)aMessageId
+                      error:(XYError **)pError;
+
+/**
+ *  \~chinese
+ *  删除该会话所有消息，同时清除内存和数据库中的消息
+ *
+ *  @param pError       错误信息
+ */
+- (void)deleteAllMessages:(XYError **)pError;
+
 #pragma mark - Load Messages Methods
 /**
  *  \~chinese
@@ -110,7 +129,7 @@ typedef enum {
  *  从数据库获取指定数量的消息，取到的消息按时间排序，并且不包含参考的消息，如果参考消息的ID为空，则从最新消息取
  *
  *  @param aMessageId       参考消息的ID
- *  @param count            获取的条数
+ *  @param aCount            获取的条数
  *  @param aDirection       消息搜索方向
  *  @param aCompletionBlock 完成的回调
  */

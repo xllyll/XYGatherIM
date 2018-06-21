@@ -98,4 +98,16 @@
     msg.body = body;
     return msg;
 }
++(XYGIMMessage *)sendVoiceMessageWithLocalPath:(NSString *)localPath duration:(NSInteger)duration to:(NSString *)to messageType:(XYGIMChatType)messageType messageExt:(NSDictionary *)messageExt{
+    XYGIMVoiceMessageBody *body = [[XYGIMVoiceMessageBody alloc] initWithLocalPath:localPath displayName:@"audio"];
+    body.duration = (int)duration;
+    XYGIMMessage *msg = [[XYGIMMessage alloc] init];
+    msg.text = @"发送一条语音消息";
+    msg.to = to;
+    msg.chatType = messageType;
+    msg.messageType = XYGIMMessageBodyTypeVoice;
+    msg.ext = messageExt;
+    msg.body = body;
+    return msg;
+}
 @end

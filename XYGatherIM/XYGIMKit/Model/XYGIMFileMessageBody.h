@@ -15,7 +15,8 @@
  *  File downloading status
  */
 typedef enum {
-    XYGIMDownloadStatusDownloading   = 0,  /*! \~chinese 正在下载 \~english Downloading */
+    XYGIMDownloadStatusWaiting = 0,
+    XYGIMDownloadStatusDownloading   = 1,  /*! \~chinese 正在下载 \~english Downloading */
     XYGIMDownloadStatusSucceed,            /*! \~chinese 下载成功 \~english Succeed */
     XYGIMDownloadStatusFailed,             /*! \~chinese 下载失败 \~english Failed */
     XYGIMDownloadStatusPending,            /*! \~chinese 准备下载 \~english Pending */

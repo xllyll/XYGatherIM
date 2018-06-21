@@ -9,5 +9,11 @@
 #import "XYGIMVideoMessageBody.h"
 
 @implementation XYGIMVideoMessageBody
-
+-(instancetype)initWithLocalPath:(NSString *)aLocalPath displayName:(NSString *)aDisplayName{
+    self = [super initWithLocalPath:aLocalPath displayName:aDisplayName];
+    if (self) {
+        self.type = XYGIMMessageBodyTypeVideo;
+    }
+    return self;
+}
 @end

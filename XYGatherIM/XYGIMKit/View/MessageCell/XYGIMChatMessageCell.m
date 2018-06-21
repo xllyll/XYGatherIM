@@ -156,7 +156,9 @@
     self.messageContentBackgroundIV.highlighted = NO;
 }
 
-
+-(CGRect)contentFrameInWindow{
+    return CGRectZero;
+}
 #pragma mark - Private Methods
 
 - (void)setup {
@@ -229,9 +231,6 @@
         
     }else{
         self.nicknameL.text = data[kXYGIMNMessageConfigurationNicknameKey];
-        
-        
-        
     }
     
     if (data[kXYGIMNMessageConfigurationReadStateKey]) {

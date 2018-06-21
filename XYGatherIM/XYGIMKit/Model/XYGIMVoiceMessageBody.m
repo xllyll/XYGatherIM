@@ -9,6 +9,13 @@
 #import "XYGIMVoiceMessageBody.h"
 
 @implementation XYGIMVoiceMessageBody
+-(instancetype)initWithLocalPath:(NSString *)aLocalPath displayName:(NSString *)aDisplayName{
+    self = [super initWithLocalPath:aLocalPath displayName:aDisplayName];
+    if (self) {
+        self.type = XYGIMMessageBodyTypeVoice;
+    }
+    return self;
+}
 -(instancetype)initWithLocalPath:(NSString *)aLocalPath url:(NSString *)url duration:(int)duration{
     self = [super init];
     if (self) {

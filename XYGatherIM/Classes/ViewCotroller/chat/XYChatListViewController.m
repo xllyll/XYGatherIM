@@ -14,7 +14,7 @@
 
 @interface XYChatListViewController ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (strong , nonatomic) NSArray<XYGIMConversation*> *conversations;
+@property (strong , nonatomic) NSMutableArray<XYGIMConversation*> *conversations;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -39,7 +39,7 @@
     
 }
 -(void)reloadData{
-    _conversations = [XYGIMClient sharedClient].chatManager.getAllConversations;
+    _conversations = [NSMutableArray arrayWithArray:[XYGIMClient sharedClient].chatManager.getAllConversations];
     [self getUnreadMessageCount];
     [self.tableView reloadData];
     
@@ -106,5 +106,23 @@
     XYGIMChatViewController *vc = [[XYGIMChatViewController alloc] initWithConversationChatter:c.conversationId conversationType:c.type];
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
+}
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return UITableViewCellEditingStyleDelete;
+}
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"删除";
+}
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        XYLog(@"");
+        XYGIMConversation *c = _conversations[indexPath.row];
+        [[XYGIMClient sharedClient].chatManager deleteConversation:c isDeleteMessages:YES completion:^(NSString *aConversationId, XYError *aError) {
+            if (aConversationId) {
+                [_conversations removeObject:c];
+                [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+            }
+        }];
+    }
 }
 @end

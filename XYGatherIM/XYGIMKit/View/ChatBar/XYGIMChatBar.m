@@ -306,7 +306,7 @@
     return mp4Url;
 }
 
-#pragma mark - XMLocationControllerDelegate
+#pragma mark - XYGIMLocationControllerDelegate
 -(XYNMessage *)didFinishWithLocationLatitude:(double)latitude longitude:(double)longitude name:(NSString *)name address:(NSString *)address zoomLevel:(double)zoomLevel snapshot:(UIImage *)snapshot{
     [self.rootViewController.navigationController dismissViewControllerAnimated:YES completion:nil];
     XYGIMMessage *msg = [[XYGIMMessage alloc] init];
@@ -322,20 +322,7 @@
 -(void)didCancelLocationViewController:(XYGIMGaoDeLocationViewController *)locationViewController{
     [locationViewController.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
-#pragma mark FUChatLuckyMoneyControllerDelegate
-//-(void)chatLuckyMoneyController:(FUChatLuckyMoneyController *)luckyMoneyVC isSuccess:(BOOL)isSuccess sendRedBag:(FUPRedBag *)redBag{
-//    if (isSuccess) {
-//        [luckyMoneyVC dismissViewControllerAnimated:YES completion:^{
-//
-//        }];
-//        if (self.delegate && [self.delegate respondsToSelector:@selector(chatBar:sendUserRedBag:)]) {
-//            [self.delegate chatBar:self sendUserRedBag:redBag];
-//        }
-//    }else{
-//        FUHUDHint(@"发送红包失败");
-//        FUHUDError(@"发送红包失败");
-//    }
-//}
+
 
 #pragma mark - MP3RecordedDelegate
 
@@ -395,19 +382,6 @@
             pickerC.sourceType = UIImagePickerControllerSourceTypeCamera;
             pickerC.delegate = self;
             [self.rootViewController presentViewController:pickerC animated:YES completion:nil];
-            
-            //            LFImagePickerController *imagePicker = [[LFImagePickerController alloc] initWithMaxImagesCount:9 delegate:self];
-            //            //imagePicker.naviBgColor = [UIColor fu_topMenuColor];
-            //
-            //            //    imagePicker.allowTakePicture = NO;
-            //            //    imagePicker.sortAscendingByCreateDate = NO;
-            //            imagePicker.doneBtnTitleStr = @"确定";
-            //            //    imagePicker.allowEditting = NO;
-            //            imagePicker.supportAutorotate = YES; /** 适配横屏 */
-            //            //    imagePicker.imageCompressSize = 200; /** 标清图压缩大小 */
-            //            //    imagePicker.thumbnailCompressSize = 20; /** 缩略图压缩大小 */
-            //            imagePicker.allowPickingGif = YES; /** 支持GIF */
-            //            [self.rootViewController presentViewController:imagePicker animated:YES completion:nil];
             
         }
             break;
@@ -756,7 +730,7 @@
 /**
  *  通知代理发送语音信息
  *
- *  @param voiceData 发送的语音信息data
+ *  @param voiceFileName 发送的语音信息data
  *  @param seconds   语音时长
  */
 - (void)sendVoiceMessage:(NSString *)voiceFileName seconds:(NSTimeInterval)seconds{

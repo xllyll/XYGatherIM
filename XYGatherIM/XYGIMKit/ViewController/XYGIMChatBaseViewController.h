@@ -59,6 +59,11 @@
  @brief 页面是否处于显示状态
  */
 @property (nonatomic) BOOL isViewDidAppear;
+/**
+ @property
+ @brief 当前页面显示时，是否滚动到最后一条
+ */
+@property (nonatomic) BOOL scrollToBottomWhenAppear; //default YES;
 
 #pragma mark SendMessage
 /**
@@ -119,4 +124,8 @@
 - (void)sendVideoMessageWithURL:(NSURL *)url;
 -(void)addMessageToDataSource:(XYGIMMessage *)message
                      progress:(id)progress;
+
+#pragma mark SELECT
+- (void)imageMessageCellSelected:(id)model messageCell:(UIView *)messageCell;
+- (void)videoMessageCellSelected:(id)model messageCell:(UIView *)messageCell;
 @end

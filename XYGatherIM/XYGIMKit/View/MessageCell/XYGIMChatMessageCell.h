@@ -98,4 +98,6 @@
 - (void)configureCellWithData:(id)data;
 
 - (void)updateMessageCell;
+
+- (CGRect)contentFrameInWindow;
 @end

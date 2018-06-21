@@ -18,6 +18,7 @@
 
 @property (strong , nonatomic) id<NIMConversationManager> conversationManager;
 
+@property (strong , nonatomic) id<NIMResourceManager> resourceManager;
 
 @end
 
@@ -39,6 +40,10 @@
     _chatManager = [[NIMSDK sharedSDK] chatManager];
     return _chatManager;
 }
+-(id<NIMResourceManager>)resourceManager{
+    _resourceManager = [[NIMSDK sharedSDK] resourceManager];
+    return _resourceManager;
+}
 -(NSMutableArray *)delegates{
     if (!_delegates) {
         _delegates = [[NSMutableArray alloc] init];
@@ -56,6 +61,7 @@
     [self.delegates removeObject:aDelegate];
 }
 -(NSArray *)getAllConversations{
+    
     NSArray<NIMRecentSession*> *slist = self.conversationManager.allRecentSessions;
     NSMutableArray *rs = [[NSMutableArray alloc] init];
     for (int i =0 ; i < slist.count; i++) {
@@ -74,9 +80,13 @@
         case XYGIMMessageBodyTypeText:
             aMessage.messageType = NIMMessageTypeText;
             break;
-        case XYGIMMessageBodyTypeVoice:
+        case XYGIMMessageBodyTypeVoice:{
             aMessage.messageType = NIMMessageTypeAudio;
+            XYGIMVoiceMessageBody *voiceBody = (XYGIMVoiceMessageBody*)aMessage.body;
+            NIMAudioObject *audioObject = [[NIMAudioObject alloc] initWithSourcePath:voiceBody.localPath];
+            message.messageObject = audioObject;
             break;
+        }
         case XYGIMMessageBodyTypeImage:{
             aMessage.messageType = NIMMessageTypeImage;
             XYGIMImageMessageBody *imgBody = (XYGIMImageMessageBody*)aMessage.body;
@@ -133,8 +143,29 @@
     return session;
 }
 -(XYGIMConversation *)getConversation:(NSString *)aConversationId type:(XYGIMConversationType)aType createIfNotExist:(BOOL)aIfCreate{
+    
     NIMSession *session = [self getSession:aConversationId type:aType];
-    XYGIMConversation *c = [self buildConversation:[_conversationManager recentSessionBySession:session]];
+    NIMRecentSession *rs = [_conversationManager recentSessionBySession:session];
+    XYGIMConversation *c = [self buildConversation:rs];
+    if (rs==nil) {
+        rs = [[NIMRecentSession alloc] init];
+        c.conversationId = session.sessionId;
+        switch (session.sessionType) {
+            case NIMSessionTypeP2P:
+                c.type = XYGIMConversationTypeChat;
+                break;
+            case NIMSessionTypeTeam:
+                c.type = XYGIMConversationTypeGroupChat;
+                break;
+            case NIMSessionTypeChatroom:
+                c.type = XYGIMConversationTypeChatRoom;
+                break;
+                
+            default:
+                break;
+        }
+    }
+    
     return c;
 }
 
@@ -218,7 +249,79 @@
            completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
     
 }
-
+-(void)deleteConversation:(XYGIMConversation *)aConversation isDeleteMessages:(BOOL)aIsDeleteMessages completion:(void (^)(NSString *, XYError *))aCompletionBlock{
+    //NIMSession *session = [NIMSession session:<#(nonnull NSString *)#> type:<#(NIMSessionType)#>]
+    NIMRecentSession *recent = aConversation.conversation;
+    
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        // 处理耗时操作的代码块...
+        if (aIsDeleteMessages==YES) {
+            NIMDeleteMessagesOption *option = [[NIMDeleteMessagesOption alloc] init];
+            option.removeSession = YES;
+            option.removeTable = YES;
+            [_conversationManager deleteAllmessagesInSession:recent.session option:option];
+        }
+        [_conversationManager deleteRecentSession:recent];
+        //通知主线程刷新
+        dispatch_async(dispatch_get_main_queue(), ^{
+            //回调或者说是通知主线程刷新，
+            aCompletionBlock(aConversation.conversationId,nil);
+        });
+        
+    });
+    
+    
+}
+-(void)deleteConversations:(NSArray<XYGIMConversation *> *)aConversations isDeleteMessages:(BOOL)aIsDeleteMessages completion:(void (^)(XYError *))aCompletionBlock{
+    
+}
+-(void)downloadMessageThumbnail:(XYGIMMessage *)aMessage progress:(void (^)(int))aProgressBlock completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
+    NSString *path = @"";
+    NSString *filepath = @"";
+    NIMMessage *msg = aMessage.message;
+    if ([msg.messageObject isKindOfClass:[NIMImageObject class]]) {
+        NIMImageObject *imgOb = msg.messageObject;
+        path = imgOb.thumbUrl;
+        filepath = imgOb.thumbPath;
+    }
+    [self.resourceManager download:path filepath:filepath progress:^(float progress) {
+        int p = (int)(progress*100);
+        XYLog(@"<网易云--下载>---  %.2f === %d",progress,p)
+        aProgressBlock(p);
+    } completion:^(NSError * _Nullable error) {
+        if (!error) {
+            aCompletionBlock(aMessage,nil);
+        }else{
+            aCompletionBlock(nil,[XYError new]);
+        }
+    }];
+}
+-(void)downloadMessageAttachment:(XYGIMMessage *)aMessage progress:(void (^)(int))aProgressBlock completion:(void (^)(XYGIMMessage *, XYError *))aCompletionBlock{
+    NSString *path = @"";
+    NSString *filepath = @"";
+    NIMMessage *msg = aMessage.message;
+    if ([msg.messageObject isKindOfClass:[NIMVideoObject class]]) {
+        NIMVideoObject *videoOb = msg.messageObject;
+        path = videoOb.url;
+        filepath = videoOb.path;
+    }
+    if ([msg.messageObject isKindOfClass:[NIMImageObject class]]) {
+        NIMImageObject *imgOb = msg.messageObject;
+        path = imgOb.url;
+        filepath = imgOb.path;
+    }
+    [self.resourceManager download:path filepath:filepath progress:^(float progress) {
+        int p = (int)(progress*100);
+        XYLog(@"<网易云--附件下载>---  %.2f === %d",progress,p)
+        aProgressBlock(p);
+    } completion:^(NSError * _Nullable error) {
+        if (!error) {
+            aCompletionBlock(aMessage,nil);
+        }else{
+            aCompletionBlock(nil,[XYError new]);
+        }
+    }];
+}
 #pragma mark NIMChatManagerDelegate
 /**
  *  即将发送消息回调

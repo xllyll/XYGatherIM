@@ -40,6 +40,7 @@
     [super updateConstraints];
     [self.messageImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.messageContentV);
+        make.width.lessThanOrEqualTo(@220);
         make.height.lessThanOrEqualTo(@200);
     }];
     
@@ -185,5 +186,18 @@ static CGRect oldframe;
     }
     return _messageProgressView;
 }
+#pragma mark - 弹入弹出动画
 
+- (CGRect)contentFrameInWindow {
+    return [self.messageImageView convertRect:self.messageImageView.bounds toView:self.messageImageView.window];
+}
+- (void)willExitFullScreenShow {
+//    self.chatImageView.hidden = YES;
+//    self.borderView.hidden = YES;
+}
+
+- (void)didExitFullScreenShow {
+//    self.chatImageView.hidden = NO;
+//    self.borderView.hidden = NO;
+}
 @end

@@ -57,20 +57,23 @@
 
 
 #pragma mark XYGIMChatBarDelegate
--(void)chatBar:(XYGIMChatBar *)chatBar sendMessage:(NSString *)message{
+- (void)chatBar:(XYGIMChatBar *)chatBar sendMessage:(NSString *)message{
     [self sendTextMessage:message];
 }
--(void)chatBar:(XYGIMChatBar *)chatBar sendPictures:(NSArray *)pictures{
+- (void)chatBar:(XYGIMChatBar *)chatBar sendVoice:(NSString *)voiceFileName seconds:(NSTimeInterval)seconds{
+    [self sendVoiceMessageWithLocalPath:voiceFileName duration:seconds];
+}
+- (void)chatBar:(XYGIMChatBar *)chatBar sendPictures:(NSArray *)pictures{
     if (pictures) {
         for (UIImage *img in pictures) {
             [self sendImageMessage:img];
         }
     }
 }
--(void)chatBar:(XYGIMChatBar *)chatBar sendImageDatas:(NSArray *)imagesDatas{
+- (void)chatBar:(XYGIMChatBar *)chatBar sendImageDatas:(NSArray *)imagesDatas{
     
 }
--(void)chatBar:(XYGIMChatBar *)chatBar sendLocation:(CLLocationCoordinate2D)locationCoordinate locationText:(NSString *)locationText{
+- (void)chatBar:(XYGIMChatBar *)chatBar sendLocation:(CLLocationCoordinate2D)locationCoordinate locationText:(NSString *)locationText{
     [self sendLocationMessageLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude andAddress:locationText];
 }
 #pragma mark - XYGIMChatMessageCellDelegate
@@ -114,11 +117,11 @@
             
             
         case XYGIMNMessageTypeImage:{
-            //[self imageMessageCellSelected:messageCell.message messageCell:messageCell];
+            [self imageMessageCellSelected:messageCell.message messageCell:messageCell];
         }
             break;
         case XYGIMNMessageTypeVideo:{
-            //[self videoMessageCellSelected:messageCell.message messageCell:messageCell];
+            [self videoMessageCellSelected:messageCell.message messageCell:messageCell];
         }
             break;
         default:
