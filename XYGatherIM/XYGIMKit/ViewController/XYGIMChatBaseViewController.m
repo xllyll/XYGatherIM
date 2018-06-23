@@ -21,7 +21,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import "XYGIMChatAssetDisplayController.h"
 
-@interface XYGIMChatBaseViewController ()<XYGIMAudioPlayerDelegate,XYGIMChatViewModelDelegate,XYGIMChatMessageCellDelegate,XYGIMChatImagePreviewDelegate>
+@interface XYGIMChatBaseViewController ()<XYGIMAudioPlayerDelegate,XYGIMChatViewModelDelegate,XYGIMChatMessageCellDelegate,XYGIMChatImagePreviewDelegate,XYGIMChatManagerDelegate>
 {
     dispatch_queue_t _messageQueue;
 }
@@ -63,6 +63,13 @@
     self.chatViewModel.delegate = self;
     
     [XYGIMAudioPlayer sharePlayer].delegate = self;
+    
+    //注册代理
+    //[EMCDDeviceManager sharedInstance].delegate = self;
+    
+    [[XYGIMClient sharedClient].chatManager addDelegate:self delegateQueue:nil];
+    [[XYGIMClient sharedClient].roomManager addDelegate:self delegateQueue:nil];
+    [[XYGIMClient sharedClient].callManager addDelegate:self delegateQueue:nil];
     
     [self tableViewDidTriggerHeaderRefresh];
 }
@@ -330,6 +337,16 @@
             break;
     }
     return type;
+}
+- (BOOL)_shouldMarkMessageAsRead
+{
+    BOOL isMark = YES;
+    if (([UIApplication sharedApplication].applicationState == UIApplicationStateBackground) || !self.isViewDidAppear)
+    {
+        isMark = NO;
+    }
+    
+    return isMark;
 }
 - (void)_imageMessageCellSelected:(XYNMessage*)model messageCell:(XYGIMChatMessageCell*)messageCell;
 {
@@ -753,5 +770,22 @@
 }
 - (void)videoMessageCellSelected:(id)model messageCell:(UIView *)messageCell{
     [self _videoMessageCellSelected:model messageCell:(XYGIMChatVideoMessageCell*)messageCell];
+}
+
+#pragma mark XYGIMChatManagerDelegate
+-(void)XYGIM_onRecvMessages:(NSArray<XYGIMMessage *> *)aMessages{
+    for (XYGIMMessage *message in aMessages) {
+        if ([self.conversation.conversationId isEqualToString:message.conversationId]) {
+            [self addMessageToDataSource:message progress:nil];
+            
+            [self _sendHasReadResponseForMessages:@[message]
+                                           isRead:NO];
+            
+            if ([self _shouldMarkMessageAsRead])
+            {
+                [self.conversation markMessageAsReadWithId:message.messageId error:nil];
+            }
+        }
+    }
 }
 @end

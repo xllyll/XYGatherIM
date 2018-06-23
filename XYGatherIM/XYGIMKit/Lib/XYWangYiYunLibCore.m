@@ -12,11 +12,15 @@
 #import "XYGIMFileCore+WangYiYun.h"
 #import "XYGIMContactManagerWangYiYunImpl.h"
 #import "XYGIMChatManagerWangYiYunImpl.h"
+#import "XYGIMChatRoomManagerWangYiYunImpl.h"
+#import "XYGIMCallManagerWangYiYunImpl.h"
 
 @interface XYWangYiYunLibCore()<NIMLoginManagerDelegate>
 {
     XYGIMContactManagerWangYiYunImpl *_contactManagerImpl;
     XYGIMChatManagerWangYiYunImpl *_chatManagerImpl;
+    XYGIMChatRoomManagerWangYiYunImpl *_chatRoomManagerImpl;
+    XYGIMCallManagerWangYiYunImpl *_callManagerImpl;
 }
 @end
 @implementation XYWangYiYunLibCore
@@ -44,6 +48,12 @@
         
         _contactManagerImpl = [[XYGIMContactManagerWangYiYunImpl alloc] init];
         self.contactManager = _contactManagerImpl;
+        
+        _chatRoomManagerImpl = [[XYGIMChatRoomManagerWangYiYunImpl alloc] init];
+        self.roomManager = _chatRoomManagerImpl;
+        
+        _callManagerImpl = [[XYGIMCallManagerWangYiYunImpl alloc] init];
+        self.callManager = _callManagerImpl;
         
     }
     return self;

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1715875B20DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1715875A20DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.m */; };
+		1715875E20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 1715875D20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.m */; };
 		171822B220D9EE8E00799283 /* NSData+XYData.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822B120D9EE8E00799283 /* NSData+XYData.m */; };
 		171822D920DB7B2000799283 /* XYGIMChatAssetDisplayController.m in Sources */ = {isa = PBXBuildFile; fileRef = 171822D720DB7B2000799283 /* XYGIMChatAssetDisplayController.m */; };
 		171822DA20DB7B2000799283 /* XYGIMChatAssetDisplayController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 171822D820DB7B2000799283 /* XYGIMChatAssetDisplayController.xib */; };
@@ -357,6 +359,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1715874A20DDEA98007D68C3 /* XYGIMChatRoomManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatRoomManager.h; sourceTree = "<group>"; };
+		1715874D20DDEAE6007D68C3 /* XYGIMCallManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMCallManager.h; sourceTree = "<group>"; };
+		1715875020DDEB68007D68C3 /* XYGIMCallManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMCallManagerDelegate.h; sourceTree = "<group>"; };
+		1715875620DDECEA007D68C3 /* XYGIMChatroomManagerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatroomManagerDelegate.h; sourceTree = "<group>"; };
+		1715875920DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatRoomManagerWangYiYunImpl.h; sourceTree = "<group>"; };
+		1715875A20DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMChatRoomManagerWangYiYunImpl.m; sourceTree = "<group>"; };
+		1715875C20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMCallManagerWangYiYunImpl.h; sourceTree = "<group>"; };
+		1715875D20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = XYGIMCallManagerWangYiYunImpl.m; sourceTree = "<group>"; };
 		171822B020D9EE8E00799283 /* NSData+XYData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSData+XYData.h"; sourceTree = "<group>"; };
 		171822B120D9EE8E00799283 /* NSData+XYData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSData+XYData.m"; sourceTree = "<group>"; };
 		171822D620DB7B2000799283 /* XYGIMChatAssetDisplayController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = XYGIMChatAssetDisplayController.h; sourceTree = "<group>"; };
@@ -1402,6 +1412,10 @@
 				17A96DAC20CE5D5300ECF6CB /* XYGIMContactManagerWangYiYunImpl.m */,
 				1783C66620D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.h */,
 				1783C66720D0BAEB003C85CA /* XYGIMChatManagerWangYiYunImpl.m */,
+				1715875920DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.h */,
+				1715875A20DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.m */,
+				1715875C20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.h */,
+				1715875D20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.m */,
 			);
 			path = Impl;
 			sourceTree = "<group>";
@@ -1410,6 +1424,8 @@
 			isa = PBXGroup;
 			children = (
 				1783C66E20D0BBAC003C85CA /* XYGIMChatManagerDelegate.h */,
+				1715875020DDEB68007D68C3 /* XYGIMCallManagerDelegate.h */,
+				1715875620DDECEA007D68C3 /* XYGIMChatroomManagerDelegate.h */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -1620,6 +1636,8 @@
 				1783C66D20D0BB9B003C85CA /* Delegate */,
 				17A96DA020CE568C00ECF6CB /* XYGIMContactManager.h */,
 				1783C66A20D0BB5A003C85CA /* XYGIMChatManager.h */,
+				1715874A20DDEA98007D68C3 /* XYGIMChatRoomManager.h */,
+				1715874D20DDEAE6007D68C3 /* XYGIMCallManager.h */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1845,7 +1863,7 @@
 		1781AB332060AD37007D5624 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "杨卢银";
 				TargetAttributes = {
 					1781AB3A2060AD37007D5624 = {
@@ -2250,6 +2268,7 @@
 				1783C72E20D3412C003C85CA /* XYUtils+Popover.m in Sources */,
 				17A9704C20CF651500ECF6CB /* XYGIMFaceManager.m in Sources */,
 				17A96DB320CE60DF00ECF6CB /* XYGIMUser.m in Sources */,
+				1715875E20DDF070007D68C3 /* XYGIMCallManagerWangYiYunImpl.m in Sources */,
 				1783C70A20D2B7F8003C85CA /* XYSearchViewController.m in Sources */,
 				17A96D5420CE094700ECF6CB /* BaseNavgationViewController.m in Sources */,
 				17A96D9620CE48C300ECF6CB /* XYGIMFileCore.m in Sources */,
@@ -2300,6 +2319,7 @@
 				1783C71920D2BE31003C85CA /* XYLocationSearchResultController.m in Sources */,
 				17A970A020CF995E00ECF6CB /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				171822E520DB7DF500799283 /* XYGIMVideoPlaybackView.m in Sources */,
+				1715875B20DDEDA2007D68C3 /* XYGIMChatRoomManagerWangYiYunImpl.m in Sources */,
 				17476650207B46170080BC9E /* SwipeView.m in Sources */,
 				17A96DA520CE57E600ECF6CB /* XYGIMMessage.m in Sources */,
 				17476656207B46170080BC9E /* TLAttributedLabelUtils.m in Sources */,
@@ -2418,6 +2438,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2425,6 +2446,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2473,6 +2495,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -2480,6 +2503,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -2516,6 +2540,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PS3YZT8DSP;
 				INFOPLIST_FILE = XYGatherIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2538,6 +2563,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PS3YZT8DSP;
 				INFOPLIST_FILE = XYGatherIM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

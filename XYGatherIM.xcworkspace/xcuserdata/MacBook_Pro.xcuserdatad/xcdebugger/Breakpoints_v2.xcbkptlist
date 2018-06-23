@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.8282"
+            timestampString = "551420746.81142"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "724"
-            endingLineNumber = "724"
+            startingLineNumber = "741"
+            endingLineNumber = "741"
             landmarkName = "-sendImageMessageWithData:"
             landmarkType = "7">
          </BreakpointContent>
@@ -36,27 +36,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.828565"
+            timestampString = "551420746.8116421"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "702"
-            endingLineNumber = "702"
-            landmarkName = "-sendTextMessage:withExt:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.828673"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "742"
-            endingLineNumber = "742"
+            startingLineNumber = "759"
+            endingLineNumber = "759"
             landmarkName = "-sendVoiceMessageWithLocalPath:duration:"
             landmarkType = "7">
          </BreakpointContent>
@@ -68,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.828757"
+            timestampString = "551420746.811744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "747"
-            endingLineNumber = "747"
+            startingLineNumber = "764"
+            endingLineNumber = "764"
             landmarkName = "-sendVoiceMessageWithLocalPath:duration:"
             landmarkType = "7">
          </BreakpointContent>
@@ -84,27 +68,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.8288389"
+            timestampString = "551420746.8119659"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "660"
-            endingLineNumber = "660"
-            landmarkName = "-_sendMessage:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.82892"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "411"
-            endingLineNumber = "411"
+            startingLineNumber = "428"
+            endingLineNumber = "428"
             landmarkName = "-_videoMessageCellSelected:messageCell:"
             landmarkType = "7">
          </BreakpointContent>
@@ -116,11 +84,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.82899"
+            timestampString = "551420746.812061"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "425"
-            endingLineNumber = "425"
+            startingLineNumber = "442"
+            endingLineNumber = "442"
             landmarkName = "-_videoMessageCellSelected:messageCell:"
             landmarkType = "7">
          </BreakpointContent>
@@ -132,11 +100,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.829062"
+            timestampString = "551420746.812147"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
             landmarkName = "-_videoMessageCellSelected:messageCell:"
             landmarkType = "7">
          </BreakpointContent>
@@ -148,11 +116,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.829134"
+            timestampString = "551420746.812215"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "490"
-            endingLineNumber = "490"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "-_videoMessageCellSelected:messageCell:"
             landmarkType = "7">
          </BreakpointContent>
@@ -164,11 +132,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "XYGatherIM/XYGIMKit/ViewController/XYGIMChatBaseViewController.m"
-            timestampString = "551264661.829204"
+            timestampString = "551420746.8122801"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "383"
+            endingLineNumber = "383"
             landmarkName = "-_imageMessageCellSelected:messageCell:"
             landmarkType = "7">
          </BreakpointContent>

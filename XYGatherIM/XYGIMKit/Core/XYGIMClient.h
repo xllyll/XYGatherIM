@@ -11,6 +11,9 @@
 #import "XYError.h"
 #import "XYGIMChatManager.h"
 #import "XYGIMContactManager.h"
+#import "XYGIMCallManager.h"
+#import "XYGIMChatRoomManager.h"
+
 #import "XYGIMConfig.h"
 
 typedef enum XYGIMLibType
@@ -66,6 +69,13 @@ typedef enum XYGIMLibType
 
 @property (assign , nonatomic) id<XYGIMContactManager> contactManager;
 @property (assign , nonatomic) id<XYGIMChatManager> chatManager;
+@property (assign , nonatomic) id<XYGIMChatRoomManager> roomManager;
+
+/**
+ *  \~chinese
+ *  实时通讯模块
+ */
+@property (assign , nonatomic) id<XYGIMCallManager> callManager;
 
 #pragma mark FFF
 // APP进入后台

@@ -69,7 +69,6 @@
 /**
  @method
  @brief 发送文本消息
- @discussion
  @param text 文本消息
  */
 - (void)sendTextMessage:(NSString *)text;
@@ -77,17 +76,14 @@
 /**
  @method
  @brief 发送文本消息
- @discussion
  @param text 文本消息
  @param ext  扩展信息
- @result
  */
 - (void)sendTextMessage:(NSString *)text withExt:(NSDictionary*)ext;
 - (void)sendCmcMessage:(NSString *)text withExt:(NSDictionary*)ext cmdParams:(NSArray*)cmdParams;
 /**
  @method
  @brief 发送图片消息
- @discussion
  @param image 发送图片
  */
 - (void)sendImageMessage:(UIImage *)image;
@@ -96,7 +92,6 @@
 /**
  @method
  @brief 发送位置消息
- @discussion
  @param latitude 经度
  @param longitude 纬度
  @param address 地址
@@ -108,7 +103,6 @@
 /**
  @method
  @brief 发送语音消息
- @discussion
  @param localPath 语音本地地址
  @param duration 时长
  */
@@ -118,7 +112,6 @@
 /**
  @method
  @brief 发送视频消息
- @discussion
  @param url 视频url
  */
 - (void)sendVideoMessageWithURL:(NSURL *)url;

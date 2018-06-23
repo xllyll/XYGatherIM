@@ -33,6 +33,18 @@
 -(void)markAllMessagesAsRead:(XYError *__autoreleasing *)pError{
     [[NIMSDK sharedSDK].conversationManager markAllMessagesReadInSession:_recentSession.session];
 }
+/**
+ *  \~chinese
+ *  将消息设置为已读
+ *
+ *  @param aMessageId   要设置消息的ID
+ *  @param pError       错误信息
+ *
+ */
+- (void)markMessageAsReadWithId:(NSString *)aMessageId
+                          error:(XYError **)pError{
+    [[NIMSDK sharedSDK].conversationManager markAllMessagesReadInSession:_recentSession.session];
+}
 #pragma mark - Load Messages Methods
 /**
  *  \~chinese
